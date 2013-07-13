@@ -14,14 +14,6 @@ jclouds master.
 Please see [Contributing to the jclouds Code Base](http://www.jclouds.org/documentation/devguides/contributing-to-jclouds/) if you are interested in 
 contributing code to jclouds.
 
-## Contributor License Agreement
-
-Before we can accept your contributions, you will need to sign a contributor license agreement.  Please contact us so that we may send you a form to 
-sign digitally.  The following documents are copies of our license agreements for your reference.
-
-   *  [Corporate Contributor License Agreement](https://github.com/jclouds/jclouds.github.com/blob/master/licenses/cla-corporate.txt)
-   *  [Individual Contributor License Agreement](https://github.com/jclouds/jclouds.github.com/blob/master/licenses/icla.txt)
-
 ## Information about jclouds.org for Getting Started on Documentation
 
 The jclouds website is built using [GitHub pages](http://pages.github.com/) which uses [Jekyll](https://github.com/mojombo/jekyll/). To preview any changes 

@@ -13,14 +13,6 @@ processes.
 
 If you are interested in helping us out with the jclouds documentation, please see our instructions for [contributing to jclouds documentation](http://www.jclouds.org/documentation/devguides/contributing-to-documentation/). 
 
-## Contributor License Agreement
-
-Before we can accept your contributions, you will need to sign a contributor license agreement.  Please contact us so that we may send you a form to 
-sign digitally.  The following documents are copies of our license agreements for your reference.
-
-   *  [Corporate Contributor License Agreement](https://github.com/jclouds/jclouds.github.com/blob/master/licenses/cla-corporate.txt)
-   *  [Individual Contributor License Agreement](https://github.com/jclouds/jclouds.github.com/blob/master/licenses/icla.txt)
-
 ## Working with jclouds on GitHub
 
 The jclouds website currently resides on GitHub, and the source code is available at the [jclouds-site Git repository](https://github.com/jclouds/jclouds-site).
