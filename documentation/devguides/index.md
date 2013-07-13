@@ -17,7 +17,7 @@ Code hosting for jclouds is done on [GitHub](https://github.com/jclouds/jclouds)
 
 ## References for Developers
 
-   *  [Google Code Site](http://code.google.com/p/jclouds/)
+   *  [Github mirror](https://github.com/jclouds)
    *  [Issue Tracker](https://github.com/jclouds/jclouds/issues?state=open)
    *  [jclouds Continuous Integration](/documentation/devguides/continuous-integration)
    *  [Provider Metadata](/documentation/devguides/provider-metadata)
@@ -31,4 +31,4 @@ It can take us quite a while to diagnose problems.  Any information that you can
 much easier for us to respond as quickly as we can.
 
    *  IRC - #jclouds on freenode or you can use [webchat](http://webchat.freenode.net/?channels=#jclouds)
-   *  [jclouds-dev google group](http://groups.google.com/group/jclouds-dev)
+   *  [dev@jclouds mailing list](mailto:dev-subscribe@jclouds.incubator.apache.org)
