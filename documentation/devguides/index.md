@@ -5,7 +5,7 @@ title: jclouds Developer Resources
 
 # jclouds Development Resources
 
-Code hosting for jclouds is done on [GitHub](https://github.com/jclouds/jclouds) and we track our project via [Google Code](http://code.google.com/p/jclouds/).
+Code is hosted on [Git at the ASF](https://git-wip-us.apache.org/repos/asf?s=jclouds) but our process makes use of [github mirrors](https://github.com/jclouds).  
 
 ## Working on jclouds
 	
@@ -18,7 +18,7 @@ Code hosting for jclouds is done on [GitHub](https://github.com/jclouds/jclouds)
 ## References for Developers
 
    *  [Github mirror](https://github.com/jclouds)
-   *  [Issue Tracker](https://github.com/jclouds/jclouds/issues?state=open)
+   *  [Issue Tracker](https://issues.apache.org/jira/browse/JCLOUDS)
    *  [jclouds Continuous Integration](/documentation/devguides/continuous-integration)
    *  [Provider Metadata](/documentation/devguides/provider-metadata)
    *  [Using Eclipse](/documentation/devguides/using-eclipse)
