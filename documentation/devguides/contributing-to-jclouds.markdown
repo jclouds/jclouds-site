@@ -23,7 +23,7 @@ sign digitally.  The following documents are copies of our license agreements fo
 
 ## Working with jclouds on GitHub
 
-The jclouds website currently resides on GitHub, and the source code is available at the [jclouds Git repository](https://github.com/jclouds/jclouds.github.com).
+The jclouds website currently resides on GitHub, and the source code is available at the [jclouds-site Git repository](https://github.com/jclouds/jclouds-site).
 
 In order to contribute to the jclouds code base, you will need to be familiar with Git and GitHub.  If you are not familiar with Git and GitHub, please 
 visit [learn.github](http://learn.github.com/p/intro.html) for an introduction and tutorial.
@@ -31,7 +31,7 @@ visit [learn.github](http://learn.github.com/p/intro.html) for an introduction a
 Git is an open source, distributed version control system.  It conveniently keeps a history on the state of the jclouds source code. The jclouds website is 
 rebuilt and updated whenever a new commit is pushed to the jclouds Git repository. This makes it simple for us to review and accept your contributions. 
 
-Current issues being addressed may be found in the [jclouds Issue Tracker](https://github.com/jclouds/jclouds/issues?state=open).  Please check the
+Current issues being addressed may be found in the [jclouds Issue Tracker](https://issues.apache.org/jira/browse/JCLOUDS).  Please check the
 issue tracker and log the issue you are working on before contributing in order to avoid duplications.  If you feel more comfortable having someone 
 else work on an issue, please log your request on the issue tracker.
 
