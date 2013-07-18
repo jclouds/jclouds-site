@@ -5,17 +5,18 @@ title: Getting Started - The Rackspace Cloud
 
 # Getting Started: The Rackspace Cloud
 
-1. [Introduction](#intro)
-1. [Get a Username and API Key](#account)
-1. [Get jclouds](#install)
+1. [Introduction](#introduction)
+1. [Get a Username and API Key](#get-a-username-and-api-key)
+1. [Get jclouds](#get-jclouds)
 1. [Terminology](#terminology)
-1. [Your First Cloud Files App](#files)
-1. [Your First Cloud Servers App](#servers)
-1. [Working with Cloud Block Storage](#volumes)
-1. [Working with Cloud Load Balancers](#loadbalancers)
-1. [Next Steps](#next)
-1. [Rackspace Cloud Providers](#providers)
-1. [Support and Feedback](#support)
+1. [Your First Cloud Files App](#your-first-cloud-files-app)
+1. [Your First Cloud Servers App](#your-first-cloud-servers-app)
+1. [Working with Cloud Block Storage](#working-with-cloud-block-storage)
+1. [Working with Cloud Load Balancers](#working-with-cloud-load-balancers)
+1. [Working with Cloud Databases](#working-with-cloud-databases)
+1. [Next Steps](#next-steps)
+1. [Rackspace Cloud Providers](#rackspace-cloud-providers)
+1. [Support and Feedback](#support-and-feedback)
 
 ## <a id="intro"></a>Introduction
 The [Rackspace Cloud](http://www.rackspace.com/cloud/public/) platform includes everything you need to build websites and applications that scale servers, storage, networking, APIs, and more. The Rackspace Cloud is based on OpenStack, which is a global collaboration of developers and cloud computing technologists producing the ubiquitous open source cloud computing platform for public and private clouds.
@@ -195,19 +196,19 @@ Cloud Block Storage works with the OpenStack layer in jclouds that is used to ac
     List Volumes
       ...
 
-## <a id="lbs"></a>Working with Cloud Load Balancers
-### <a id="lbs-intro"></a>Introduction
+## <a id="loadbalancers"></a>Working with Cloud Load Balancers
+### <a id="loadbalancers-intro"></a>Introduction
 
 [Cloud Load Balancers](http://www.rackspace.com/cloud/public/loadbalancers/) distributes workloads across two or more servers, network links, and other resources to maximize throughput, minimize response time, and avoid overload. Rackspace Cloud Load Balancers allow you to quickly load balance multiple Cloud Servers for optimal resource utilization.
 
-### <a id="lbs-apis"></a>APIs
+### <a id="loadbalancers-apis"></a>APIs
 
 Cloud Load Balancers works with the Rackspace layer in jclouds that is used to access features specific to the Rackspace load balancer system.
 
 1. The Rackspace API for Cloud Load Balancers is org.jclouds.rackspace.cloudloadbalancers.CloudLoadBalancersApi.  All other APIs for working with load balancers are accessible via the CloudLoadBalancersApi.
 1. You can find these APIs in the latest [Javadoc](http://demobox.github.com/jclouds-maven-site/latest/apidocs).
 
-### <a id="lbs-source"></a>The Source Code
+### <a id="loadbalancers-source"></a>The Source Code
 
 1. Create the directory hierarchy org/jclouds/examples/rackspace/cloudloadbalancers/ in your jclouds directory.
 1. Create Java source files called CreateLoadBalancerWithExistingServers.java and Constants.java in the directory above.
@@ -224,7 +225,7 @@ Cloud Load Balancers works with the Rackspace layer in jclouds that is used to a
 1. Open Constants.java for editing.
 1. Go to the example code [Constants.java](https://github.com/jclouds/jclouds-examples/blob/master/rackspace/src/main/java/org/jclouds/examples/rackspace/cloudloadbalancers/Constants.java), read it over, and copy the code into your file.
 
-### <a id="lbs-compile"></a>Compile and Run
+### <a id="loadbalancers-compile"></a>Compile and Run
 
     javac -classpath ".:lib/*" org/jclouds/examples/rackspace/cloudloadbalancers/CreateLoadBalancerWithExistingServers.java
     
@@ -234,11 +235,52 @@ Cloud Load Balancers works with the Rackspace layer in jclouds that is used to a
       LoadBalancer{id=85901...}
       Go to http://166.78.34.87
 
+## <a id="databases"></a>Working with Cloud Databases
+### <a id="databases-intro"></a>Introduction
+
+[Cloud Databases](http://www.rackspace.com/cloud/databases/) provides easily managed cloud MySQL instances with built-in data replication for speed and reliability.
+
+### <a id="databases-apis"></a>APIs
+
+You can access Cloud Databases with the jclouds openstack-trove API by specifying the rackspace clouddatabases providers "rackspace-clouddatabases-us" and "rackspace-clouddatabases-uk". The -us one can be used to access the United States regions, and the -uk one is for the United Kingdom regions. The examples use the -us provider, but the providers are interchangeable (but regions will differ).
+
+1. The Rackspace compatible API for Cloud Databases is org.jclouds.openstack.trove.v1.TroveApi - All other APIs for working with Cloud Databases are accessible via the TroveApi.
+1. You can find these APIs in the latest [Javadoc](http://demobox.github.com/jclouds-maven-site/latest/apidocs).
+
+### <a id="databases-source"></a>The Source Code
+
+1. Create the directory hierarchy org/jclouds/examples/rackspace/clouddatabases/ in your jclouds directory.
+1. Create Java source files called CreateInstance.java and Constants.java in the directory above.
+1. You should now have a directory with the following structure:
+    * `jclouds/`
+        * `pom.xml`
+        * `lib/`
+            * `*.jar`
+        * `org/jclouds/examples/rackspace/clouddatabases/`
+            * `CreateInstance.java`
+            * `Constants.java`
+1. Open CreateInstance.java for editing.
+1. Go to the example code [CreateInstance.java](https://github.com/jclouds/jclouds-examples/blob/master/rackspace/src/main/java/org/jclouds/examples/rackspace/clouddatabases/CreateInstance.java), read it over, and copy the code into your file.
+1. Open Constants.java for editing.
+1. Go to the example code [Constants.java](https://github.com/jclouds/jclouds-examples/blob/master/rackspace/src/main/java/org/jclouds/examples/rackspace/clouddatabases/Constants.java), read it over, and copy the code into your file.
+
+### <a id="databases-compile"></a>Compile and Run
+
+Note: When providing a java classpath in Windows, the path separator is ';' instead of ':'
+
+    javac -classpath ".:lib/*" org/jclouds/examples/rackspace/clouddatabases/CreateInstance.java
+    
+    java -classpath ".:lib/*" org.jclouds.examples.rackspace.clouddatabases.CreateInstance myUsername myApiKey
+
+### <a id="databases-advanced"></a>Advanced work with Cloud Databases
+
+In addition to the create database instance example, by going through the clouddatabases example code, you will learn to create instances, databases, and database users as well as delete and modify them. You will also learn how to set up and access a database from the public internet over JDBC. You can find the examples documentation here: [Examples Documentation](https://github.com/jclouds/jclouds-examples/tree/master/rackspace)
+
 ## <a id="jee"></a>jclouds in a Managed Container
 
 Setting up jclouds to work in a managed container is easy. You simply need to ensure that jclouds won't spawn any of its own threads. You can do this by using the ExecutorServiceModule when building your Context.
 
-An example code snippet.
+An example code snippet:
 
 {% highlight java %}
 import static com.google.common.util.concurrent.MoreExecutors.sameThreadExecutor; 
@@ -287,6 +329,8 @@ This is a list of providers that work with the Rackspace Cloud that you can use 
 * `"rackspace-cloudblockstorage-uk"`
 * `"rackspace-cloudloadbalancers-us"`
 * `"rackspace-cloudloadbalancers-uk"`
+* `"rackspace-clouddatabases-us"`
+* `"rackspace-clouddatabases-uk"`
 
 ## <a id="support"></a>Support and Feedback
 
