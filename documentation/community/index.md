@@ -7,7 +7,9 @@ title: jclouds Community
 
 ## [Who uses jclouds?](/documentation/reference/apps-that-use-jclouds/)
 
-## [Join the jclouds Google Group](https://groups.google.com/forum/?fromgroups#!forum/jclouds)
+## [Join the jclouds-user mailing list](http://mail-archives.apache.org/mod_mbox/incubator-jclouds-user/)
+
+## [Join the jclouds-dev mailing list](http://mail-archives.apache.org/mod_mbox/incubator-jclouds-dev/)
 
 ## [Attend a jclouds event!](http://www.meetup.com/jclouds/events/calendar/)
 
