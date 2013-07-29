@@ -8,7 +8,7 @@ title: Quick Start - HP Cloud Services
 This page helps you get started with jclouds API with
 
 1. Sign up for [HP Cloud Services](http://hpcloud.com/).
-2. Get your Account ID and Access Key by going to this [page](https://manage.hpcloud.com/api_keys).
+2. Get your Account ID and Access Key by going to this [page](https://account.hpcloud.com/account/api_keys).
 3. Ensure you are using a recent version of Java 6.
 4. Setup your project to include `hpcloud-objectstorage` and `hpcloud-compute`.
 	* Get the dependencies `org.jclouds.provider/hpcloud-objectstorage` and `org.jclouds.provider/hpcloud-compute` using jclouds [Installation](/documentation/userguide/installation-guide).
