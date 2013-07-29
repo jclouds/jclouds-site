@@ -10,5 +10,6 @@ rm -rf site-content/site-content
 rm site-content/deploy-site.sh
 #add new files
 cd site-content
-svn st | grep ? | awk '{print $2}'| xargs svn --no-auto-props add {} \;
+svn status | awk '/^?/{print $2}' | \
+    while read filename; do svn --no-auto-props add $filename; done
 svn ci --no-auth-cache --username $1 --password $2 -m'deploy jclouds site content'
