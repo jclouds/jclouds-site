@@ -1,0 +1,2 @@
+Failed tests:
+testBigFileGets(org.jclouds.azureblob.blobstore.integration.AzureBlobIntegrationLiveTest): get constitution, completed: 0/10, errors: 0, rate: 3000ms/op

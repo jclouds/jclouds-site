@@ -1,0 +1,4 @@
+Failed tests:
+testObjectOperations(org.jclouds.rackspace.cloudfiles.CloudFilesUSClientLiveTest)
+
+testCreateBlobWithExpiry(org.jclouds.rackspace.cloudfiles.blobstore.integration.CloudFilesUSBlobIntegrationLiveTest): expires=null; expected=Tue Aug 20 15:58:07 PDT 2013

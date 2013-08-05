@@ -1,0 +1,6 @@
+Failed tests:
+testCreateBlobWithExpiry(org.jclouds.hpcloud.objectstorage.blobstore.integration.HPCloudObjectStorageBlobIntegrationLiveTest): expires=null; expected=Tue Aug 20 16:08:15 PDT 2013
+
+deleteObject(org.jclouds.hpcloud.objectstorage.blobstore.integration.HPCloudObjectStorageBlobIntegrationLiveTest): command: PUT https://region-a.geo-1.objects.hpcloudsvc.com/v1/53176293441764/gaul-blobstore1/%7Bgreat%3Cr%7D HTTP/1.1 failed with response: HTTP/1.1 400 Bad Request; content: [Object/Container name contains forbidden chars from "<>]
+
+deleteObject(org.jclouds.hpcloud.objectstorage.blobstore.integration.HPCloudObjectStorageBlobIntegrationLiveTest): command: PUT https://region-a.geo-1.objects.hpcloudsvc.com/v1/53176293441764/gaul-blobstore0/lesst%3Een HTTP/1.1 failed with response: HTTP/1.1 400 Bad Request; content: [Object/Container name contains forbidden chars from "<>]

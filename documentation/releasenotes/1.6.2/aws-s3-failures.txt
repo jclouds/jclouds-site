@@ -1,0 +1,8 @@
+Failed tests:
+testAllLocations(org.jclouds.aws.s3.blobstore.integration.AWSS3ServiceIntegrationLiveTest): Validation on 'public abstract com.google.common.util.concurrent.ListenableFuture org.jclouds.s3.S3AsyncClient.putBucketInRegion(java.lang.String,java.lang.String,org.jclouds.s3.options.PutBucketOptions[])[us-standard, gaul-blobstore2642193893237061645-51770976815952750808961678129673761027, [Lorg.jclouds.s3.options.PutBucketOptions;@17827d26]' didn't pass:(..)
+
+testPublicReadAccessPolicy(org.jclouds.aws.s3.services.AWSBucketsLiveTest): Validation on 'public abstract com.google.common.util.concurrent.ListenableFuture org.jclouds.s3.S3AsyncClient.putBucketInRegion(java.lang.String,java.lang.String,org.jclouds.s3.options.PutBucketOptions[])[us-standard, gaul-blobstore4-1959176996707427997eu2155053334691053318-3194206839787100246-7546663990301004217, [Lorg.jclouds.s3.options.PutBucketOptions;@364e33aa]' didn't pass:(..)
+
+testDirectory(org.jclouds.aws.s3.blobstore.integration.AWSS3ContainerIntegrationLiveTest): [[type=RELATIVE_PATH, id=null, name=directory, location={scope=REGION, id=us-standard, description=us-standard, parent=aws-s3, iso3166Codes=[US]}, uri=https://gaul-blobstore15.s3.amazonaws.com/directory/, userMetadata={}]]
+
+testPublicAccess(org.jclouds.aws.s3.blobstore.integration.AWSS3ContainerLiveTest): Validation on 'public abstract com.google.common.util.concurrent.ListenableFuture org.jclouds.s3.S3AsyncClient.putBucketInRegion(java.lang.String,java.lang.String,org.jclouds.s3.options.PutBucketOptions[])[us-standard, gaul-blobstore08827220242612177591-8888273970424123073171768477945421794, [Lorg.jclouds.s3.options.PutBucketOptions;@20c00612]' didn't pass:(..)

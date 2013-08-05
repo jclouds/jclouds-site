@@ -1,0 +1,15 @@
+Failed tests:
+testClientExists(org.jclouds.hostedchef.HostedChefApiLiveTest)  Time elapsed: 1.38 sec  <<< FAILURE!
+org.jclouds.http.HttpResponseException: command: HEAD https://api.opscode.com/organizations/again-nacx/clients/nacx HTTP/1.1 failed with response: HTTP/1.1 405 Method Not Allowed; content: [null]
+
+testListCookbooks(org.jclouds.hostedchef.HostedChefApiLiveTest)  Time elapsed: 0.749 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<false> but was:<true>
+
+testDatabagExists(org.jclouds.hostedchef.HostedChefApiLiveTest)  Time elapsed: 0.611 sec  <<< FAILURE!
+org.jclouds.http.HttpResponseException: command: HEAD https://api.opscode.com/organizations/again-nacx/data/jcloudstest-nacx HTTP/1.1 failed with response: HTTP/1.1 405 Method Not Allowed; content: [null]
+
+testRoleExists(org.jclouds.hostedchef.HostedChefApiLiveTest)  Time elapsed: 0.626 sec  <<< FAILURE!
+org.jclouds.http.HttpResponseException: command: HEAD https://api.opscode.com/organizations/again-nacx/roles/jcloudstest-nacx HTTP/1.1 failed with response: HTTP/1.1 405 Method Not Allowed; content: [null]
+
+testDatabagItemExists(org.jclouds.hostedchef.HostedChefApiLiveTest)  Time elapsed: 0.649 sec  <<< FAILURE!
+org.jclouds.http.HttpResponseException: command: HEAD https://api.opscode.com/organizations/again-nacx/data/jcloudstest-nacx/jcloudstest-nacx HTTP/1.1 failed with response: HTTP/1.1 405 Method Not Allowed; content: [null]
