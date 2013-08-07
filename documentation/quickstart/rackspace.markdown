@@ -25,7 +25,7 @@ This guide assumes you're familiar with Java and its technologies. To get starte
 ## <a id="account"></a>Get a Username and API Key
 1. Sign up for free for the [Rackspace Cloud (US)](https://cart.rackspace.com/cloud/).
 1. Login to the [Cloud Control Panel (US)](https://mycloud.rackspace.com/).
-1. In the top right corner click on your username and then API Keys.
+1. In the top right corner click on your username and then click Settings & Contacts to locate your API Key.
 
 Likewise you can go to the [Rackspace Cloud (UK)](https://buyonline.rackspace.co.uk/cloud/userinfo?type=normal) and login to the [Cloud Control Panel (UK)](https://mycloud.rackspace.co.uk/).
 
