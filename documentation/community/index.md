@@ -9,10 +9,10 @@ title: jclouds Community
 
 ## [Join the jclouds Google Group](https://groups.google.com/forum/?fromgroups#!forum/jclouds)
 
-## [Attend a jclouds Event!](http://www.meetup.com/jclouds/events/calendar/)
+## [Attend a jclouds event!](http://www.meetup.com/jclouds/events/calendar/)
 
 ## [GitHub](https://github.com/jclouds/jclouds)
 
 ## [Twitter](http://twitter.com/jclouds)
 
-## [A current list of all Supported Providers](/documentation/reference/supported-providers/)
+## [Current list of all supported providers](/documentation/reference/supported-providers/)
