@@ -17,7 +17,7 @@ title: Getting Started with jclouds
 
 * The user guide for the BlobStore abstraction
 
-## [Computeservice](/documentation/userguide/compute/)
+## [Compute](/documentation/userguide/compute/)
 
 * The user guide for the Computeservice abstraction
 

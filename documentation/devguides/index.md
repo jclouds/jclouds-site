@@ -5,7 +5,7 @@ title: jclouds Developer Resources
 
 # jclouds Development Resources
 
-Code is hosted on [Git at the ASF](https://git-wip-us.apache.org/repos/asf?s=jclouds) but our process makes use of [github mirrors](https://github.com/jclouds).  
+Code is hosted on [Git at the ASF](https://git-wip-us.apache.org/repos/asf?s=jclouds) but our process makes use of [GitHub mirrors](https://github.com/jclouds).  
 
 ## Working on jclouds
 	
@@ -17,7 +17,7 @@ Code is hosted on [Git at the ASF](https://git-wip-us.apache.org/repos/asf?s=jcl
 
 ## References for Developers
 
-   *  [Github mirror](https://github.com/jclouds)
+   *  [GitHub mirror](https://github.com/jclouds)
    *  [Issue Tracker](https://issues.apache.org/jira/browse/JCLOUDS)
    *  [jclouds Continuous Integration](/documentation/devguides/continuous-integration)
    *  [Provider Metadata](/documentation/devguides/provider-metadata)

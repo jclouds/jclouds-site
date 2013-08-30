@@ -19,7 +19,7 @@ jclouds offers several API abstractions as Java and Clojure libraries. The most 
 ## [BLOBSTORE](http://www.jclouds.org/documentation/userguide/blobstore-guide/)
 BlobStore is a simplified and portable means of managing your key-value storage providers.  BlobStore presents you with a straightforward 
 Map view of a container to access your data.
-
+
 ## [COMPUTESERVICE](http://www.jclouds.org/documentation/userguide/compute/)
 ComputeService streamlines the task of managing instances in the cloud by enabling you to start multiple machines at once and install software on them.
 

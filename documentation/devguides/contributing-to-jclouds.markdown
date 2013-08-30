@@ -8,10 +8,14 @@ title: Contributing to the jclouds Code Base
 ## Introduction
 
 Welcome and thank you for your interest in contributing to jclouds!  This guide will take you through the process of making contributions to the jclouds 
-code base.  It will begin by walking you through how to commit changes to the jclouds repository on GitHub and then move on to more advanced development 
+code base.  It will begin by walking you through how to submit changes to the jclouds mirror repository on GitHub (the master copy of jclouds' source is hosted in [Apache's Git server](https://git-wip-us.apache.org/repos/asf?p=incubator-jclouds.git;a=summary))) and then move on to more advanced development 
 processes.
 
-If you are interested in helping us out with the jclouds documentation, please see our instructions for [contributing to jclouds documentation](http://www.jclouds.org/documentation/devguides/contributing-to-documentation/). 
+If you are interested in helping us out with the jclouds documentation, please see our instructions for [contributing to jclouds documentation](/documentation/devguides/contributing-to-documentation/). 
+
+## Opening a JIRA issue
+
+jclouds uses [Apache's JIRA](https://issues.apache.org/jira/browse/JCLOUDS) to keep track of bugs and feature request. Please check if your contribution is related to an existing issue, and otherwise create a new one describing the desired change.
 
 ## Working with jclouds on GitHub
 

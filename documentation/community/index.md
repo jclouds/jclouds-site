@@ -13,7 +13,7 @@ title: jclouds Community
 
 ## [Attend a jclouds event!](http://www.meetup.com/jclouds/events/calendar/)
 
-## [GitHub](https://github.com/jclouds/jclouds)
+## [Source](https://github.com/jclouds/jclouds)
 
 ## [Twitter](http://twitter.com/jclouds)
 

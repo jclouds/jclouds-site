@@ -7,7 +7,7 @@ title: jclouds User Guides
 
 ## jclouds APIs
 
-* [Computeservice API and Tools](/documentation/userguide/compute)
+* [Compute API and Tools](/documentation/userguide/compute)
 * [BlobStore API](/documentation/userguide/blobstore-guide)
 
 ## jclouds Basics to get Started
