@@ -7,9 +7,9 @@ title: jclouds Community
 
 ## [Who uses jclouds?](/documentation/reference/apps-that-use-jclouds/)
 
-## [Join the jclouds-user mailing list](http://mail-archives.apache.org/mod_mbox/incubator-jclouds-user/)
+## [Subscribe](mailto:jclouds-user-subscribe@apache.org) to the [jclouds-user mailing list](http://www.mail-archive.com/user@jclouds.incubator.apache.org/)
 
-## [Join the jclouds-dev mailing list](http://mail-archives.apache.org/mod_mbox/incubator-jclouds-dev/)
+## [Subscribe](mailto:jclouds-dev-subscribe@apache.org) to the [jclouds-dev mailing list](http://www.mail-archive.com/dev@jclouds.incubator.apache.org/)
 
 ## [Attend a jclouds event!](http://www.meetup.com/jclouds/events/calendar/)
 
