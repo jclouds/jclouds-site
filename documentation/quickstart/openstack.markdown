@@ -278,9 +278,40 @@ public class JCloudsSwift implements Closeable {
 
 ## <a id="next"></a>Next Steps
 
-1. Try the example above with one of the public clouds. For the Rackspace Cloud init() becomes
 
+- Try the example above with a keystone endpoint that defines multiple storage regions. For this init() becomes: 
 <pre>
+{% highlight java %}
+private void init() {
+   Iterable<Module> modules = ImmutableSet.<Module> of(new SLF4JLoggingModule());
+
+   String provider = "swift-keystone"; //Region selection is limited to swift-keystone provider
+   String identity = "demo:demo"; 
+   String password = "devstack"; 
+   String endpoint = "http://keystone-endpoint.example.com/v2.0"; 
+   String region = "RegionOne"; 
+
+   // If your keystone endpoint has multiple storage regions
+   // then it is recommended that you specify which region to use. 
+   // You can do this via the "jclouds.region" property
+   Properties properties = new Properties();
+   properties.setProperty(LocationConstants.PROPERTY_REGION, region);
+
+   BlobStoreContext context = ContextBuilder.newBuilder(provider)
+         .endpoint(endpoint)
+         .credentials(identity, password)
+         .modules(modules)
+         .overrides(properties)
+         .buildView(BlobStoreContext.class);
+   storage = context.getBlobStore();
+   swift = context.unwrap();
+}
+{% endhighlight %}
+</pre>
+
+- Try the example above with one of the public clouds. For the Rackspace Cloud init() becomes:
+<pre>
+{% highlight java %}
 private void init() {    
    Iterable<Module> modules = ImmutableSet.<Module> of(new SLF4JLoggingModule());
    Properties overrides = new Properties();
@@ -301,14 +332,14 @@ private void init() {
    nova = context.unwrap();
    zones = nova.getApi().getConfiguredZones();
 }
+{% endhighlight %}
 </pre>
-
-1. Try using the `"openstack-cinder"` provider to list volumes (hint: see [VolumeAndSnapshotApiLiveTest.testListVolumes()](https://github.com/jclouds/jclouds/blob/master/apis/openstack-cinder/src/test/java/org/jclouds/openstack/cinder/v1/features/VolumeAndSnapshotApiLiveTest.java)).
-1. Have a look at how the optional extensions are handled (hint: see [FloatingIPApiLiveTest.testListFloatingIPs()](https://github.com/jclouds/jclouds/blob/master/apis/openstack-nova/src/test/java/org/jclouds/openstack/nova/v2_0/extensions/FloatingIPApiLiveTest.java)).
-1. Change the example to do different things that you want to do.
-1. Browse the [documentation](http://www.jclouds.org/documentation/) and have a look at the [Javadoc](http://demobox.github.com/jclouds-maven-site/latest/apidocs).
-1. Return to the [Installation Guide](http://www.jclouds.org/documentation/userguide/installation-guide/) and have a look at the different ways to integrate jclouds with your project.
-1. Join the [jclouds mailing list](https://groups.google.com/forum/?fromgroups#!forum/jclouds) or maybe even the [jclouds developer mailing list](https://groups.google.com/forum/?fromgroups#!forum/jclouds-dev).
+- Try using the `"openstack-cinder"` provider to list volumes (hint: see [VolumeAndSnapshotApiLiveTest.testListVolumes()](https://github.com/jclouds/jclouds/blob/master/apis/openstack-cinder/src/test/java/org/jclouds/openstack/cinder/v1/features/VolumeAndSnapshotApiLiveTest.java)).
+- Have a look at how the optional extensions are handled (hint: see [FloatingIPApiLiveTest.testListFloatingIPs()](https://github.com/jclouds/jclouds/blob/master/apis/openstack-nova/src/test/java/org/jclouds/openstack/nova/v2_0/extensions/FloatingIPApiLiveTest.java#L42)).
+- Change the example to do different things that you want to do.
+- Browse the [documentation](http://www.jclouds.org/documentation/) and have a look at the [Javadoc](http://demobox.github.com/jclouds-maven-site/latest/apidocs).
+- Return to the [Installation Guide](http://www.jclouds.org/documentation/userguide/installation-guide/) and have a look at the different ways to integrate jclouds with your project.
+- Join the [jclouds community](http://incubator.apache.org/projects/jclouds.html) as either a developer or user. 
 
 
 ## <a id="providers"></a>OpenStack Providers
