@@ -138,7 +138,7 @@ are valuable members of our community.
    - uses jclouds to provision servers for their automation stacks
 
 ##[SeatYourself](http://seatyourself.biz/)##
-   - uses [BlobStore](http://www.jclouds.org/documentation/userguide/blobstore-guide/) to persist dataO
+   - uses [BlobStore](http://www.jclouds.org/documentation/userguide/blobstore-guide/) to persist data
 
 ##[Twitter](http://www.twitter.com)##
    - uses jclouds infused Pallet to deploy their storm platform to standard and variable count of spot EC2 instances and Apache Whirr to set up test Cassandra clusters
