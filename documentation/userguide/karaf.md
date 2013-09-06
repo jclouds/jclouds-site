@@ -1,8 +1,8 @@
 ---
 layout: jclouds
-title: jclouds on Apache Karaf
+title: On Apache Karaf
 ---
-# Installation Instructions for jclouds on Apache Karaf
+# Installation Instructions for Apache jclouds&reg; on Apache Karaf
 
 ## Introduction
 

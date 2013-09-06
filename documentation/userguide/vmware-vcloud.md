@@ -1,8 +1,9 @@
 ---
 layout: jclouds
-title: Using jclouds to Manage VMWare vCloud
+title: Manage VMWare vCloud
 ---
-#Using jclouds to Manage VMWare vCloud
+
+#Using Apache jclouds&reg; to Manage VMWare vCloud
 
 ## Introduction
 

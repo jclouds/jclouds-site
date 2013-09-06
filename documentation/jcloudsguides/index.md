@@ -1,9 +1,9 @@
 ---
 layout: jclouds
-title: jclouds User Guides
+title: User Guides
 ---
 
-# jclouds User Guides
+# Apache jclouds&reg; User Guides
 
 ## jclouds APIs
 

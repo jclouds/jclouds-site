@@ -1,6 +1,6 @@
 ---
 layout: jclouds
-title: jclouds Home
+title: Home
 ---
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>

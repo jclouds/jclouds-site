@@ -1,6 +1,6 @@
 ---
 layout: jclouds
-title: jclouds - Async Api
+title: Async Api
 ---
 
 # Introduction

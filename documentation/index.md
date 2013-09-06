@@ -1,9 +1,9 @@
 ---
 layout: jclouds
-title: jclouds Documentation
+title: Documentation
 ---
 
-# jclouds Documentation
+# Apache jclouds&reg; Documentation
 
 Below you will find the documentation for jclouds.org including user guides, a list of supported clouds, release notes, and other helpful 
 references. Find information about jclouds.org, browse all documentation, or help to improve the documentation by [contributing](/documentation/devguides/contributing-to-documentation/).

@@ -1,8 +1,9 @@
 ---
 layout: jclouds
-title: jclouds - supported providers
+title: Supported Providers
 ---
-# jclouds : supported providers
+
+# Apache jclouds&reg; supported providers
 
 The following is the list of providers that are supported by the jclouds API.
 
@@ -10,7 +11,7 @@ The following is the list of providers that are supported by the jclouds API.
 ## <a id="compute"></a>Compute API
 ###Supported Providers 
 
-The Maven Group ID for all supported providers below is [org.jclouds.provider](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.jclouds.provider%22)
+The Maven Group ID for all supported providers below is [org.apache.jclouds.provider](http://search.maven.org/#search%7Cga%7C1%7Corg.apache.jclouds.provider)
 
 <table>
 	<thead>
@@ -148,7 +149,7 @@ The Maven Group ID for all supported providers below is [org.jclouds.provider](h
 
 You can also set the context property `[Artifact ID].endpoint` to use the following APIs for your private cloud.  
 
-The Maven Group ID for all supported APIs below is [org.jclouds.api](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.jclouds.api%22)
+The Maven Group ID for all supported APIs below is [org.apache.jclouds.api](http://search.maven.org/#search%7Cga%7C1%7Corg.apache.jclouds.api)
                        
 <table>
 	<thead>
@@ -197,7 +198,7 @@ The Maven Group ID for all supported APIs below is [org.jclouds.api](http://sear
 ## <a id="blobstore"></a>Blobstore API
 ###Supported Providers
 
-The Maven Group ID for all supported providers below is [org.jclouds.provider](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.jclouds.provider%22)
+The Maven Group ID for all supported providers below is [org.apache.jclouds.provider](http://search.maven.org/#search%7Cga%7C1%7Corg.apache.jclouds.provider)
 
 <table>
 	<thead>
@@ -246,7 +247,7 @@ The Maven Group ID for all supported providers below is [org.jclouds.provider](h
 
 You can also set the context property `[Artifact ID].endpoint` to use the following APIs for your private cloud.  
 
-The Maven Group ID for all supported APIs below is [org.jclouds.api](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.jclouds.api%22)
+The Maven Group ID for all supported APIs below is [org.apache.jclouds.api](http://search.maven.org/#search%7Cga%7C1%7Corg.apache.jclouds.api)
                        
 <table>
 	<thead>

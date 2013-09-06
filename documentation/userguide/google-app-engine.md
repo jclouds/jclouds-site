@@ -1,8 +1,8 @@
 ---
 layout: jclouds
-title: Using jclouds with Google App Engine
+title: Deploying to Google App Engine
 ---
-# Using jclouds with Google App Engine
+# Using Apache jclouds&reg; with Google App Engine
 
 ## Introduction
 

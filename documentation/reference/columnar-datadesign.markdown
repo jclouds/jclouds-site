@@ -2,7 +2,8 @@
 layout: jclouds
 title: Columnar Data abstraction API
 ---
-#Columnar Data abstraction API
+
+# Columnar Data abstraction API
 
 ## Introduction
 

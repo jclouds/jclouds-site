@@ -3,7 +3,7 @@ layout: jclouds
 title: Developer Setup Instructions for Eclipse
 ---
 
-# jclouds Developer Setup instructions for Eclipse
+# Apache jclouds&reg; Developer Setup instructions for Eclipse
 
 ## Introduction
 This guide will help you set up jclouds in Eclipse and includes instructions for running tests.

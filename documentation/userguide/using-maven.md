@@ -1,8 +1,9 @@
 ---
 layout: jclouds
-title: Using jClouds with Apache Maven
+title: Using Apache Maven
 ---
-#Using jClouds with Apache Maven
+
+# Using Apache jclouds&reg; with Apache Maven
 
 ## Introduction
 

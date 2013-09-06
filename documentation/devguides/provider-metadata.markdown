@@ -3,7 +3,7 @@ layout: jclouds
 title: Provider Metadata
 ---
 
-# Provider Metadata in jclouds
+# Provider Metadata in Apache jclouds&reg;
 
 ## Introduction
 

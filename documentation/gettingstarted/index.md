@@ -1,9 +1,9 @@
 ---
 layout: jclouds
-title: Getting Started with jclouds
+title: Getting Started
 ---
 
-# Getting Started with jclouds
+# Getting Started with Apache jclouds&reg;
 
 ## [What is jclouds?](/documentation/gettingstarted/what-is-jclouds/)
 

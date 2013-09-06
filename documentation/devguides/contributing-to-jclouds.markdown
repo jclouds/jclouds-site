@@ -1,9 +1,9 @@
 ---
 layout: jclouds
-title: Contributing to the jclouds Code Base
+title: Contributing to the Code Base
 ---
 
-# Contributing to the jclouds Code Base
+# Contributing to the Apache jclouds&reg; Code Base
 
 ## Introduction
 

@@ -1,9 +1,9 @@
 ---
 layout: jclouds
-title: Contributing to jclouds Documentation
+title: Contributing to the Documentation
 ---
 
-# Contributing to jclouds Documentation
+# Contributing to Apache jclouds&reg; Documentation
 
 ## Introduction
 

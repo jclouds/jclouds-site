@@ -1,14 +1,14 @@
 ---
 layout: jclouds
-title: jclouds Home
+title: What is jclouds?
 ---
 
-WHAT IS JCLOUDS? 
-===============
+WHAT IS APACHE JCLOUDS&reg;?
+======================
 
 Cloud Interfaces, Simplified.
 
-jclouds is an open source library that helps you get started in the cloud and utilizes your [Java](http://www.oracle.com/technetwork/java/index.html) 
+Apache jclouds&reg; is an open source library that helps you get started in the cloud and utilizes your [Java](http://www.oracle.com/technetwork/java/index.html) 
 or [Clojure](http://clojure.org) development skills. The jclouds API gives you the freedom to use portable abstractions or cloud-specific features. 
 
 jclouds tests support of 30 cloud providers and cloud software stacks including Amazon, Azure, GoGrid, Ninefold, OpenStack, Rackspace, and vCloud.  Please see the

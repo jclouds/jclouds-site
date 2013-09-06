@@ -1,15 +1,15 @@
 ---
 layout: jclouds
-title: A List of applications that use jclouds
+title: A List of applications that use Apache jclouds&reg;
 ---
 
-# jclouds Community Members
+# Apache jclouds&reg; Community Members
 
 We know folks from a good many places.  While this may just be a list of applications that use jclouds, the good people behind these applications 
 are valuable members of our community.  
 
 ##[Abiquo](http://www.abiquo.com/)##
-   - uses jclouds for OpsCode Chef integration and internally to communicate the UI with the Abiquo API
+   - uses jclouds for OpsCode Chef integration, for AWS integration, and internally to communicate the UI with the Abiquo API
 
 ##[Adobe](http://www.adobe.com/)
    - uses jclouds to provision EC2 and vCloud infrastructure under their Enterprise PaaS

@@ -1,6 +1,6 @@
 ---
 layout: jclouds
-title: jclouds - Error Handling
+title: Error Handling
 ---
 
 # Introduction

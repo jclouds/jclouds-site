@@ -1,8 +1,8 @@
 ---
 layout: jclouds
-title: Using jclouds ant task for Compute API Operations
+title: Using Ant task for Compute API Operations
 ---
-# Using jclouds ant task for Compute API Operations
+# Using Apache jclouds&reg; ant task for Compute API Operations
 
 Ant is a popular Java build tool...kind of like make.  We have written a few Ant tasks in the 
 [antcontrib](http://jclouds.googlecode.com/svn/trunk/tools/antcontrib) project that make building cloud projects easier.
@@ -26,7 +26,7 @@ Here's an example that gets all the libraries needed for the compute task.
   <typedef resource="org/apache/maven/artifact/ant/antlib.xml" />
 
   <artifact:localRepository id="local.repository" path="${user.home}/.m2/repository" />
-  <artifact:remoteRepository id="jclouds.repository" url="https://oss.sonatype.org/content/repositories/releases" />
+  <artifact:remoteRepository id="jclouds.repository" url="http://repo1.maven.org/maven2" />
 
   <artifact:dependencies pathId="jclouds.classpath">
     <dependency groupId="org.jclouds" artifactId="jclouds-antcontrib" version="1.0.0" />

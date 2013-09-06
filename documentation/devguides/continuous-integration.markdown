@@ -1,9 +1,9 @@
 ---
 layout: jclouds
-title: jclouds Continuous Integration
+title: Continuous Integration
 ---
 
-# jclouds Automated testing + snapshots repository.
+# Apache jclouds&reg; Automated testing + snapshots repository
 
 ## Introduction
 

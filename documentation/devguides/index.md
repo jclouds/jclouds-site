@@ -1,9 +1,9 @@
 ---
 layout: jclouds
-title: jclouds Developer Resources
+title: Developer Resources
 ---
 
-# jclouds Development Resources
+# Apache jclouds&reg; Development Resources
 
 Code is hosted on [Git at the ASF](https://git-wip-us.apache.org/repos/asf?s=jclouds) but our process makes use of [GitHub mirrors](https://github.com/jclouds).  
 

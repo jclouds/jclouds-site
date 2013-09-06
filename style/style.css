@@ -101,9 +101,13 @@ margin-right:auto;
 	font-size: 180%;
 }
 
+#asf_logo {
+        text-align:center;
+}
+
 #who_what_how {
 	text-align: left;
-	margin-left: 550px;
+	margin-left: 480px;
 	font-size: 150%;
 	line-height:500%;
 	padding-top:45px;

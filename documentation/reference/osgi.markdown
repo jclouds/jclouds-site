@@ -1,8 +1,8 @@
 ---
 layout: jclouds
-title: Deploying jclouds to Apache Fleix OSGi container
+title: Deploying to Apache Fleix OSGi container
 ---
-# Deploying jclouds to Apache Fleix OSGi container
+# Deploying Apache jclouds&reg; to Apache Fleix OSGi container
 
 ## Introduction
 

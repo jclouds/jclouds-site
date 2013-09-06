@@ -1,5 +1,5 @@
 ---
 layout: jclouds
-title: jclouds OAuth Integration
+title: OAuth Integration
 ---
-# jclouds OAuth Integration
+# Apache jclouds&reg; OAuth Integration

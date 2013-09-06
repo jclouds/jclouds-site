@@ -3,7 +3,7 @@ layout: jclouds
 title: Creating New Providers
 ---
 
-# Creating New Providers
+# Creating New Providers in Apache jclouds&reg;
 
 ## Creating New Providers with Maven Archetypes
 

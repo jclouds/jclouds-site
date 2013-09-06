@@ -3,7 +3,7 @@ layout: jclouds
 title: Provider Testing
 ---
 
-# Testing in jclouds
+# Testing in Apache jclouds&reg;
 
 ## Introduction
 

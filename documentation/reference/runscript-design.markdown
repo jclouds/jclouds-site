@@ -1,6 +1,6 @@
 ---
 layout: jclouds
-title: jclouds - Run a Script on SSH - Implementation
+title: Run a Script on SSH - Implementation
 ---
 
 # Running a Script using SSH : implementation

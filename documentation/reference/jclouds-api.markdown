@@ -1,8 +1,9 @@
 ---
 layout: jclouds
-title: jclouds API
+title: API
 ---
-# jclouds API
+
+# Apache jclouds&reg; API
  
 This page explains the jclouds API which is underneath all tools that use jclouds. 
 The jclouds API binds HTTP rest services to synchronous and asynchronous java apis. 

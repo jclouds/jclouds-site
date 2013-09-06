@@ -1,8 +1,9 @@
 ---
 layout: jclouds
-title: Design of jclouds compute abstraction
+title: Design of the compute abstraction
 ---
-# Design of jclouds compute abstraction
+
+# Design of Apache jclouds&reg; compute abstraction
 
 ## Introduction
 

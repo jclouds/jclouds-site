@@ -1,9 +1,9 @@
 ---
 layout: jclouds
-title: jclouds Community
+title: Community
 ---
 
-# Become a part of the jclouds Community!
+# Become a part of the Apache jclouds&reg; Community!
 
 ## [Who uses jclouds?](/documentation/reference/apps-that-use-jclouds/)
 

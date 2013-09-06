@@ -1,8 +1,9 @@
 ---
 layout: jclouds
-title: Frequently Asked Questions - JClouds EC2 integration
+title: Frequently Asked Questions: EC2 integration
 ---
-# Frequently Asked Questions - JClouds EC2 integration
+
+# Frequently Asked Questions - Apache jclouds&reg; EC2 integration
 
 ## How to use your keypair with EC2 AMI
 
