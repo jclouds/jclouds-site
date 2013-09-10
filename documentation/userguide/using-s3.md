@@ -15,8 +15,9 @@ Here are a few configuration examples of common s3 clones:
 You must configure your account for [interoperable mode](https://developers.google.com/storage/docs/reference/v1/apiversion1#interoperable) and [generate HMAC keys](https://developers.google.com/storage/docs/reference/v1/getting-startedv1#keys).  Note that you must create containers via jclouds, not the web console.  Finally set these properties:
 ```
 jclouds.provider=s3
-jclouds.endpoint=https://commondatastorage.googleapis.com
+jclouds.endpoint=https://storage.googleapis.com
 jclouds.s3.virtual-host-buckets=false
+jclouds.strip-expect-header=true
 ```
 
 ### RiakCS
