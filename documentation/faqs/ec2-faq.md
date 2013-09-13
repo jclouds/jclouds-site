@@ -1,6 +1,6 @@
 ---
 layout: jclouds
-title: Frequently Asked Questions: EC2 integration
+title: Frequently Asked Questions - EC2 integration
 ---
 
 # Frequently Asked Questions - Apache jclouds&reg; EC2 integration
