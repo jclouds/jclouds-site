@@ -19,6 +19,7 @@ Code is hosted on [Git at the ASF](https://git-wip-us.apache.org/repos/asf?s=jcl
 
    *  [GitHub mirror](https://github.com/jclouds)
    *  [Issue Tracker](https://issues.apache.org/jira/browse/JCLOUDS)
+   *  [jclouds Developer Wiki](http://wiki.apache.org/jclouds/)
    *  [jclouds Continuous Integration](/documentation/devguides/continuous-integration)
    *  [Provider Metadata](/documentation/devguides/provider-metadata)
    *  [Using Eclipse](/documentation/devguides/using-eclipse)
