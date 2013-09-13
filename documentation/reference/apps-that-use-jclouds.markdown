@@ -39,7 +39,7 @@ are valuable members of our community.
    - orchestrates provisioning workflows over jclouds provider APIs using Scala
 
 ##[Cloudsoft Monterey](http://www.cloudsoftcorp.com/)##
-   - uses [ComputeService](http://www.jclouds.org/documentation/userguide/compute/) to extend the Monterey overlay network across multiple public clouds
+   - uses [ComputeService](/documentation/userguide/compute) to extend the Monterey overlay network across multiple public clouds
 
 ##[Cloudstore](https://cldstr.com/)##
    - uses jclouds to enable non-technical users to run web apps on EC2, Rackspace and others
@@ -69,7 +69,7 @@ are valuable members of our community.
    - uses jclouds for monitoring and provisioning cloud services from different vendors like AWS and vCloud
 
 ##[Funambol](http://www.funambol.com/)##
-   - uses [BlobStore](http://www.jclouds.org/documentation/userguide/blobstore-guide/) to help synchronize content across multiple cloud providers or locally to disk
+   - uses [BlobStore](/documentation/userguide/blobstore-guide) to help synchronize content across multiple cloud providers or locally to disk
 
 ##[Fuse Fabric](http://fabric.fusesource.org/)##
    - uses jclouds for creating/provisioning the agents that run in the cloud
@@ -117,7 +117,7 @@ are valuable members of our community.
    - uses jclouds to provision machines, databases, and loadbalancers that compose environments
 
 ##[Omixon](http://www.omixon.com/)##
-   - uses [BlobStore](http://www.jclouds.org/documentation/userguide/blobstore-guide/) for big data transfer and made Apache Whirr to provision Hadoop
+   - uses [BlobStore](/documentation/userguide/blobstore-guide) for big data transfer and made Apache Whirr to provision Hadoop
 
 ##[Pallet](http://palletops.com/)##
    - uses jclouds clojure to manage node counts and provision instances
@@ -132,13 +132,13 @@ are valuable members of our community.
    - uses jclouds to deploy OpenShift Flex applications to Terremark, Rackspace, and EC2
 
 ##[RunDeck integration](https://github.com/gschueler/rundeck-jclouds)##
-   - uses [ComputeService](http://www.jclouds.org/documentation/userguide/compute/) as a resource provider for runbook automation
+   - uses [ComputeService](/documentation/userguide/compute) as a resource provider for runbook automation
 
 ##[Salesforce](http://www.salesforce.com/)##
    - uses jclouds to provision servers for their automation stacks
 
 ##[SeatYourself](http://seatyourself.biz/)##
-   - uses [BlobStore](http://www.jclouds.org/documentation/userguide/blobstore-guide/) to persist data
+   - uses [BlobStore](/documentation/userguide/blobstore-guide) to persist data
 
 ##[Twitter](http://www.twitter.com)##
    - uses jclouds infused Pallet to deploy their storm platform to standard and variable count of spot EC2 instances and Apache Whirr to set up test Cassandra clusters

@@ -271,8 +271,8 @@ public class MyJEEClass {
 1. When you're ready to publish some web pages on the internet, try the [CloudFilesPublish.java](https://github.com/jclouds/jclouds-examples/blob/master/rackspace/src/main/java/org/jclouds/examples/rackspace/cloudfiles/CloudFilesPublish.java), [CloudServersPublish.java](https://github.com/jclouds/jclouds-examples/blob/master/rackspace/src/main/java/org/jclouds/examples/rackspace/cloudservers/CloudServersPublish.java), or [CreateLoadBalancerWithNewServers.java](https://github.com/jclouds/jclouds-examples/blob/master/rackspace/src/main/java/org/jclouds/examples/rackspace/cloudloadbalancers/CreateLoadBalancerWithNewServers.java) examples.
 1. Change the examples to do different things that you want to do.
 1. After running some examples, compare the output with what you see in the [Cloud Control Panel](https://mycloud.rackspace.com/).
-1. Browse the [documentation](http://www.jclouds.org/documentation/) and have a look at the latest [Javadoc](http://demobox.github.com/jclouds-maven-site/latest/apidocs).
-1. Return to the [Installation Guide](http://www.jclouds.org/documentation/userguide/installation-guide/) and have a look at the different ways to integrate jclouds with your project.
+1. Browse the [documentation](/documentation) and have a look at the latest [Javadoc](http://demobox.github.com/jclouds-maven-site/latest/apidocs).
+1. Return to the [Installation Guide](/documentation/userguide/installation-guide) and have a look at the different ways to integrate jclouds with your project.
 1. Join the [jclouds mailing list](https://groups.google.com/forum/?fromgroups#!forum/jclouds) or maybe even the [jclouds developer mailing list](https://groups.google.com/forum/?fromgroups#!forum/jclouds-dev).
 
 ## <a id="providers"></a>Rackspace Cloud Providers

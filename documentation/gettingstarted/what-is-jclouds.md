@@ -12,15 +12,15 @@ Apache jclouds&reg; is an open source library that helps you get started in the 
 or [Clojure](http://clojure.org) development skills. The jclouds API gives you the freedom to use portable abstractions or cloud-specific features. 
 
 jclouds tests support of 30 cloud providers and cloud software stacks including Amazon, Azure, GoGrid, Ninefold, OpenStack, Rackspace, and vCloud.  Please see the
-complete list of [jclouds supported providers](http://www.jclouds.org/documentation/reference/supported-providers/) that are supported by the jclouds API.
+complete list of [jclouds supported providers](/documentation/reference/supported-providers) that are supported by the jclouds API.
 
 jclouds offers several API abstractions as Java and Clojure libraries. The most mature of these are BlobStore and ComputeService.
 
-## [BLOBSTORE](http://www.jclouds.org/documentation/userguide/blobstore-guide/)
+## [BLOBSTORE](/documentation/userguide/blobstore-guide)
 BlobStore is a simplified and portable means of managing your key-value storage providers.  BlobStore presents you with a straightforward 
 Map view of a container to access your data.
 
-## [COMPUTESERVICE](http://www.jclouds.org/documentation/userguide/compute/)
+## [COMPUTESERVICE](/documentation/userguide/compute)
 ComputeService streamlines the task of managing instances in the cloud by enabling you to start multiple machines at once and install software on them.
 
 

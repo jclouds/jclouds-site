@@ -11,7 +11,7 @@ Welcome and thank you for your interest in contributing to the jclouds documenta
 walk you through the process of forking the website, and show you how to commit your changes to the documentation so that we may pull them into the 
 jclouds master. 
 
-Please see [Contributing to the jclouds Code Base](http://www.jclouds.org/documentation/devguides/contributing-to-jclouds/) if you are interested in 
+Please see [Contributing to the jclouds Code Base](/documentation/devguides/contributing-to-jclouds) if you are interested in 
 contributing code to jclouds.
 
 ## Information about jclouds.org for Getting Started on Documentation

@@ -12,10 +12,10 @@ This adapter is intended for anyone who needs to run a small-scale deployment ma
 
 Typically, developers and devops can benefit of this adapter that allows them to test/validate their jclouds code on a local, controlled environment before pointing the jclouds API towards a public supported provider.
 
-See [supported providers](http://www.jclouds.org/documentation/reference/supported-providers/)
+See [supported providers](/documentation/reference/supported-providers)
 
 The overall design aims to give a cloud-ish experience to the jclouds user that want to use a vSphere installation instead of a compute provider.
-At a very high level, jclouds-vsphere will be able to create new nodes by cloning an existing master vm (it could be also a template) that matches the requirements expressed using jclouds template (see [template](http://www.jclouds.org/documentation/userguide/compute/)).
+At a very high level, jclouds-vsphere will be able to create new nodes by cloning an existing master vm (it could be also a template) that matches the requirements expressed using jclouds template (see [template](/documentation/userguide/compute)).
 
 Obviously vSphere has a number of missing features compared to any other compute provider that jclouds-vsphere needs to fill out.
 

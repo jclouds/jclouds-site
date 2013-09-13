@@ -337,8 +337,8 @@ private void init() {
 - Try using the `"openstack-cinder"` provider to list volumes (hint: see [VolumeAndSnapshotApiLiveTest.testListVolumes()](https://github.com/jclouds/jclouds/blob/master/apis/openstack-cinder/src/test/java/org/jclouds/openstack/cinder/v1/features/VolumeAndSnapshotApiLiveTest.java)).
 - Have a look at how the optional extensions are handled (hint: see [FloatingIPApiLiveTest.testListFloatingIPs()](https://github.com/jclouds/jclouds/blob/master/apis/openstack-nova/src/test/java/org/jclouds/openstack/nova/v2_0/extensions/FloatingIPApiLiveTest.java#L42)).
 - Change the example to do different things that you want to do.
-- Browse the [documentation](http://www.jclouds.org/documentation/) and have a look at the [Javadoc](http://demobox.github.com/jclouds-maven-site/latest/apidocs).
-- Return to the [Installation Guide](http://www.jclouds.org/documentation/userguide/installation-guide/) and have a look at the different ways to integrate jclouds with your project.
+- Browse the [documentation](/documentation) and have a look at the [Javadoc](http://demobox.github.com/jclouds-maven-site/latest/apidocs).
+- Return to the [Installation Guide](/documentation/userguide/installation-guide) and have a look at the different ways to integrate jclouds with your project.
 - Join the [jclouds community](http://incubator.apache.org/projects/jclouds.html) as either a developer or user. 
 
 
