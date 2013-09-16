@@ -13,7 +13,7 @@ Code is hosted on [Git at the ASF](https://git-wip-us.apache.org/repos/asf?s=jcl
    *  [An Introduction to Guava and Guice](/documentation/devguides/guice-guava-primer)
    *  [Creating Providers with Maven Archetypes](/documentation/devguides/creating-providers-with-maven)
    *  [Provider testing](/documentation/devguides/provider-testing)
-   *  [Contributing to Documentation](/documentation/devguides/contributing-to-documentation)
+   *  [Contributing to Documentation](https://wiki.apache.org/jclouds/How%20to%20Contribute%20Documentation)
 
 ## References for Developers
 
