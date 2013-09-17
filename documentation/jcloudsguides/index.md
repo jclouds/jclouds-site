@@ -12,6 +12,7 @@ title: User Guides
 
 ## jclouds Basics to get Started
 
+* [How to Report a Bug](/documentation/userguide/bug-report)
 * [Using the CLI with Apache Karaf](/documentation/userguide/karaf)
 * [Building with Apache Maven](/documentation/userguide/using-maven)
 
