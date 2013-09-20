@@ -5,17 +5,16 @@ title: Quick Start - Chef
 
 # Quick Start: Chef
 
-1. Setup a Chef Server or register for [Opscode Hosted Chef](https://community.opscode.com/users/new).
+1. Setup a Chef Server or register for [Opscode Enterprise Chef](https://getchef.opscode.com/signup).
 2. Ensure you are using a recent JDK 6 version.
-3. Setup your project to include `chef`, `hostedchef` or `privatechef`, depending on the Chef flavor you are going to connect to.
+3. Setup your project to include `chef`, or `enterprisechef`, depending on the Chef flavor you are going to connect to.
     * Get the dependencies `org.jclouds.api/chef` using jclouds [Installation](/documentation/userguide/installation-guide).
-    * Get the dependencies `org.jclouds.labs/hostedchef` using jclouds [Installation](/documentation/userguide/installation-guide).
-    * Get the dependencies `org.jclouds.labs/privatechef` using jclouds [Installation](/documentation/userguide/installation-guide).
+    * Get the dependencies `org.jclouds.provider/enterprisechef` using jclouds [Installation](/documentation/userguide/installation-guide).
 4. Start coding
 
-## About Hosted and Private Chef
+## About Enterprise Chef
 
-The Hosted and Private Chef apis are still not complete. The User and Organization apis are still a work in progress, so please, be patient.  
+The Enterprise Chef api is still not complete. The User and Organization apis are still a work in progress, so please, be patient.
 The core Chef api, however, provides access to all Chef features in all Chef flavors, so you can use that api to connect to your favorite endpoint.
 
 ## Using the Chef Server api
@@ -23,7 +22,7 @@ The core Chef api, however, provides access to all Chef features in all Chef fla
 You can easily access the Chef Server api to manage the different components of your Chef Server.  
 The following example shows several calls to the api and the creation of the context, so you can get an idea of how jclouds-chef works.
 
-Note that you can use `chef`, `hostedchef` or `privatechef` to create the context.
+Note that you can use `chef` or `enterprisechef` to create the context.
 
 {% highlight java %}
 String client = "clientName";
@@ -31,13 +30,13 @@ String organization = "organization"
 String pemFile = System.getProperty("user.home") + "/.chef/" + client + ".pem";
 String credential = Files.toString(new File(pemFile), Charsets.UTF_8);
 
-ChefContext context = ContextBuilder.newBuilder("hostedchef") //
+ChefContext context = ContextBuilder.newBuilder("enterprisechef") //
     .endpoint("https://api.opscode.com/organizations/" + organization) //
     .credentials(client, credential) //
     .buildView(ChefContext.class);
 
 // The raw api has access to all chef features, as exposed in the Chef REST api
-HostedChefApi api = context.getApi(HostedChefApi.class);
+EnterpriseChefApi api = context.unwrapApi(EnterpriseChefApi.class);
 Set<String> databags = api.listDatabags();
 
 // ChefService has helpers for common commands
@@ -76,7 +75,7 @@ chefConfig.put(ChefProperties.CHEF_VALIDATOR_NAME, validator);
 chefConfig.put(ChefProperties.CHEF_VALIDATOR_CREDENTIAL, validatorCredential);
 
 // Create the connection to the Chef server
-ChefContext context = ContextBuilder.newBuilder("hostedchef") //
+ChefContext context = ContextBuilder.newBuilder("enterprisechef") //
     .endpoint("https://api.opscode.com/organizations/" + organization) //
     .credentials(client, credential) //
     .overrides(chefConfig) //
@@ -94,7 +93,7 @@ String group = "jclouds-chef-example";
 
 // Set the recipe to install and the configuration values to override
 String recipe = "apache2";
-String config = "{\"apache\": {\"listen_ports\": \"8080\"}}";
+String attributes = "{\"apache\": {\"listen_ports\": \"8080\"}}";
 
 // Check to see if the recipe you want exists
 List<String> runlist = null;
@@ -106,7 +105,8 @@ if (any(cookbookVersions, containsRecipe(recipe))) {
 
 // Update the chef service with the run list you wish to apply to all nodes in the group
 // and also provide the json configuration used to customize the desired values
-chefContext.getChefService().updateBootstrapConfigForGroup(runlist, new JsonBall(config), group);
+BootstrapConfig config = BootstrapConfig.builder().runList(runlist).attributes(attributes).build();
+chefContext.getChefService().updateBootstrapConfigForGroup(group, config);
 
 // Build the script that will bootstrap the node
 Statement bootstrap = chefContext.getChefService().createBootstrapScriptForGroup(group);
@@ -127,7 +127,7 @@ Here is the overall process:
 
 1. Grab the run-list associated with the group from the bootstrap databag.
 2. Write a single shell script that does the following:
-    1. Installs Ruby and Chef Gems using the same process as [Knife Bootstrap](http://wiki.opscode.com/display/chef/Knife+Bootstrap)
+    1. Installs Ruby and Chef Gems using the same process as [Knife Bootstrap](http://docs.opscode.com/knife_bootstrap.html)
     2. mkdir /etc/chef
     3. Write /etc/chef/client.rb, which sets the nodename as group-ip_address Ex. hadoop-175.2.2.3 (note that the ip address comes from ohai).
     4. Write /etc/chef/validation.pem associated with the provided validator.
@@ -136,10 +136,15 @@ Here is the overall process:
 
 ## Customize how Chef is installed
 
-When bootstrapping nodes, jclouds will take care of installing all dependencies that are required to run Chef. This includes `ruby`, `rubygems` and the `chef` gem and its dependencies. Sometimes you may want to have more control over how those dependencies are installed, so starting from `jclouds 1.6.0-rc.1`, the following additional properties can be configured when creating the context:
+There are two different ways to install Chef: Using the Opscode Omnibus installer (`1.7` only), or manually installing the Chef gems.
+
+When using the Omnibus installer (the default option in jclouds `1.7`), the installer itself will download and install an entire Ruby and RubyGems distribution with the Chef gems preinstalled. All will be installed in an isolated directory so it does not affect any existing Ruby version. This is the preferred way to install Chef.
+
+If you need more control on what versions of Chef are installed, you can make jclouds install the appropriate gems. The following additional properties can be configured when creating the context to customize how Chef is installed:
 
 | *Property* | *Description* |
 |------------|---------------|
+| ChefProperties.USE_OMNIBUS | Boolean property to enable/disable the Omnibus installer. By default is `true`.
 | ChefProperties.CHEF_VERSION | The version of the Chef gem to install. It accepts concrete versions, and also ranges like '>= 0.10.8', etc. If the property is not set, the latest available version of the gem will be installed.
 | ChefProperties.CHEF_GEM_SYSTEM_VERSION | The version of Rubygems to install (if not yet installed). By default will install version `1.8.10`, to keep compatibility with previous jclouds-chef versions. However, this property can now be used to install the desired version of Rubygems.
 | ChefProperties.CHEF_UPDATE_GEM_SYSTEM | Boolean property to force a `gem update --system` (or a `gem update --system <version>` if the previous property is set. By default is `false`.
