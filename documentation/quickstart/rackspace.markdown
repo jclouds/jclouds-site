@@ -5,18 +5,18 @@ title: Getting Started - The Rackspace Cloud
 
 # Getting Started: The Rackspace Cloud
 
-1. [Introduction](#introduction)
-1. [Get a Username and API Key](#get-a-username-and-api-key)
-1. [Get jclouds](#get-jclouds)
+1. [Introduction](#intro)
+1. [Get a Username and API Key](#account)
+1. [Get jclouds](#install)
 1. [Terminology](#terminology)
-1. [Your First Cloud Files App](#your-first-cloud-files-app)
-1. [Your First Cloud Servers App](#your-first-cloud-servers-app)
-1. [Working with Cloud Block Storage](#working-with-cloud-block-storage)
-1. [Working with Cloud Load Balancers](#working-with-cloud-load-balancers)
-1. [Working with Cloud Databases](#working-with-cloud-databases)
-1. [Next Steps](#next-steps)
-1. [Rackspace Cloud Providers](#rackspace-cloud-providers)
-1. [Support and Feedback](#support-and-feedback)
+1. [Your First Cloud Files App](#files)
+1. [Your First Cloud Servers App](#servers)
+1. [Working with Cloud Block Storage](#volumes)
+1. [Working with Cloud Load Balancers](#loadbalancers)
+1. [Working with Cloud Databases](#databases)
+1. [Next Steps](#next)
+1. [Rackspace Cloud Providers](#providers)
+1. [Support and Feedback](#support)
 
 ## <a id="intro"></a>Introduction
 The [Rackspace Cloud](http://www.rackspace.com/cloud/public/) platform includes everything you need to build websites and applications that scale servers, storage, networking, APIs, and more. The Rackspace Cloud is based on OpenStack, which is a global collaboration of developers and cloud computing technologists producing the ubiquitous open source cloud computing platform for public and private clouds.
