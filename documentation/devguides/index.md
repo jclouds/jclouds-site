@@ -9,7 +9,7 @@ Code is hosted on [Git at the ASF](https://git-wip-us.apache.org/repos/asf?s=jcl
 
 ## Working on jclouds
 	
-   *  [Contributing to the jclouds Code Base](/documentation/devguides/contributing-to-jclouds)
+   *  [Contributing to the jclouds Code Base](https://wiki.apache.org/jclouds/How%20to%20Contribute)
    *  [An Introduction to Guava and Guice](/documentation/devguides/guice-guava-primer)
    *  [Creating Providers with Maven Archetypes](/documentation/devguides/creating-providers-with-maven)
    *  [Provider testing](/documentation/devguides/provider-testing)
