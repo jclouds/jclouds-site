@@ -273,30 +273,6 @@ responses = client.runScriptOnNodesMatching(runningInGroup(group), script,
                   overrideCredentialsWith(new Credentials(loginUser, myKey));
 {% endhighlight %}
 
-##### Working with credentials
-
-Note that by default, jclouds stores credentials in a static member.  
-If you close and reopen your compute context, your credentials will still be accessible.  
-If you'd like to have credentials persist across compute service contexts, then supply a backing map like below:
-
-{% highlight java %}
-// set the location of the filesystem you wish to persist credentials to
-props.setProperty(FilesystemConstants.PROPERTY_BASEDIR, "/var/gogrid");
-
-blobContext = ContextBuilder.newBuilder("filesystem")
-                 .credentials("foo", "bar")
-                 .overrides(props)
-                 .buildView(BlobStoreContext.class);
-
-credentialsMap = blobContext.createInputStreamMap("credentials");
-
-computeContext = ContextBuilder.newBuilder("gogrid")
-                      .credentials(apiKey, secret)
-                      .modules(ImmutableSet.<Module> of(new Log4JLoggingModule(),
-                                                        new CredentialStoreModule(credentialsMap),
-                                                        new SshjSshClientModule()))
-                      .buildView(ComputeServiceContext.class);
-{% endhighlight %}
 ### Individual Node Commands
 Individual commands are executed against a specific node's `id` (not `providerId`!).  
 You can save time if you know you are only affecting one node, and don't need jclouds' help finding it.

@@ -148,78 +148,7 @@ for detailed description.
 
 ### APIs
 
-You can choose from four APIs in increasing complexity: Map, BlobMap, BlobStore, and AsyncBlobStore.  
-For simple applications, you may find the most basic `Map<String,InputStream>` interface most appropriate.  
-As complexity increases, you are also able to use the AsyncBlobStore interface: `FutureCommand`.  Let's review the `Map` APIs first.
-
-#### InputStreamMap
-
-If you don't want to be bothered with the details of a BlobStore like Amazon S3, you may consider just accessing containers
- as a plain `Map<String, InputStream>` object.  Just create your context to to the BlobStore, choose the container of the stuff
- you want to manage, and get to work:
-
-{% highlight java %}
-BlobStoreContext context = ContextBuilder.newBuilder("aws-s3")
-                 .credentials(identity, credential)
-                 .buildView(BlobStoreContext.class);
-Map<String, InputStream> map = context.createInputStreamMap("adrian.photos");
-// do work
-context.close();
-{% endhighlight %}
-
-##### Tips
-* Always close your InputStreams
-When you do something like this, the `InputStream` returned may be holding a connection to the provider.  
-Be sure to close your `InputStream` promptly.
-
-{% highlight java %}
-InputStream aGreatMovie = map.get("theshining.mpg");
-try {
-      //watch
-} finally {
-if (aGreatMovie != null) aGreatMovie.close();
-}
-
-{% endhighlight %}
-
-* Extra put methods
-While you can feel free to use `map.put("stuff", new FileInputStream("stuff.txt")`, jclouds does provide some extra goodies.  
-To use these, use the `InputStreamMap` class as opposed to `Map<String,InputStream>` when creating you Map view.
-
-{% highlight java %}
-InputStreamMap map = context.createInputStreamMap("adrian.photos");
-map.putFile("stuff", new File("stuff.txt"));
-map.putBytes("secrets", Util.encrypt("secrets.txt"));
-map.putString("index.html", "<html><body>hello world</body></html>");
-{% endhighlight %}
-
-There are also corresponding `putAllFiles`, `Bytes`, `Strings` methods if you have bulk stuff to store.
-
-#### BlobMap
-
-There are some limitations when using the `Map<String, InputStream>` API.  For starters, you cannot pass any extra data
- to the provider.  For example, if you want to pass a default filename via the `Content-Disposition` group, 
-it cannot be done this way.  `BlobMap`  allows you do customize the data you are sending at the cost of coding to a `jclouds` API. 
-Considering it is only one class at this point, this is a decent tradeoff for many.  
-
-Here is an example that shows how to use the `BlobMap` API:
-
-{% highlight java %}
-BlobStoreContext context = ContextBuilder.newBuilder("aws-s3")
-                 .credentials(identity, credential)
-                 .buildView(BlobStoreContext.class);
-BlobMap map = context.createBlobMap("adrian.photos");
-
-Blob blob = map.blobBuilder("sushi.jpg")                                                                                                                                                  
-               .payload(new File("sushi.jpg"))// or byte[]. InputStream, etc.                                                                                                             
-               .contentDisposition("attachment; filename=sushi.jpg")                                                                                                                      
-               .contentType("image/jpeg")                                                                                                                                                 
-               .calculateMD5().build();
-
-map.put(blob.getName(), blob);
-
-context.close();
-{% endhighlight %}
+You can choose from two APIs: BlobStore and AsyncBlobStore.
 
 #### BlobStore (Synchronous)
 <!-- TODO The difference between BlobStore/Introduction -->
