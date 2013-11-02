@@ -1,3 +1,4 @@
+<img src="/style/favicon.ico"></img>
 Copyright &copy; 2011-2013 <a href="http://www.apache.org">The Apache Software Foundation</a>. All Rights Reserved.
 
 Apache, jclouds, Apache jclouds, the jclouds logo, and the Apache feather logos are registered trademarks or trademarks of the Apache Software Foundation.
