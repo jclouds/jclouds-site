@@ -32,4 +32,4 @@ It can take us quite a while to diagnose problems.  Any information that you can
 much easier for us to respond as quickly as we can.
 
    *  IRC - #jclouds on freenode or you can use [webchat](http://webchat.freenode.net/?channels=#jclouds)
-   *  [dev@jclouds mailing list](mailto:dev-subscribe@jclouds.incubator.apache.org)
+   *  [dev@jclouds mailing list](/documentation/community)

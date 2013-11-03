@@ -13,4 +13,4 @@ From the main trunk build, snapshot artifacts are published to [Apache's Nexus](
 
 ## Jenkins
 
-If you think you might need access to jclouds' Jenkins, or would like a job set up there to build your jclouds-related project, please post a request to the jclouds [dev mailing list](http://incubator.apache.org/projects/jclouds.html).
+If you think you might need access to jclouds' Jenkins, or would like a job set up there to build your jclouds-related project, please post a request to the jclouds [dev mailing list](/documentation/community).

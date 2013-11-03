@@ -5,7 +5,7 @@ title: Logging
 
 ## Logging in Apache jclouds&reg;
 
-Logging in jclouds can save you time and effort when developing your code or looking for help. If your code is not behaving how you expect it to, enabling and configuring logging in jclouds can quickly give you valuable insight into the root cause of the issue. If you need help from the [jclouds-user mailing list](http://www.mail-archive.com/user@jclouds.incubator.apache.org/), the logs can help the people there assist you. The logs can be verbose so it's often best to simply copy and paste them into a [gist](https://gist.github.com/) and just post the link on the mailing list.
+Logging in jclouds can save you time and effort when developing your code or looking for help. If your code is not behaving how you expect it to, enabling and configuring logging in jclouds can quickly give you valuable insight into the root cause of the issue. If you need help from the [jclouds-user mailing list](http://www.mail-archive.com/user@jclouds.apache.org/), the logs can help the people there assist you. The logs can be verbose so it's often best to simply copy and paste them into a [gist](https://gist.github.com/) and just post the link on the mailing list.
 
 By default, jclouds does no logging whatsoever for maximum performance.
 

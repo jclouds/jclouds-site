@@ -339,7 +339,7 @@ private void init() {
 - Change the example to do different things that you want to do.
 - Browse the [documentation](/documentation) and have a look at the [Javadoc](http://demobox.github.com/jclouds-maven-site/latest/apidocs).
 - Return to the [Installation Guide](/documentation/userguide/installation-guide) and have a look at the different ways to integrate jclouds with your project.
-- Join the [jclouds community](http://incubator.apache.org/projects/jclouds.html) as either a developer or user. 
+- Join the [jclouds community](/documentation/community) as either a developer or user. 
 
 
 ## <a id="providers"></a>OpenStack Providers
