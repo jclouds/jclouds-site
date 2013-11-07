@@ -33,7 +33,7 @@
 
 <body>
   <div id="main">
-	<div id="top">
+    <div id="top">
       <a href="/"><div id="logo"></div></a>
       <div id="menu">
         {% capture menu %}{% include menu.md %}{% endcapture %} {{ menu | markdownify }} <!-- This bit of liquid lets us render the template components as markdown -->
@@ -41,12 +41,12 @@
     </div>
     <div id="content">
       <div id="column2">
-		{{ content }}
+        {{ content }}
       </div>
     </div>
     <div id="footer">
       {% capture footer %}{% include footer.md %}{% endcapture %} {{ footer | markdownify }} <!-- This bit of liquid lets us render the template components as markdown -->
-     <a href="http://www.apache.org"><img src="http://incubator.apache.org/images/egg-logo.png"/></a>
+      <a href="http://www.apache.org"><img src="http://incubator.apache.org/images/egg-logo.png"/></a>
     </div>
   </div>
 </body>
