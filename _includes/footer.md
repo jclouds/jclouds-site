@@ -4,4 +4,4 @@ Apache, jclouds, Apache jclouds, the jclouds logo, and the Apache feather logos 
 
 [License](http://www.apache.org/licenses/) | [Sponsorship](http://www.apache.org/foundation/sponsorship.html) | [Thanks](http://www.apache.org/foundation/thanks.html) | [Security](http://www.apache.org/security/)
 
-<img src="/style/favicon.ico" />
+<img src="/style/feather-small.gif" width="80", height="24"/>
