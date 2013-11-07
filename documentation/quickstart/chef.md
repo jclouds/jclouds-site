@@ -14,13 +14,13 @@ title: Quick Start - Chef
 
 ## About Enterprise Chef
 
-The Enterprise Chef api is still not complete. The User and Organization apis are still a work in progress, so please, be patient.
-The core Chef api, however, provides access to all Chef features in all Chef flavors, so you can use that api to connect to your favorite endpoint.
+The Enterprise Chef API is still not complete. The User and Organization APIs are still a work in progress, so please, be patient.
+The core Chef API, however, provides access to all Chef features in all Chef flavors, so you can use that API to connect to your favorite endpoint.
 
-## Using the Chef Server api
+## Using the Chef Server API
 
-You can easily access the Chef Server api to manage the different components of your Chef Server.  
-The following example shows several calls to the api and the creation of the context, so you can get an idea of how jclouds-chef works.
+You can easily access the Chef Server API to manage the different components of your Chef Server.  
+The following example shows several calls to the API and the creation of the context, so you can get an idea of how jclouds-chef works.
 
 Note that you can use `chef` or `enterprisechef` to create the context.
 
@@ -35,7 +35,7 @@ ChefContext context = ContextBuilder.newBuilder("enterprisechef") //
     .credentials(client, credential) //
     .buildView(ChefContext.class);
 
-// The raw api has access to all chef features, as exposed in the Chef REST api
+// The raw API has access to all chef features, as exposed in the Chef REST API
 EnterpriseChefApi api = context.unwrapApi(EnterpriseChefApi.class);
 Set<String> databags = api.listDatabags();
 
@@ -50,7 +50,7 @@ context.close();
 
 ## Bootstrap nodes with Chef and the ComputeService
 
-You can also combine the jclouds compute portable api with the Chef api to bootstrap nodes using Chef. The example below shows how you can combine both apis to achieve this.
+You can also combine the jclouds compute portable API with the Chef API to bootstrap nodes using Chef. The example below shows how you can combine both APIs to achieve this.
 
 ### Relationship between compute groups and run lists
 
