@@ -6,17 +6,18 @@ title: Getting Started - The Rackspace Cloud
 # Getting Started: The Rackspace Cloud
 
 1. [Introduction](#intro)
-1. [Get a Username and API Key](#account)
-1. [Get jclouds](#install)
-1. [Terminology](#terminology)
-1. [Your First Cloud Files App](#files)
-1. [Your First Cloud Servers App](#servers)
-1. [Working with Cloud Block Storage](#volumes)
-1. [Working with Cloud Load Balancers](#loadbalancers)
-1. [Working with Cloud Databases](#databases)
-1. [Next Steps](#next)
-1. [Rackspace Cloud Providers](#providers)
-1. [Support and Feedback](#support)
+2. [Get a Username and API Key](#account)
+3. [Get jclouds](#install)
+4. [Terminology](#terminology)
+5. [Your First Cloud Files App](#files)
+6. [Your First Cloud Servers App](#servers)
+7. [Working with Cloud Block Storage](#volumes)
+8. [Working with Cloud Load Balancers](#loadbalancers)
+9. [Working with Cloud Databases](#databases)
+10. [Working with Rackspace Autoscale](#autoscale)
+11. [Next Steps](#next)
+12. [Rackspace Cloud Providers](#providers)
+13. [Support and Feedback](#support)
 
 ## <a id="intro"></a>Introduction
 The [Rackspace Cloud](http://www.rackspace.com/cloud/public/) platform includes everything you need to build websites and applications that scale servers, storage, networking, APIs, and more. The Rackspace Cloud is based on OpenStack, which is a global collaboration of developers and cloud computing technologists producing the ubiquitous open source cloud computing platform for public and private clouds.
@@ -246,7 +247,7 @@ Cloud Load Balancers works with the Rackspace layer in jclouds that is used to a
 You can access Cloud Databases with the jclouds openstack-trove API by specifying the rackspace clouddatabases providers "rackspace-clouddatabases-us" and "rackspace-clouddatabases-uk". The -us one can be used to access the United States regions, and the -uk one is for the United Kingdom regions. The examples use the -us provider, but the providers are interchangeable (but regions will differ).
 
 1. The Rackspace compatible API for Cloud Databases is org.jclouds.openstack.trove.v1.TroveApi - All other APIs for working with Cloud Databases are accessible via the TroveApi.
-1. You can find these APIs in the latest [Javadoc](http://demobox.github.com/jclouds-maven-site/latest/apidocs).
+1. You can find these APIs in the latest [Javadoc](http://javadocs-labs-openstack.jclouds.cloudbees.net/).
 
 ### <a id="databases-source"></a>The Source Code
 
@@ -276,6 +277,48 @@ Note: When providing a java classpath in Windows, the path separator is ';' inst
 ### <a id="databases-advanced"></a>Advanced work with Cloud Databases
 
 In addition to the create database instance example, by going through the clouddatabases example code, you will learn to create instances, databases, and database users as well as delete and modify them. You will also learn how to set up and access a database from the public internet over JDBC. You can find the examples documentation here: [Examples Documentation](https://github.com/jclouds/jclouds-examples/tree/master/rackspace)
+
+## <a id="autoscale"></a>Working with Rackspace Autoscale
+### <a id="autoscale-intro"></a>Introduction
+
+[Rackspace Autoscale](http://www.rackspace.com/cloud/autoscale/) takes the work out of capacity planning, allowing Rackspace Cloud Monitoring alerts or scheduled events to create and delete servers. Through the use of webhooks, Autoscale can be integrated into countless deployment scenarios. Read the dev blog [here](http://developer.rackspace.com/blog/rackspace-autoscale-is-now-open-source.html).
+
+### <a id="autoscale-apis"></a>APIs
+
+You can access Rackspace Autoscale with the jclouds rackspace-autoscale API by specifying the rackspace autoscale provider "rackspace-autoscale-us". There is no -uk provider at this time.
+
+1. The Rackspace compatible API for Autoscale is org.apache.jclouds.labs.rackspace-autoscale.AutoscaleApi - All other APIs for working with Autoscale are accessible via the [AutoscaleApi](http://javadocs-labs-openstack.jclouds.cloudbees.net/org/jclouds/rackspace/autoscale/v1/AutoscaleApi.html).
+1. You can find these APIs in the latest [Javadoc](http://javadocs-labs-openstack.jclouds.cloudbees.net/).
+
+### <a id="autoscale-source"></a>The Source Code
+
+1. Create the directory hierarchy org/jclouds/examples/rackspace/autoscale/ in your jclouds directory.
+1. Create Java source files called CreatePolicy.java and Constants.java in the directory above.
+1. You should now have a directory with the following structure:
+    * `jclouds/`
+        * `pom.xml`
+        * `lib/`
+            * `*.jar`
+        * `org/jclouds/examples/rackspace/autoscale/`
+            * `CreatePolicy.java`
+            * `Constants.java`
+1. Open CreatePolicy.java for editing.
+1. Go to the example code [Createpolicy.java](https://github.com/jclouds/jclouds-examples/blob/master/rackspace/src/main/java/org/jclouds/examples/rackspace/autoscale/CreatePolicy.java), read it over, and copy the code into your file.
+1. Open Constants.java for editing.
+1. Go to the example code [Constants.java](https://github.com/jclouds/jclouds-examples/blob/master/rackspace/src/main/java/org/jclouds/examples/rackspace/autoscale/Constants.java), read it over, and copy the code into your file.
+
+### <a id="autoscale-compile"></a>Compile and Run
+
+Note: When providing a java classpath in Windows, the path separator is ';' instead of ':'
+Note: This uses the API key, not the password.
+
+    javac -classpath ".:lib/*" org/jclouds/examples/rackspace/autoscale/CreatePolicy.java
+    
+    java -classpath ".:lib/*" org.jclouds.examples.rackspace.autoscale.CreatePolicy myUsername myApiKey
+
+### <a id="autoscale-advanced"></a>Advanced work with Rackspace Autoscale
+
+In addition to the CreatePolicy example, by going through the autoscale example code, you will learn to create and execute webhooks, and delete and modify groups, policies, and webhooks. You can find the examples documentation [here](https://github.com/jclouds/jclouds-examples/tree/master/rackspace).
 
 ## <a id="jee"></a>jclouds in a Managed Container
 
