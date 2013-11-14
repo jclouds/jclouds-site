@@ -78,28 +78,32 @@ Cloud Files works with a portable layer in jclouds that is used to access featur
 ### <a id="files-source"></a>The Source Code
 
 1. Create the directory hierarchy org/jclouds/examples/rackspace/cloudfiles/ in your jclouds directory.
-1. Create Java source files called CreateContainer.java and Constants.java in the directory above.
+1. Create Java source files called CloudFilesPublish.java and Constants.java in the directory above.
 1. You should now have a directory with the following structure:
     * `jclouds/`
         * `pom.xml`
         * `lib/`
             * `*.jar`
         * `org/jclouds/examples/rackspace/cloudfiles/`
-            * `CreateContainer.java`
+            * `CloudFilesPublish.java`
             * `Constants.java`
-1. Open CreateContainer.java for editing.
-1. Go to the example code [CreateContainer.java](https://github.com/jclouds/jclouds-examples/blob/master/rackspace/src/main/java/org/jclouds/examples/rackspace/cloudfiles/CreateContainer.java), read it over, and copy the code into your file.
+1. Open CloudFilesPublish.java for editing.
+1. Go to the example code [CloudFilesPublish.java](https://github.com/jclouds/jclouds-examples/blob/master/rackspace/src/main/java/org/jclouds/examples/rackspace/cloudfiles/CloudFilesPublish.java), read it over, and copy the code into your file.
 1. Open Constants.java for editing.
 1. Go to the example code [Constants.java](https://github.com/jclouds/jclouds-examples/blob/master/rackspace/src/main/java/org/jclouds/examples/rackspace/cloudfiles/Constants.java), read it over, and copy the code into your file.
 
 ### <a id="files-compile"></a>Compile and Run
 
-    javac -classpath ".:lib/*" org/jclouds/examples/rackspace/cloudfiles/CreateContainer.java
+    javac -classpath ".:lib/*" org/jclouds/examples/rackspace/cloudfiles/CloudFilesPublish.java
 
-    java -classpath ".:lib/*" org.jclouds.examples.rackspace.cloudfiles.CreateContainer myUsername myApiKey
+    java -classpath ".:lib/*" org.jclouds.examples.rackspace.cloudfiles.CloudFilesPublish myUsername myApiKey
 
     Create Container
-      jclouds-example
+      jclouds-example-publish
+    Create Object From File
+      createObjectFromFile.html
+    Enable CDN Container
+      Go to http://blah.rackcdn.com/createObjectFromFile.html
 
 ## <a id="servers"></a>Your First Cloud Servers App
 ### <a id="servers-intro"></a>Introduction
@@ -117,36 +121,33 @@ Cloud Servers works with a portable layer in jclouds that is used to access feat
 ### <a id="servers-source"></a>The Source Code
 
 1. Create the directory hierarchy org/jclouds/examples/rackspace/cloudservers/ in your jclouds directory.
-1. Create Java source files called CreateServer.java and Constants.java in the directory above.
+1. Create Java source files called CloudServersPublish.java and Constants.java in the directory above.
 1. You should now have a directory with the following structure:
     * `jclouds/`
         * `pom.xml`
         * `lib/`
             * `*.jar`
         * `org/jclouds/examples/rackspace/cloudservers/`
-            * `CreateServer.java`
+            * `CloudServersPublish.java`
             * `Constants.java`
-1. Open CreateServer.java for editing.
-1. Go to the example code [CreateServer.java](https://github.com/jclouds/jclouds-examples/blob/master/rackspace/src/main/java/org/jclouds/examples/rackspace/cloudservers/CreateServer.java), read it over, and copy the code into your file.
+1. Open CloudServersPublish.java for editing.
+1. Go to the example code [CloudServersPublish.java](https://github.com/jclouds/jclouds-examples/blob/master/rackspace/src/main/java/org/jclouds/examples/rackspace/cloudservers/CloudServersPublish.java), read it over, and copy the code into your file.
 1. Open Constants.java for editing.
 1. Go to the example code [Constants.java](https://github.com/jclouds/jclouds-examples/blob/master/rackspace/src/main/java/org/jclouds/examples/rackspace/cloudservers/Constants.java), read it over, and copy the code into your file.
 
 ### <a id="servers-compile"></a>Compile and Run
 
-    javac -classpath ".:lib/*" org/jclouds/examples/rackspace/cloudservers/CreateServer.java
+    javac -classpath ".:lib/*" org/jclouds/examples/rackspace/cloudservers/CloudServersPublish.java
     
-    java -classpath ".:lib/*" org.jclouds.examples.rackspace.cloudservers.CreateServer myUsername myApiKey
+    java -classpath ".:lib/*" org.jclouds.examples.rackspace.cloudservers.CloudServersPublish myUsername myApiKey
 
-    Images
-      Image{id=9eb71a23-2c7e-...}
-      ...
-    Flavors
-      Flavor{id=2,...}
-      ...
     Create Server
-    .....................................................
-      ServerCreated{id=b037b1a1-...}
-      Login IP: 123.123.123.123 Username: root Password: a1b2c3d4
+      {id=IAD/4d560...}
+      Configure And Start Webserver
+      (a lot of ssh output)
+        Login: ssh root@123.123.123.123
+        Password: a1b2c3d4
+        Go to http://123.123.123.123
 
 ## <a id="volumes"></a>Working with Cloud Block Storage
 ### <a id="volumes-intro"></a>Introduction
