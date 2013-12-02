@@ -184,9 +184,9 @@ If you don't have a location concern, pass `null` to accept the default.
 
 {% highlight java %}
 boolean created = blobStore.createContainerInLocation(null, String container);
-if (created){
+if (created) {
 	// the container didn't exist, but does now
-}else{
+} else {
  	// the container already existed
 }
     
