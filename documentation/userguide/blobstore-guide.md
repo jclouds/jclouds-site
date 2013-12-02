@@ -183,7 +183,7 @@ BlobStore blobstore = context.getBlobStore();
 If you don't have a location concern, pass `null` to accept the default.
 
 {% highlight java %}
-boolean created = blobStore.createContainerInLocation(null, String container);
+boolean created = blobStore.createContainerInLocation(null, container);
 if (created) {
 	// the container didn't exist, but does now
 } else {
