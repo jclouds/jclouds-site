@@ -319,3 +319,24 @@ float:right;
 span.news p{
 clear:both;
 }
+
+ul {
+ margin:6px 0 0 12px;
+ padding:0;
+}
+ 
+ul li {
+ list-style-type:square;
+ margin:0 0 8px;
+ padding:0;
+}
+ 
+ol {
+ margin:6px 0 0 18px;
+ padding:0;
+}
+ 
+ol li {
+ margin:0 15px 8px;
+ padding:0;
+}
