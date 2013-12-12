@@ -14,7 +14,7 @@ title: Getting Started - The Rackspace Cloud
 7. [Working with Cloud Block Storage](#volumes)
 8. [Working with Cloud Load Balancers](#loadbalancers)
 9. [Working with Cloud Databases](#databases)
-10. [Working with Rackspace Autoscale](#autoscale)
+10. [Working with Cloud Auto Scale](#autoscale)
 11. [Next Steps](#next)
 12. [Rackspace Cloud Providers](#providers)
 13. [Support and Feedback](#support)
@@ -278,16 +278,16 @@ Note: When providing a java classpath in Windows, the path separator is ';' inst
 
 In addition to the create database instance example, by going through the clouddatabases example code, you will learn to create instances, databases, and database users as well as delete and modify them. You will also learn how to set up and access a database from the public internet over JDBC. You can find the examples documentation here: [Examples Documentation](https://github.com/jclouds/jclouds-examples/tree/master/rackspace)
 
-## <a id="autoscale"></a>Working with Rackspace Autoscale
+## <a id="autoscale"></a>Working with Cloud Auto Scale
 ### <a id="autoscale-intro"></a>Introduction
 
-[Rackspace Autoscale](http://www.rackspace.com/cloud/autoscale/) takes the work out of capacity planning, allowing Rackspace Cloud Monitoring alerts or scheduled events to create and delete servers. Through the use of webhooks, Autoscale can be integrated into countless deployment scenarios. Read the dev blog [here](http://developer.rackspace.com/blog/rackspace-autoscale-is-now-open-source.html).
+[Cloud Auto Scale](http://www.rackspace.com/cloud/auto-scale/) takes the work out of capacity planning, allowing Rackspace Cloud Monitoring alerts or scheduled events to create and delete servers. Through the use of webhooks, Auto Scale can be integrated into countless deployment scenarios. Read the dev blog [here](http://developer.rackspace.com/blog/rackspace-autoscale-is-now-open-source.html).
 
 ### <a id="autoscale-apis"></a>APIs
 
-You can access Rackspace Autoscale with the jclouds rackspace-autoscale API by specifying the rackspace autoscale provider "rackspace-autoscale-us". There is no -uk provider at this time.
+You can access Cloud Auto Scale with the jclouds rackspace-autoscale API by specifying the Auto Scale provider "rackspace-autoscale-us". There is no -uk provider at this time.
 
-1. The Rackspace compatible API for Autoscale is org.apache.jclouds.labs.rackspace-autoscale.AutoscaleApi - All other APIs for working with Autoscale are accessible via the [AutoscaleApi](http://javadocs-labs-openstack.jclouds.cloudbees.net/org/jclouds/rackspace/autoscale/v1/AutoscaleApi.html).
+1. The Rackspace compatible API for Auto Scale is org.jclouds.rackspace.autoscale.v1.AutoscaleApi - All other APIs for working with Auto Scale are accessible via the [AutoscaleApi](http://javadocs-labs-openstack.jclouds.cloudbees.net/org/jclouds/rackspace/autoscale/v1/AutoscaleApi.html).
 1. You can find these APIs in the latest [Javadoc](http://javadocs-labs-openstack.jclouds.cloudbees.net/).
 
 ### <a id="autoscale-source"></a>The Source Code
@@ -303,7 +303,7 @@ You can access Rackspace Autoscale with the jclouds rackspace-autoscale API by s
             * `CreatePolicy.java`
             * `Constants.java`
 1. Open CreatePolicy.java for editing.
-1. Go to the example code [Createpolicy.java](https://github.com/jclouds/jclouds-examples/blob/master/rackspace/src/main/java/org/jclouds/examples/rackspace/autoscale/CreatePolicy.java), read it over, and copy the code into your file.
+1. Go to the example code [CreatePolicy.java](https://github.com/jclouds/jclouds-examples/blob/master/rackspace/src/main/java/org/jclouds/examples/rackspace/autoscale/CreatePolicy.java), read it over, and copy the code into your file.
 1. Open Constants.java for editing.
 1. Go to the example code [Constants.java](https://github.com/jclouds/jclouds-examples/blob/master/rackspace/src/main/java/org/jclouds/examples/rackspace/autoscale/Constants.java), read it over, and copy the code into your file.
 
@@ -316,9 +316,9 @@ Note: This uses the API key, not the password.
     
     java -classpath ".:lib/*" org.jclouds.examples.rackspace.autoscale.CreatePolicy myUsername myApiKey
 
-### <a id="autoscale-advanced"></a>Advanced work with Rackspace Autoscale
+### <a id="autoscale-advanced"></a>Advanced work with Rackspace Auto Scale
 
-In addition to the CreatePolicy example, by going through the autoscale example code, you will learn to create and execute webhooks, and delete and modify groups, policies, and webhooks. You can find the examples documentation [here](https://github.com/jclouds/jclouds-examples/tree/master/rackspace).
+In addition to the CreatePolicy example, by going through the Auto Scale example code, you will learn to create and execute webhooks, and delete and modify groups, policies, and webhooks. You can find the examples documentation [here](https://github.com/jclouds/jclouds-examples/tree/master/rackspace).
 
 ## <a id="jee"></a>jclouds in a Managed Container
 
