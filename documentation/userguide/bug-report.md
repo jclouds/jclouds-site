@@ -21,7 +21,7 @@ Bugs can be reported in [JIRA](https://issues.apache.org/jira/browse/JCLOUDS) or
 
 The version of jclouds can be found in the name of the JAR files you are using in your application or the pom.xml file of your application if you're using Maven.
 
-E.G. jclouds Version: 1.6.2-incubating
+E.G. jclouds Version: 1.6.3
 
 ## <a id="cloud-version"></a>Cloud and API Version
 
