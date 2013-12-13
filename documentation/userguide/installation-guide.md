@@ -136,7 +136,7 @@ You need to update your repositories and add the following in your project's pom
 <repositories>
   <repository>
     <id>jclouds-snapshots</id>
-    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    <url>https://repository.apache.org/content/repositories/snapshots</url>
     <snapshots>
       <enabled>true</enabled>
     </snapshots>
@@ -164,7 +164,7 @@ Then, add jclouds snapshot dependencies to your __build.xml__ as shown below:
 
 {% highlight xml %}
 <artifact:remoteRepository id="jclouds.snapshot.repository"
-                           url="https://oss.sonatype.org/content/repositories/snapshots" />
+                           url="https://repository.apache.org/content/repositories/snapshots" />
 <artifact:dependencies pathId="jclouds.classpath">
   <dependency groupId="org.apache.jclouds"
               artifactId="jclouds-allcompute"
@@ -186,5 +186,5 @@ If you use lieningen, you can add jclouds snapshots to your __project.clj__ like
                  [org.clojure/tools.logging "0.2.3"]
                  [org.apache.jclouds/jclouds-allcompute "1.6.4-SNAPSHOT"]
                  [org.apache.jclouds/jclouds-allblobstore "1.6.4-SNAPSHOT"]]
-  :repositories { "jclouds-snapshot" "https://oss.sonatype.org/content/repositories/snapshots"}
+  :repositories { "jclouds-snapshot" "https://repository.apache.org/content/repositories/snapshots"}
 {% endhighlight %}
