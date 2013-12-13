@@ -14,4 +14,14 @@ rm site-content/deploy-site.sh
 cd site-content
 svn status | awk '/^?/{print $2}' | \
     while read filename; do svn --no-auto-props add $filename; done
-svn ci --no-auth-cache --username $1 --password $2 -m'deploy jclouds site content'
+
+USERNAME_ARG=""
+if [ -n "$1" ]; then
+    USERNAME_ARG="--username $1"
+fi
+PASSWORD_ARG=""
+if [ -n "$2" ]; then
+    PASSWORD_ARG="--password $2"
+fi
+svn commit --no-auth-cache $USERNAME_ARG $PASSWORD_ARG \
+    --message 'deploy jclouds site content'
