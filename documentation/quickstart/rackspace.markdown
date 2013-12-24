@@ -15,9 +15,10 @@ title: Getting Started - The Rackspace Cloud
 8. [Working with Cloud Load Balancers](#loadbalancers)
 9. [Working with Cloud Databases](#databases)
 10. [Working with Cloud Auto Scale](#autoscale)
-11. [Next Steps](#next)
-12. [Rackspace Cloud Providers](#providers)
-13. [Support and Feedback](#support)
+11. [Working with Cloud Queues](#queues)
+12. [Next Steps](#next)
+13. [Rackspace Cloud Providers](#providers)
+14. [Support and Feedback](#support)
 
 ## <a id="intro"></a>Introduction
 The [Rackspace Cloud](http://www.rackspace.com/cloud/public/) platform includes everything you need to build websites and applications that scale servers, storage, networking, APIs, and more. The Rackspace Cloud is based on OpenStack, which is a global collaboration of developers and cloud computing technologists producing the ubiquitous open source cloud computing platform for public and private clouds.
@@ -319,6 +320,56 @@ Note: This uses the API key, not the password.
 ### <a id="autoscale-advanced"></a>Advanced work with Rackspace Auto Scale
 
 In addition to the CreatePolicy example, by going through the Auto Scale example code, you will learn to create and execute webhooks, and delete and modify groups, policies, and webhooks. You can find the examples documentation [here](https://github.com/jclouds/jclouds-examples/tree/master/rackspace).
+
+## <a id="queues"></a>Working with Cloud Queues
+### <a id="queues-intro"></a>Introduction
+
+[Cloud Queues](http://www.rackspace.com/cloud/queues/) easily connect distributed applications without installing complex software. Create unlimited queues quickly and send unlimited messages.
+
+### <a id="queues-apis"></a>APIs
+
+Cloud Queues works with the OpenStack layer in jclouds that is used to access features common to all OpenStack Marconi queuing systems.
+
+1. The OpenStack API for Cloud Queues is the org.jclouds.openstack.marconi.v1.MarconiApi. All other APIs for working with queues are accessible via the MarconiApi.
+1. You can find these APIs in the latest [Javadoc](http://javadocs-labs-openstack.jclouds.cloudbees.net).
+
+### <a id="queues-source"></a>The Source Code
+
+1. Create the directory hierarchy org/jclouds/examples/rackspace/cloudqueues/ in your jclouds directory.
+1. Create Java source files called ProducerConsumer.java and Constants.java in the directory above.
+1. You should now have a directory with the following structure:
+    * `jclouds/`
+        * `pom.xml`
+        * `lib/`
+            * `*.jar`
+        * `org/jclouds/examples/rackspace/cloudqueues/`
+            * `ProducerConsumer.java`
+            * `Constants.java`
+1. Open ProducerConsumer.java for editing.
+1. Go to the example code [ProducerConsumer.java](https://github.com/jclouds/jclouds-examples/blob/master/rackspace/src/main/java/org/jclouds/examples/rackspace/cloudqueues/ProducerConsumer.java), read it over, and copy the code into your file.
+1. Open Constants.java for editing.
+1. Go to the example code [Constants.java](https://github.com/jclouds/jclouds-examples/blob/master/rackspace/src/main/java/org/jclouds/examples/rackspace/cloudqueues/Constants.java), read it over, and copy the code into your file.
+
+### <a id="queues-compile"></a>Compile and Run
+
+    javac -classpath ".:lib/*" org/jclouds/examples/rackspace/cloudqueues/ProducerConsumer.java
+
+    java -classpath ".:lib/*" org.jclouds.examples.rackspace.cloudqueues.ProducerConsumer myUsername myApiKey
+
+    Producer Consumer
+      Producer 1 Message 1:0
+      Producer 1 Message 1:1
+      Consumer 1 Message 1:0 (Queue This Way)
+      Consumer 2 Message 1:1 (Queue This Way)
+      Producer 1 Message 1:2
+      Consumer 1 Message 1:2 (Queue This Way)
+      Producer 1 Message 1:3
+      Consumer 1 Message 1:3 (Queue This Way)
+      Producer 1 Message 1:4
+      Producer 1 Message 1:5
+      Consumer 2 Message 1:4 (Queue This Way)
+      ...
+      
 
 ## <a id="jee"></a>jclouds in a Managed Container
 
