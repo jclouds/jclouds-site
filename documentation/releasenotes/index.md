@@ -39,4 +39,4 @@ The Release Notes for all jclouds versions released before joining the ASF are l
 * [1.1.0](/documentation/releasenotes/1.1.0) | [Javadoc](http://demobox.github.com/jclouds-maven-site-1.1.0/1.1.0/jclouds-multi/apidocs/)
 
 If you do not see the Release Notes or Javadocs that you are looking for or would like to request other documentation regarding jclouds releases, 
-please [let us know](https://groups.google.com/forum/#!forum/jclouds).
+please [let us know](/documentation/community/).
