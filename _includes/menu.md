@@ -2,3 +2,4 @@
 * [Documentation](/documentation/)
 * [Community](/documentation/community/)
 * [Development](/documentation/devguides/)
+* [Blog](/blog/)
