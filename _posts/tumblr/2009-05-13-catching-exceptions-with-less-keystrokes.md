@@ -2,6 +2,7 @@
 layout: post
 title: Catching exceptions with fewer keystrokes
 author: Adrian Cole
+comments: true
 tags: jclouds design exception generics typeerasure
 tumblr_url: http://jclouds.tumblr.com/post/107464443/catching-exceptions-with-less-keystrokes
 ---

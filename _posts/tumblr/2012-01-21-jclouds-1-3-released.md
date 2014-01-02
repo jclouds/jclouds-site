@@ -2,6 +2,7 @@
 layout: post
 title: jclouds 1.3 released!
 author: Adrian Cole
+comments: true
 tags: cloud jclouds
 tumblr_url: http://jclouds.tumblr.com/post/16217483394/jclouds-1-3-released
 ---

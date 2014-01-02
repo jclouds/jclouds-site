@@ -2,6 +2,7 @@
 layout: post
 title: jclouds 1.5.4 "Mistletoe" released
 author: Adrian Cole
+comments: true
 tumblr_url: http://jclouds.tumblr.com/post/37796834043/jclouds-1-5-4-mistletoe-released
 ---
 

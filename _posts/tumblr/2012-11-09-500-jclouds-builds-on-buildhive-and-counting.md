@@ -2,6 +2,7 @@
 layout: post
 title: 500 jclouds builds on BuildHive and counting...
 author: Adrian Cole
+comments: true
 tumblr_url: http://jclouds.tumblr.com/post/35355758760/500-jclouds-builds-on-buildhive-and-counting
 ---
 

@@ -2,6 +2,7 @@
 layout: post
 title: jclouds 1.5 is out!
 author: Adrian Cole
+comments: true
 tumblr_url: http://jclouds.tumblr.com/post/32464325932/jclouds-1-5-is-out
 ---
 

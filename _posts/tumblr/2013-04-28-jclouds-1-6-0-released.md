@@ -2,6 +2,7 @@
 layout: post
 title: jclouds 1.6.0 released!
 author: Adrian Cole
+comments: true
 tumblr_url: http://jclouds.tumblr.com/post/49146565342/jclouds-1-6-0-released
 ---
 

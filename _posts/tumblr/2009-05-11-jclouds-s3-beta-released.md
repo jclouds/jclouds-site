@@ -2,6 +2,7 @@
 layout: post
 title: jclouds-s3 beta released
 author: Adrian Cole
+comments: true
 tags: jclouds gae s3 cloud java concurrent grid google appengine
 tumblr_url: http://jclouds.tumblr.com/post/106128259/jclouds-s3-beta-released
 ---

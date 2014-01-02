@@ -2,6 +2,7 @@
 layout: post
 title: jclouds at Gluecon 2013
 author: Adrian Cole
+comments: true
 tumblr_url: http://jclouds.tumblr.com/post/50350422954/jclouds-at-gluecon-2013
 ---
 

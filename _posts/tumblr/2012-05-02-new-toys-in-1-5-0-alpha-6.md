@@ -2,6 +2,7 @@
 layout: post
 title: New toys in 1.5.0-alpha.6
 author: Adrian Cole
+comments: true
 tumblr_url: http://jclouds.tumblr.com/post/22267128043/new-toys-in-1-5-0-alpha-6
 ---
 

@@ -2,6 +2,7 @@
 layout: post
 title: EC2 gets rid of that *"if instancetype.is32bit"* statement
 author: Adrian Cole
+comments: true
 tumblr_url: http://jclouds.tumblr.com/post/19009661244/ec2-gets-rid-of-that-if-instancetype-is32bit
 ---
 

@@ -2,6 +2,7 @@
 layout: post
 title: jclouds 1.5.3 out the door
 author: Adrian Cole
+comments: true
 tags: jclouds cloud openstack rackspace ec2 buildhive cloudbees java
 tumblr_url: http://jclouds.tumblr.com/post/35922275965/jclouds-1-5-3-out-the-door
 ---

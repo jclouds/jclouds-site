@@ -2,6 +2,7 @@
 layout: post
 title: Take a peek at vCloud Director 1.5, OpenStack, and VirtualBox
 author: Adrian Cole
+comments: true
 tumblr_url: http://jclouds.tumblr.com/post/19773099764/take-a-peek-at-vcloud-director-1-5-openstack-and
 ---
 

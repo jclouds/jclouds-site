@@ -2,6 +2,7 @@
 layout: post
 title: jclouds training and Jfokus Stockholm
 author: Adrian Cole
+comments: true
 tumblr_url: http://jclouds.tumblr.com/post/16037530881/jclouds-training-and-jfokus-stockholm
 ---
 

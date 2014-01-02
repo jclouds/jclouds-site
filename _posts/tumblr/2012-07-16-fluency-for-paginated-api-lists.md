@@ -2,6 +2,7 @@
 layout: post
 title: Fluency for paginated api lists
 author: Adrian Cole
+comments: true
 tags: aws s3 guava java clojure cloud jclouds
 tumblr_url: http://jclouds.tumblr.com/post/27338079498/fluency-for-paginated-api-lists
 ---
