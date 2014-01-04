@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% include head.html %}
+    </head>
+    <body>
+        {% include navbar.html %}
+        <div id="home-content" class="container">
+            <div class="row clearfix">
+                <div class="col-md-4 column">
+                    <img src="/img/fullsizelogo.jpg" class="img-rounded"/>
+                </div>
+                <div class="col-md-8 column">
+                    <div class="jumbotron">
+                        <h2>The Java Multi-Cloud Toolkit</h2>
+                        <p>Apache jclouds® is an open source multi-cloud toolkit for the Java platform that gives you the freedom to create applications that are <strong>portable across clouds</strong> while giving you <strong>full control</strong> to use cloud-specific features.</p>
+                        <p>
+                            <a class="btn btn-primary btn-large" href="/start/">
+                                <span class="glyphicon glyphicon-book"></span>
+                                Learn
+                            </a>
+                            <a class="btn btn-success btn-large" href="/start/install/">
+                                <span class="glyphicon glyphicon-download"></span>
+                                Install
+                            </a>
+                            <a class="btn btn-warning btn-large" href="https://github.com/jclouds/jclouds">
+                                <span class="glyphicon glyphicon-cog"></span>
+                                Source
+                            </a>
+                            <a class="btn btn-warning btn-large" href="/community/">
+                                <span class="glyphicon glyphicon-globe"></span>
+                                Contribute
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-divider">
+                <span class="text">CLOUDS</span>
+            </div>
+            <br/>
+            <ul class="list-inline text-center">
+                <li><img class="img-list" src="img/logos/abiquo.png" alt="Abiquo" title="Abiquo"/></li>
+                <li><img class="img-list" src="img/logos/aws.jpg" alt="Amazon Web Services" title="Amazon Web Services"/></li>
+                <li><img class="img-list" src="img/logos/cloudsigma.png" alt="CloudSigma" title="CloudSigma"/></li>
+                <li><img class="img-list" src="img/logos/cloudstack.png" alt="CloudStack" title="CloudStack"/></li>
+            </ul>
+            <ul class="list-inline text-center">
+                <li><img class="img-list" src="img/logos/hpcloud.png" alt="HP Cloud" title="HP Cloud"/></li>
+                <li><img class="img-list" src="img/logos/joyent.png" alt="Joyent" title="Joyent"/></li>
+                <li><img class="img-list" src="img/logos/openstack.png" alt="OpensStack" title="OpenStack"/></li>
+                <li><img class="img-list" src="img/logos/rackspace.png" alt="Rackspace" title="Rackspace"/></li>
+            </ul>
+            <p class="lead text-center text-primary"><strong><a href="/guides/providers/">...and many more!</a></strong></p>
+
+            <div class="section-divider">
+                <span class="text">CODE</span>
+            </div>
+            <br/>
+            <div class="row clearfix">
+                <div class="col-md-6 column">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Compute</h3>
+                        </div>
+                        <div class="panel-body">
+{% highlight java %}
+ComputeService compute = ContextBuilder.newBuilder("aws-ec2")
+    .credentials("identity", "credential")
+    .buildView(ComputeServiceContext.class)
+    .getComputeService();
+
+Template template = compute.templateBuilder()
+    .osFamily(OsFamily.UBUNTU)
+    .minRam(2048)
+    .options(inboundPorts(22, 80))
+    .build();
+
+compute.createNodesInGroup("jclouds", 1, template);
+{% endhighlight %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 column">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">BlobStore</h3>
+                        </div>
+                        <div class="panel-body">
+{% highlight java %}
+BlobStore blobStore = ContextBuilder.newBuilder("aws-s3")
+    .credentials("identity", "credential")
+    .buildView(BlobStoreContext.class)
+    .getBlobStore();
+
+blobStore.createContainerInLocation(location, "mycontainer");
+
+Blob blob = blobStore.blobBuilder("blob")
+    .payload("blob-content")
+    .build();
+
+blobStore.putBlob("mycontainer", blob);
+{% endhighlight %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-md-3 column">
+                    <h3 class="text-primary"><span class="glyphicon glyphicon-cog"></span>&nbsp;Compute</h3>
+                    <p>The portable Compute interface allows users to provision their infrastructure in any cloud provider. With Apache jclouds&reg; users are in control of the entire process: deployment configuration, provisioning and bootstrap.</p>
+                </div>
+                <div class="col-md-3 column">
+                    <h3 class="text-primary"><span class="glyphicon glyphicon-hdd"></span>&nbsp;BlobStore</h3>
+                    <p>Using the BlobStore interface, users can easily store objects in a wide range of blob store providers, regardless of how big the objects to manage are, or how many files are there.</p>
+                </div>
+                <div class="col-md-3 column">
+                    <h3 class="text-primary"><span class="glyphicon glyphicon-stats"></span>&nbsp;Load Balancer</h3>
+                    <p>The Load Balancer abstraction provides a common interface to configure the load balancers in any cloud that supports them. Just define the load balancer and the nodes that should join it, and it will be ready for the action.</p>
+                </div>
+                <div class="col-md-3 column">
+                    <h3 class="text-primary"><span class="glyphicon glyphicon-fire"></span>&nbsp;Specific APIs</h3>
+                    <p>Apache jclouds&reg; also provides DNS, firewall, storage, configuration management, image management, provider specific APIs, and much more. Make sure to check them out!</p>
+                </div>
+            </div>
+            <br/>
+            <div class="section-divider">
+                <span class="text">USERS</span>
+            </div>
+            <br/>
+            <ul class="list-inline text-center">
+                <li><img class="img-list" src="img/logos/cloudsoft.png" alt="Cloudsoft" title="Cloudsoft"/></li>
+                <li><img class="img-list" src="img/logos/jenkins.png" alt="Jenkins" title="Jenkins"/></li>
+                <li><img class="img-list" src="img/logos/maginatics.png" alt="Maginatics" title="Maginatics"/></li>
+                <li><img class="img-list" src="img/logos/neoload.png" alt="NeoTys NeoLoad" title="NeoTys NeoLoad"/></li>
+            </ul>
+            <ul class="list-inline text-center">
+                <li><img class="img-list" src="img/logos/cloudify.png" alt="GigaSpaces Cloudify" title="GigaSpaces Cloudify"/></li>
+                <li><img class="img-list" src="img/logos/pallet.png" alt="Pallet" title="Pallet"/></li>
+                <li><img class="img-list" src="img/logos/seatyourself.gif" alt="SeatYourself" title="SeatYourself"/></li>
+                <li><img class="img-list" src="img/logos/stratos.png" alt="Apache Stratos" title="Apache Stratos"/></li>
+            </ul>
+            <p class="lead text-center text-primary"><strong><a href="/community/users/">...and many more!</a></strong></p>
+
+            {% include footer.html %}
+        </div>
+    </body>
+</html>

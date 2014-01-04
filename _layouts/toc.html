@@ -2,21 +2,20 @@
 <html lang="en">
     <head>
         {% include head.html %}
+        <script type="text/javascript">
+            $(document).ready(createTOC);
+        </script>
     </head>
     <body>
         {% include navbar.html %}
         <div class="container">
             <div class="page-header">
                 <h1>{{ page.title }}</h1>
-                <span class="text-muted">{{ page.date | date: "%-d %B %Y"}}, by {{ page.author }}</span>
             </div>
-            {{ content }}
-            {% if page.comments %}
-            <div id="comments">
-                <hr/>
-                {% include disqus.html %}
+            <div id="toc"></div>
+            <div id="content">
+                {{ content }}
             </div>
-            {% endif %}
             <div class="row clearfix">
                 <div id="footer" class="col-md-12 column">
                     {% include footer.html %}

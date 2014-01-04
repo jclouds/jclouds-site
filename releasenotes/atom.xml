@@ -1,0 +1,21 @@
+---
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>{{ site.url }}/</id>
+  <title><![CDATA[{{ site.title }}]]></title>
+  <link href="{{ site.url }}/atom.xml" rel="self"/>
+  <link href="{{ site.url }}/"/>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <generator uri="http://jekyllrb.com/">Jekyll</generator>
+
+  {% for page in site.pages %}{% if page.release_notes == true %}  
+  <entry>
+    <id>{{ site.url }}{{ page.url }}</id>
+    <title type="html"><![CDATA[{{ page.title | cdata_escape }}]]></title>
+    <link href="{{ site.url }}{{ page.url }}"/>
+    <updated>{{ page.date | date_to_xmlschema }}</updated>
+    <content type="html"><![CDATA[{{ page.content | expand_urls: site.url | cdata_escape }}]]></content>
+  </entry>
+  {% endif %}{% endfor %}
+</feed>

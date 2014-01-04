@@ -1,3 +1,8 @@
+url: http://jclouds.apache.org
+title: Apache jclouds
 markdown: rdiscount
 pygments: true
-permalink: pretty
+paginate: 5
+paginate_path: "blog/page:num"
+permalink: /blog/:categories/:year/:month/:day/:title
+relative_permalinks: false
