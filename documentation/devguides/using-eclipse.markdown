@@ -56,4 +56,4 @@ Tests making direct SSH connections, such as [`SshjSshClientLiveTest`](https://g
 
 The destination host must be a Unix-like host that contains a world readable `/etc/passwd` file.
 
-You can use Eclipe's [String Substitution](http://help.eclipse.org/juno/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Freference%2Fpreferences%2Frun-debug%2Fref-string_substitution.htm&resultof=%22string%22%20%22substitution%22%20%22substitut%22%20) feature to declare aliases for sensitive information such as your username and password and use these aliases in the Program Arguments.
+You can use Eclipse's [String Substitution](http://help.eclipse.org/juno/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Freference%2Fpreferences%2Frun-debug%2Fref-string_substitution.htm&resultof=%22string%22%20%22substitution%22%20%22substitut%22%20) feature to declare aliases for sensitive information such as your username and password and use these aliases in the Program Arguments.
