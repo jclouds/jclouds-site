@@ -11,7 +11,7 @@ title: Quick Start - OpenStack
 1. [List Servers](#nova)
 1. [List Containers](#swift)
 1. [Next Steps](#next)
-1. [OpenStack Providers](#providers)
+1. [OpenStack Dependencies](#pom)
 
 ## <a id="intro"></a>Introduction
 [OpenStack](http://www.openstack.org/) is a global collaboration of developers and cloud computing technologists producing the ubiquitous open source cloud computing platform for public and private clouds. The project aims to deliver solutions for all types of clouds by being simple to implement, massively scalable, and feature rich. The technology consists of a series of interrelated projects delivering various components for a cloud infrastructure solution.
@@ -30,15 +30,17 @@ Because the OpenStack API is also open, the jclouds APIs that talk to private Op
 ## <a id="install"></a>Get jclouds
 
 1. Ensure you are using the [Java Development Kit (JDK) version 6 or later](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
-1. In your Terminal or Command Prompt run the following to verify the JDK is installed correctly.
     * `javac -version` 
+1. Ensure you are using [Maven version 3 or later](http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html).
+    * `mvn -version` 
 1. Create a directory to try out jclouds.
-    * `mkdir jclouds` 
-1. Follow the instructions for [Getting the binaries using Apache Ant](/documentation/userguide/installation-guide#ant).
+    * `mkdir jclouds`
+    * `cd jclouds`
+1. Make a local copy of the [pom.xml](#pom) file below in the jclouds directory.
+    * mvn dependency:copy-dependencies "-DoutputDirectory=./lib"
 1. You should now have a directory with the following structure:
     * `jclouds/`
-        * `build.xml`
-        * `maven-ant-tasks.jar`
+        * `pom.xml`
         * `lib/`
             * `*.jar`
 
@@ -342,11 +344,86 @@ private void init() {
 - Join the [jclouds community](/documentation/community) as either a developer or user. 
 
 
-## <a id="providers"></a>OpenStack Providers
+## <a id="pom"></a>OpenStack Dependencies
 
-This is a list of providers that work with OpenStack that you can use to build your Context.
+This pom.xml file specifies all of the dependencies you'll need to work with OpenStack. Replace the jclouds.version X.X.X with the latest version available according to the [Release Notes](http://jclouds.apache.org/documentation/releasenotes/).
 
-* `"openstack-nova"`
-* `"openstack-keystone"`
-* `"openstack-cinder"`
-* `"swift-keystone"`
+<pre>
+{% highlight xml %}
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <properties>
+    <jclouds.version>X.X.X</jclouds.version>
+  </properties>
+  <groupId>org.apache.jclouds.examples</groupId>
+  <artifactId>openstack-examples</artifactId>
+  <version>1.0</version>
+  <dependencies>
+    <!-- jclouds dependencies -->
+    <dependency>
+      <groupId>org.apache.jclouds.driver</groupId>
+      <artifactId>jclouds-slf4j</artifactId>
+      <version>${jclouds.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.jclouds.driver</groupId>
+      <artifactId>jclouds-sshj</artifactId>
+      <version>${jclouds.version}</version>
+    </dependency>
+    <!-- OpenStack dependencies -->
+    <dependency>
+      <groupId>org.apache.jclouds.api</groupId>
+      <artifactId>openstack-keystone</artifactId>
+      <version>${jclouds.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.jclouds.api</groupId>
+      <artifactId>openstack-nova</artifactId>
+      <version>${jclouds.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.jclouds.api</groupId>
+      <artifactId>swift</artifactId>
+      <version>${jclouds.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.jclouds.api</groupId>
+      <artifactId>openstack-cinder</artifactId>
+      <version>${jclouds.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.jclouds.api</groupId>
+      <artifactId>openstack-trove</artifactId>
+      <version>${jclouds.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.jclouds.labs</groupId>
+      <artifactId>openstack-glance</artifactId>
+      <version>${jclouds.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.jclouds.labs</groupId>
+      <artifactId>openstack-marconi</artifactId>
+      <version>${jclouds.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.jclouds.labs</groupId>
+      <artifactId>openstack-neutron</artifactId>
+      <version>${jclouds.version}</version>
+    </dependency>
+    <!-- 3rd party dependencies -->
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.0.13</version>
+    </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>5.1.25</version>
+    </dependency>
+  </dependencies>
+</project>
+{% endhighlight %}
+</pre>
