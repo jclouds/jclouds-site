@@ -69,8 +69,7 @@ There are some differences in terminology between jclouds and OpenStack that sho
 1. You should now have a directory with the following structure:
     * `jclouds/`
         * `JCloudsNova.java`
-        * `build.xml`
-        * `maven-ant-tasks.jar`
+        * `pom.xml`
         * `lib/`
             * `*.jar`
 1. Open JCloudsNova.java for editing, read the code below, and copy it in.
@@ -188,8 +187,7 @@ In the init() method note that
 1. You should now have a directory with the following structure:
     * `jclouds/`
         * `JCloudsSwift.java`
-        * `build.xml`
-        * `maven-ant-tasks.jar`
+        * `pom.xml`
         * `lib/`
             * `*.jar`
 1. Open JCloudsSwift.java for editing, read the code below, and copy it in.
