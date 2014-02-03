@@ -44,7 +44,7 @@ You have the following options:
 | jclouds-slf4j (Optional) | SLF4JLoggingModule
 | jclouds-antcontrib (Optional) | AntLoggingModule
 
-To get an optional dependency go to the [Installation Guide](/documentation/userguide/installation-guide) and include the dependency for your kind of installation. For example, in the Getting the latest binaries section add [org.jclouds/jclouds-log4j "X.X.X"] to the list of dependencies.
+To get an optional dependency go to the [Installation Guide](/documentation/userguide/installation-guide) and include the dependency for your kind of installation. For example, in the "Getting the binaries using lein" section, add `org.apache.jclouds.driver/jclouds-log4j "X.Y.Z"` to the list of dependencies.
 
 ### log4j
 
