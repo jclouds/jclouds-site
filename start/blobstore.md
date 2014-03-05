@@ -167,8 +167,11 @@ blobStore = context.getBlobStore();
 blobStore.createContainerInLocation(null, "mycontainer");
 
 // add blob
-blob = blobStore.blobBuilder("test")  // you can use folders via newBlob(folderName + "/sushi.jpg")
-                  .payload("testdata").build();
+ByteSource payload = ByteSource.wrap("blob-content".getBytes(Charsets.UTF_8));
+blob = blobStore.blobBuilder("test")  // you can use folders via blobBuilder(folderName + "/sushi.jpg")
+    .payload(payload)
+    .contentLength(payload.size)
+    .build();
 blobStore.putBlob(containerName, blob);
 {% endhighlight %}
 
@@ -234,10 +237,14 @@ import static org.jclouds.blobstore.options.PutOptions.Builder.multipart;
   // create container
   blobStore.createContainerInLocation(null, "mycontainer");
 
-  File input = new File(fileName);
   // Add a Blob
-  Blob blob = blobStore.blobBuilder(objectName).payload(input)
-               .contentType(MediaType.APPLICATION_OCTET_STREAM).contentDisposition(objectName).build();
+  ByteSource payload = Files.asByteSource(new File(fileName));
+  Blob blob = blobStore.blobBuilder(objectName)
+      .payload(payload)
+      .contentDisposition(objectName)
+      .contentLength(payload.size())
+      .contentType(MediaType.OCTET_STREAM.toString())
+      .build();
   // Upload a file
   ListenableFuture<String> futureETag = blobStore.putBlob(containerName, blob, multipart());
 
@@ -378,11 +385,14 @@ you must set [Content Disposition](http://www.jtricks.com/bits/content_dispositi
 it with BlobStore API:
 
 {% highlight java %}
+ByteSource payload = Files.asByteSource(new File("sushi.jpg"));
 Blob blob = context.getBlobStore().blobBuilder("sushi.jpg")
-               .payload(new File("sushi.jpg"))// or byte[]. InputStream, etc.
-               .contentDisposition("attachment; filename=sushi.jpg")
-               .contentType("image/jpeg")
-               .calculateMD5().build();
+    .payload(payload)  // or InputStream
+    .contentDisposition("attachment; filename=sushi.jpg")
+    .contentMD5(payload.hash(Hashing.md5()).asBytes())
+    .contentLength(payload.size())
+    .contentType(MediaType.JPEG.toString())
+    .build();
 {% endhighlight %}
 
 

@@ -96,14 +96,14 @@ BlobStore blobStore = ContextBuilder.newBuilder("aws-s3")
     .credentials("identity", "credential")
     .buildView(BlobStoreContext.class)
     .getBlobStore();
+blobStore.createContainerInLocation(location, "container-name");
 
-blobStore.createContainerInLocation(location, "mycontainer");
-
-Blob blob = blobStore.blobBuilder("blob")
-    .payload("blob-content")
+ByteSource payload = ByteSource.wrap(new byte[] {1, 2, 3, 4});
+Blob blob = blobStore.blobBuilder("blob-name")
+    .payload(payload)
+    .contentLength(payload.size())
     .build();
-
-blobStore.putBlob("mycontainer", blob);
+blobStore.putBlob("container-name", blob);
 {% endhighlight %}
                         </div>
                     </div>
