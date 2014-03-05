@@ -8,15 +8,11 @@
         <div class="container">
             <div class="page-header">
                 <h1>{{ page.title }}</h1>
-                <span class="text-muted">{{ page.date | date_to_long_string }}, by {{ page.author }}</span>
+                {% if page.date %}
+                    <span class="text-muted">{{ page.date | date_to_long_string }}</span>
+                {% endif %}
             </div>
             {{ content }}
-            {% if page.comments %}
-            <div id="comments">
-                <hr/>
-                {% include disqus.html %}
-            </div>
-            {% endif %}
             <div class="row clearfix">
                 <div id="footer" class="col-md-12 column">
                     {% include footer.html %}

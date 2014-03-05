@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: releasenotes
 title: Release Notes Beta 8
 ---
 

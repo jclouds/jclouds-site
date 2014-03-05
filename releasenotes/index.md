@@ -33,8 +33,8 @@ The Release Notes for all jclouds versions released before joining the ASF are l
 * [1.3.1](/releasenotes/1.3) | [Javadoc](http://demobox.github.com/jclouds-maven-site-1.3.1/1.3.1/jclouds-multi/apidocs/)
 * [1.3.0](/releasenotes/1.3) | [Javadoc](http://demobox.github.com/jclouds-maven-site-1.3.0/1.3.0/jclouds-multi/apidocs/)
 * [1.2.2](/releasenotes/1.2.2) | [Javadoc](http://demobox.github.com/jclouds-maven-site-1.2.2/1.2.2/jclouds-multi/apidocs/)
-* [1.2.1](/releasenotes/1.2) | [Javadoc](http://demobox.github.com/jclouds-maven-site-1.2.1/1.2.1/jclouds-multi/apidocs/)
-* [1.2.0](/releasenotes/1.2) | [Javadoc](http://demobox.github.com/jclouds-maven-site-1.2.0/1.2.0/jclouds-multi/apidocs/)
+* [1.2.1](/releasenotes/1.2/) | [Javadoc](http://demobox.github.com/jclouds-maven-site-1.2.1/1.2.1/jclouds-multi/apidocs/)
+* [1.2.0](/releasenotes/1.2/) | [Javadoc](http://demobox.github.com/jclouds-maven-site-1.2.0/1.2.0/jclouds-multi/apidocs/)
 * [1.1.1](/releasenotes/1.1.1) | [Javadoc](http://demobox.github.com/jclouds-maven-site-1.1.1/1.1.1/jclouds-multi/apidocs/)
 * [1.1.0](/releasenotes/1.1.0) | [Javadoc](http://demobox.github.com/jclouds-maven-site-1.1.0/1.1.0/jclouds-multi/apidocs/)
 

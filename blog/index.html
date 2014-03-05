@@ -5,7 +5,7 @@ title: Blog & News
 
 {% for post in paginator.posts %}
 <h3><a class="text-primary" href="{{ post.url }}">{{ post.title }}</a></h3>
-<span class="text-muted">{{ post.date | date: "%-d %B %Y"}}, by {{ post.author }}</span>
+<span class="text-muted">{{ post.date | date_to_long_string }}, by {{ post.author }}</span>
 <p>{{ post.excerpt }}</p>
 {% endfor %}
 
