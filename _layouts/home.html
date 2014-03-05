@@ -36,6 +36,9 @@
                 </div>
             </div>
 
+            {% capture news %}{% include news.md %}{% endcapture %}
+            {{ news | markdownify }}
+
             <div class="section-divider">
                 <span class="text">CLOUDS</span>
             </div>
