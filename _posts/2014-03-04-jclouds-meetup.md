@@ -13,7 +13,7 @@ Last night we held a jclouds meetup at Cloudera offices in San Francisco. It was
 
 I kicked things off with an introduction to jclouds at [0:04 of the meetup](http://www.youtube.com/watch?v=8nuON0zGVJI&t=3m50s). I'll be giving this presentation at ApacheCon on April 7, 2014 and wanted to take this opportunity to practice it in front of a captive audience. You can find my presentation slides at [Introduction to Apache jclouds](http://www.slideshare.net/phymata/introduction-to-apache-jclouds).
 
-Next up was Andrew Gaul from Maginatics with an informative presentation at [0:40 of the meetup](http://www.youtube.com/watch?v=8nuON0zGVJI&t=40m00s) on [Apache jclouds at Maginatics](http://gaul.org/talks/jclouds-at-maginatics/). I personally learned a lot from Andrew's presentation like the wide variety of differences amongst object storage providers. The engineering work that Gaul and the team from Maginatics have done around the BlobStore portable API in jclouds is impressive.
+Next up was Andrew Gaul from Maginatics with an informative presentation at [0:40 of the meetup](http://www.youtube.com/watch?v=8nuON0zGVJI&t=40m00s) on [Apache jclouds at Maginatics](http://www.slideshare.net/Maginatics/apache-jclouds-atmaginatics). I personally learned a lot from Andrew's presentation like the wide variety of differences amongst object storage providers. The engineering work that Gaul and the team from Maginatics have done around the BlobStore portable API in jclouds is impressive.
 
 At [1:09 of the meetup](http://www.youtube.com/watch?v=8nuON0zGVJI&t=69m0s) we made a toast to Ignasi Barrera for his work in kicking off the jclouds website redesign. Thanks Ignasi! And thanks to everyone who helped make it a reality!
 
