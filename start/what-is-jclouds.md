@@ -24,7 +24,7 @@ jclouds offers several API abstractions as Java and Clojure libraries. The most 
 </tr>
 <tr>
     <td><strong>LoadBalancer</strong></td>
-    <td>The Load Balancer abstraction provides a common interface to configure the load balancers in any cloud that supports them. Just define the load balancer and the nodes that should join it, and it will be ready for the action.<</td>
+    <td>The Load Balancer abstraction provides a common interface to configure the load balancers in any cloud that supports them. Just define the load balancer and the nodes that should join it, and it will be ready for the action.</td>
 </tr>
 </tbody>
 </table>
