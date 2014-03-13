@@ -38,7 +38,7 @@ Programming against cloud environments can be challenging. jclouds focuses on th
 <tr>
     <td><span class="glyphicon glyphicon-ok green"></span></td>
     <td><strong>SIMPLE INTERFACE</strong></td>
-    <td>Get started without dealing with REST-like APIs or WebServices.  Instead of creating new object types, jclouds reuses concepts like maps so that the programming model is familiar. </td>
+    <td>Get started without dealing with REST-like APIs or WebServices. Instead of creating new object types, jclouds reuses concepts like maps so that the programming model is familiar. </td>
 </tr>
 <tr>
     <td><span class="glyphicon glyphicon-ok green"></span></td>
@@ -53,12 +53,12 @@ Programming against cloud environments can be challenging. jclouds focuses on th
 <tr>
     <td><span class="glyphicon glyphicon-ok green"></span></td>
     <td><strong>UNIT TESTABILITY</strong></td>
-    <td>Write your unit tests without mocking complexity or the brittleness of remote connections.  Writing tests for cloud endpoints is difficult. jclouds providesyou with Stub connections that simulate a cloud without creating network connections.</td>
+    <td>Write your unit tests without mocking complexity or the brittleness of remote connections. Writing tests for cloud endpoints is difficult. jclouds provides you with Stub connections that simulate a cloud without creating network connections.</td>
 </tr>
 <tr>
     <td><span class="glyphicon glyphicon-ok green"></span></td>
     <td><strong>PERFORMANCE</strong></td>
-    <td>Customize configuration to match your performance needs.  jclouds provides you with asynchronous commands and tunable http, date, encryption, and encryption modules.</td>
+    <td>Customize configuration to match your performance needs. jclouds provides you with asynchronous commands, tunable http, date, and encryption modules.</td>
 </tr>
 <tr>
     <td><span class="glyphicon glyphicon-ok green"></span></td>
