@@ -3,6 +3,8 @@ layout: page
 title: Blog & News
 ---
 
+<p><a href="https://wiki.apache.org/jclouds/How%20to%20Contribute%20Documentation">Write a guest post!</a></p>
+
 {% for post in paginator.posts %}
 <h3><a class="text-primary" href="{{ post.url }}">{{ post.title }}</a></h3>
 <span class="text-muted">{{ post.date | date_to_long_string }}, by {{ post.author }}</span>
