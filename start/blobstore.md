@@ -4,324 +4,282 @@ title: BlobStore Guide
 permalink: /start/blobstore/
 ---
 
-The BlobStore API is a portable means of managing key-value storage providers such as Microsoft Azure Blob Service
-and Amazon S3. It offers both asynchronous and synchronous APIs, as well as Map-based access to your data.
-Our APIs are dramatically simplified from the providers, yet still offer enough sophistication to perform
-most work in a portable manner.
-We also have integrations underway for popular tools such as Apache commons VFS.
+The BlobStore API is a portable means of managing key-value storage providers such as Microsoft
+Azure Blob Service, Amazon S3, or OpenStack Object Storage. It offers a synchronous API to your data.
 
-Like other components in `jclouds`, you always have means to gain access to the provider-specific interface
-if you need functionality that is not available in our abstraction.
+Our APIs are dramatically simplified from the providers, yet still offer enough sophistication to
+perform most work in a portable manner.
 
+Like other components in jclouds, you always have means to gain access to the provider-specific
+interface if you need functionality that is not available in our abstraction.
 
-## Features
-### Location Aware API
+## Features  
+---  
 
-Our location API helps you to portably identify a container within context, such as Americas or Europe.
+### Location Aware
+
+Our location API helps you to portably identify a container within context, such as "Americas" or "Europe".
 
 We use the same model across the [ComputeGuide](/start/compute/) which allows you to facilitate collocation of processing and data.
 
-### Asynchronous API
+### Integration with non-Java Clients
 
-You have a choice of using either synchronous or asynchronous BlobStore API. If you choose to use the Asynchronous API,
-you'll benefit by
-gaining access to the most efficient means to achieve this, regardless of whether it is via threads, non-blocking io,
-or native async clients such as google appengine's async url fetch service.
-
-### Integration with non-java clients
-
-Using our `BlobRequestSigner`, you can portably generate HTTP requests that can be passed to external systems
-for execution or processing.
-Use cases include javascript side-loading and curl-based processing on the bash prompt.  Be creative!
+Using our `BlobRequestSigner`, you can portably generate HTTP requests that can be passed to
+external systems for execution or processing. Use cases include JavaScript client-side loading, and
+curl based processing on the bash prompt. Be creative!
 
 ### Transient Provider
 
-Our in-memory BlobStore allows you to test your storage code without credentials or a credit card!
+Our **_in-memory_** provider allows you to test your storage code without credentials or a credit card!
 
 ### Filesystem Provider
 
-Our file system BlobStore allows you to use the same API when persisting to disk, memory, or a remote BlobStore like Amazon S3.
+Our **_filesystem_** provider allows you to use the same API when persisting to disk, memory, or a
+remote `BlobStore`.
+
 
 ## Supported Providers
+---
+jclouds supports a wide range of blobstore providers that can be used equally in any `BlobStore`.
 
-See [Blobstore API: Supported Providers](/reference/providers/#blobstore) for providers that can be used equally in any Blobstore API tool.
+Please refer to the [Supported BlobStore Providers](/guides/providers/#blobstore-providers) page for
+more information.
 
 
 ## Concepts
-
-The BlobStore API requires knowledge of 3 concepts: service, container, and blob.
-A BlobStore is a key-value store such as Amazon S3, where your account exists, and where you can create containers.
-A container is a namespace for your data, and you can have many of them.
-Inside your container, you store data as a Blob referenced by a name.  In all BlobStores the combination of your account, container,
-and blob relates directly to an HTTPs url.
+---
+A **_blobstore_** is a key-value storage service, such as Amazon S3, where your account exists, and
+where you can create containers and blobs. A **_container_** is a namespace for your data, and you
+can have many of them. Inside your container, you store data as a **_blob_** referenced by a name. In all
+blobstores, the combination of your account, container, and blob relates directly to an HTTP URL.
 
 Here are some key points about blobstores:
 
 * Globally addressable
-* Key, value with metadata
+* Key/value data storage with metadata
 * Accessed via HTTP
-* Containers are provisioned on demand through API calls
+* Provisioned on demand through an API
 * Unlimited scaling
 * Most are billed on a usage basis
 
 ### Container
 
-A container is a namespace for your objects.  Depending on the service, the scope can be global, account, or sub-account scoped.
-For example, in Amazon S3, containers are called buckets, and they must be uniquely named such that no-one else in
- the world conflicts.  In other blobstores, the naming convention of the container is less strict.
-All blobstores allow you to list your containers and also the contents within them.  These contents can
-either be blobs, folders, or virtual paths.
+A **_container_** is a namespace for your objects.
 
-Everything in a BlobStore is stored in a container.  A container is like a website.  So, if my container name is adrian,
-it will be created in an http accessible way.
-For example, if I'm using Amazon S3, a container looks like this: `http://adrian.s3.amazonaws.com`.
-If I store my photo with a key "mymug.jpg," you can guess it will end up here: `http://adrian.s3.amazonaws.com/mymug.jpg`
+Depending on the service, the scope can be **_global_**, **_region_**, **_account_**, or **_sub-account_**
+scoped. For example, in Amazon S3, containers are called **_buckets_**, and they must be uniquely named such
+that no-one else in the world conflicts.
+
+Everything in a BlobStore is stored in a **_container_**, which is an HTTP accessible location
+(similar to a website) referenced by a URL.
+
+For example, using Amazon S3, creating a container named `jclouds` would be referenced as
+`http://jclouds.s3.amazonaws.com`.  Storing a photo with the key `mymug.jpg`, will be accessible
+through `http://jclouds.s3.amazonaws.com/mymug.jpg`
+
+In other blobstores, the naming convention of the container is less strict. All blobstores allow you
+to list your containers and also the contents within them. These contents can either be **_blobs_**,
+**_folders_**, or a **_virtual path_**.
 
 ### Blob
 
-A blob is unstructured data that is stored in a container.
-Some blobstores call them objects, blobs, or files.  You lookup blobs in a container by a text key, which often relates
-directly to the HTTP url used to manipulate it.  Blobs can be zero length or larger, some restricting size to 5GB,
-and others not restricting at all.
+A **_blob_** is unstructured data that is stored in a container.
 
-Finally, blobs can have metadata in the form of text key-value pairs you can store alongside the data.
-When a blob is in a folder, its name is relative to that folder.  Otherwise, it is its full path.
+Some blobstores refer to them as **_objects_**, **_blobs_**, or **_files_**.  You access a blob in a
+container by a text key, which often relates directly to the HTTP URL used to manipulate it.  Blobs
+can be zero length or larger, with some providers limiting blobs to a maximum size, and others not
+restricting at all.
+
+Finally, blobs can have metadata in the form of text key-value pairs you can store alongside the
+data. When a blob is container in a folder, its name is either relative to that folder, or its full
+path.
 
 ### Folder
 
-A folder is a subcontainer.  It can contain blobs or other folders.  The names of items in a folder are `basenames`.
-Blob names incorporate folders via "/" - just like you would with a "regular" file system.
+A **_folder_** is a subcontainer and can contain blobs or other folders.
+
+The names of items in a folder are `basenames`. Blob names incorporate folders via a path separator
+`"/"` and is similar to accessing a file in a typical filesystem.
 
 ### Virtual Path
 
-A virtual path can either be a marker file or a prefix.  In either case, they are purely used to
-give the appearance of a hierarchical structure in a flat BlobStore.
-When you perform a list at a virtual path, the blob names returned are absolute paths.
+A **_virtual path_** can either be a marker file or a prefix.
+
+In either case, they are purely used to give the appearance of a hierarchical structure in a flat
+blobstore. When you perform a list at a virtual path, the blob names returned are absolute paths.
 
 ### Access Control
 
-By default, every item you put into a container is private, if you are interested in giving access to others,
-you will have to explicitly configure that.
+By default, every item you put into a container is _private_, if you are interested in giving access
+to others, you will have to explicitly configure that. Exposing public containers is provider-specific.
 
-Currently, means to expose your containers to the public are provider-specific.
+### Limitations
 
-### limitations
-Each blobstore has its own limitations.
+Each blobstore has its own limitations. Please see the provider guides for blobstore-specific 
+limitations and tips.
 
-  * *S3* According to Amazon, it is better to create or delete buckets in a separate initialization or setup routine that you run less often.
-  	You are also only allowed 100 buckets per account, so be parsimonious (frugal).
-  * *Azure* You have to wait 30 seconds before recreating a container with the same name.
-  * _Azure_ currently supports max 64MB files, google storage has a very large limit,
-  * Amazon S3 introduced a multipart upload possibility which allow files until 5TB size.
-  * _S3_ and _Rackspace_ CloudFiles have a 5GB limit.  We've engineered jclouds to not put further limits on blob size.
-
-
-## Using BlobStore API
+## Usage
+---
 
 ### Connecting to a BlobStore
 
-A connection to a `BlobStore` like S3 in jclouds is called a `BlobStoreContext`. It should be reused for multiple requests and is thread-safe.
-An `BlobStoreContext` associates an identity on a provider to a set of network connections.
-At a minimum, you need to specify your identity (in the case of S3, AWS Access Key ID) and a credential (in S3, your Secret Access Key).
-Once you have your credentials, connecting to your `BlobStore` service is easy:
+A connection to a `BlobStore` in jclouds is called a `BlobStoreContext`. It is thread-safe and
+should be reused for multiple requests to the service.
+
+A `BlobStoreContext` associates an identity for a provider to a set of network connections.
+
+At a minimum, you need to specify an _identity_ and _credential_ when creating a `BlobStoreContext`.
+In the case of Amazon S3, your identity is the **Access Key ID** and credential is the **Secret
+Access Key**.
+
+Once you have this information, connecting to your `BlobStore` service is easy:
+
 
 {% highlight java %}
 BlobStoreContext context = ContextBuilder.newBuilder("aws-s3")
-                 .credentials(identity, credential)
-                 .buildView(BlobStoreContext.class);
+                  .credentials(identity, credential)
+                  .buildView(BlobStoreContext.class);
 {% endhighlight %}
 
-This will give you a connection to the BlobStore, and if it is remote, it will be SSL unless unsupported by
-the provider.  Everything you access from this context will use the same credentials and potentially the same objects.
+This will give you a connection to the blobstore, and if it is remote, it will be SSL unless
+unsupported by the provider. Everything you access from this context will use the same credentials.
 
 ### Disconnecting
 
-When you are finished with a context, you should close it using close method:
+When you are finished with a `BlobStoreContext`, you should close it accordingly:
 
 {% highlight java %}
 context.close();
 {% endhighlight %}
 
-There are many options available for creating contexts.  Please see the Javadoc for
-[ContextBuilder](http://demobox.github.com/jclouds-maven-site-1.5.5/1.5.5/jclouds-multi/apidocs/org/jclouds/ContextBuilder.html)
-for detailed description.
+There are many options available for creating a `Context`.  Please see the
+[ContextBuilder](http://javadocs.jclouds.cloudbees.net/org/jclouds/ContextBuilder.html) Javadocs for
+a detailed description.
 
-### APIs
 
-You can choose from two APIs: BlobStore and AsyncBlobStore.
-
-#### BlobStore (Synchronous)
+### BlobStore API
 <!-- TODO The difference between BlobStore/Introduction -->
 
-Here is an example of the `BlobStore` interface.
+Here is an example of the synchronous `BlobStore` interface:
 
 {% highlight java %}
-// init
+// Initialize the BlobStoreContext
 context = ContextBuilder.newBuilder("aws-s3")
-                 .credentials(accesskeyid, secretaccesskey)
-                 .buildView(BlobStoreContext.class);
+             .credentials(accesskeyid, secretaccesskey)
+             .buildView(BlobStoreContext.class);
 
+// Access the BlobStore
 blobStore = context.getBlobStore();
 
-// create container
+// Create a Container
 blobStore.createContainerInLocation(null, "mycontainer");
 
-// add blob
+// Create a Blob
 ByteSource payload = ByteSource.wrap("blob-content".getBytes(Charsets.UTF_8));
-blob = blobStore.blobBuilder("test")  // you can use folders via blobBuilder(folderName + "/sushi.jpg")
+blob = blobStore.blobBuilder("test") // you can use folders via blobBuilder(folderName + "/sushi.jpg")
     .payload(payload)
-    .contentLength(payload.size)
+    .contentLength(payload.size())
     .build();
+
+// Upload the Blob
 blobStore.putBlob(containerName, blob);
+
+// Don't forget to close the context when you're done!
+context.close()
 {% endhighlight %}
 
-##### Creating a Container
-If you don't already have a container, you will need to create one.  First, get a BlobStore from your context:
+#### Creating a Container  
+If you don't already have a container, you will need to create one.
+
+First, get a `BlobStore` from your context:
 
 {% highlight java %}
 BlobStore blobstore = context.getBlobStore();
 {% endhighlight %}
 
-`Location` is a region, provider or another scope in which a container can be created to ensure data locality.
-If you don't have a location concern, pass `null` to accept the default.
+Location is a region, provider, or another scope in which a container can be created to ensure data
+locality. If you don't have a location concern, pass `null` to accept the default.
 
 {% highlight java %}
 boolean created = blobStore.createContainerInLocation(null, container);
 if (created) {
-	// the container didn't exist, but does now
+   // the container didn't exist, but does now
 } else {
- 	// the container already existed
+   // the container already existed
 }
-
 {% endhighlight %}
 
-#### AsyncBlobStore
+### Multipart Upload
 
-`AsyncBlobStore` is the third and most powerful way to interact with a BlobStore. The API are asynchronous even
-if the engine you choose is not asynchronous.
-`AsyncBlobStore` has the same methods as the `BlobStore`, but all commands return `java.util.concurrent.Future` results.
-Using `AsyncBlobStore` you can perform a lot of commands simultaneously, such as aggregating hundreds of blobs for processing.
-You can also attach listeners to the result, so that you can do things like publish to a message queue when an operation completes.
-
-Here's an example of uploading tons of blobs at the same time:
-
-{% highlight java %}
-import static org.jclouds.concurrent.FutureIterables.awaitCompletion;
-
-Map<Blob, Future<?>> responses = Maps.newHashMap();
-for (Blob blob : blobs) {
-   responses.put(blob, context.getAsyncBlobStore().putBlob(containerName, blob));
-}
-exceptions = awaitCompletion(responses,
-      context.utils().userExecutor(),
-      maxTime,
-      logger,
-      String.format("putting into containerName: %s", containerName));
-{% endhighlight %}
-
-
-### Multipart upload
-
-Providers may implement multipart upload for large or very files.
-Here's an example of `multipart upload` using aws-s3 provider, which [allow uploading files large as 5TB.](http://docs.amazonwebservices.com/AmazonS3/latest/dev/index.html?qfacts.html)
+Providers may implement multipart upload for large or very large files. Here's an example of multipart
+upload, using `aws-s3` provider, which allows [uploading files as large as
+5TB](http://docs.amazonwebservices.com/AmazonS3/latest/dev/index.html?qfacts.html).
 
 {% highlight java %}
 import static org.jclouds.blobstore.options.PutOptions.Builder.multipart;
 
-  // init
-  context = ContextBuilder.newBuilder("aws-s3")
+// Initialize the BlobStoreContext
+context = ContextBuilder.newBuilder("aws-s3")
                  .credentials(accesskeyid, secretaccesskey)
                  .buildView(BlobStoreContext.class);
-  AsyncBlobStore blobStore = context.getAsyncBlobStore();
 
-  // create container
-  blobStore.createContainerInLocation(null, "mycontainer");
+// Access the BlobStore
+BlobStore blobStore = context.getBlobStore();
 
-  // Add a Blob
-  ByteSource payload = Files.asByteSource(new File(fileName));
-  Blob blob = blobStore.blobBuilder(objectName)
-      .payload(payload)
-      .contentDisposition(objectName)
-      .contentLength(payload.size())
-      .contentType(MediaType.OCTET_STREAM.toString())
-      .build();
-  // Upload a file
-  ListenableFuture<String> futureETag = blobStore.putBlob(containerName, blob, multipart());
+// Create a Container
+blobStore.createContainerInLocation(null, "mycontainer");
 
-  // asynchronously wait for the upload
-  String eTag = futureETag.get();
+// Create a Blob
+ByteSource payload = Files.asByteSource(new File(fileName));
+Blob blob = blobStore.blobBuilder(objectName)
+    .payload(payload)
+    .contentDisposition(objectName)
+    .contentLength(payload.size())
+    .contentType(MediaType.OCTET_STREAM.toString())
+    .build();
+
+// Upload the Blob 
+String eTag = blobStore.putBlob(containerName, blob, multipart());
+
+// Don't forget to close the context when you're done!
+context.close()
 {% endhighlight %}
 
 ### Logging
 
-You can now see status of aggregate blobstore commands by enabling at least DEBUG on the log category: "jclouds.blobstore".
+Please refer to the [logging](http://jclouds.apache.org/reference/logging/) page for more information
+on how to configure logging in jclouds.
 
-Here is example output:
-{% highlight text %}
-2010-01-31 14:41:14,921 TRACE [jclouds.blobstore] (pool-4-thread-4) deleting from containerName: adriancole-blobstore2,
-completed: 5001/5001, errors: 0, rate: 14ms/op
-{% endhighlight %}
 
-If you are using the Log4JLoggingModule, here is an example log4j.xml stanza you can use to enable blobstore logging:
+# Clojure  
+---  
 
-{% highlight xml %}
-   <appender name="BLOBSTOREFILE" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="File" value="logs/jclouds-blobstore.log" />
-        <param name="Append" value="true" />
-        <param name="DatePattern" value="'.'yyyy-MM-dd" />
-        <param name="Threshold" value="TRACE" />
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%d %-5p [%c] (%t) %m%n" />
-        </layout>
-    </appender>
-
-    <appender name="ASYNCBLOBSTORE" class="org.apache.log4j.AsyncAppender">
-        <appender-ref ref="BLOBSTOREFILE" />
-    </appender>
-
-   <category name="jclouds.blobstore">
-        <priority value="TRACE" />
-        <appender-ref ref="ASYNCBLOBSTORE" />
-    </category>
-{% endhighlight %}
-
-# Clojure
-
-The above examples show how to use the `BlobStore` API in Java. You can also use the API in Clojure.
+<!-- TODO: update this to latest clojure -->
+The above examples show how to use the `BlobStore` API in Java. The same API can be used from Clojure!
 
 ## Setup
-
-  * Install [leiningen](http://github.com/technomancy/leiningen)
-  * `lein new mygroup/myproject`
-  * `cd myproject`
-  * `vi project.clj`
-  * for jclouds 1.1 and earlier (clojure 1.2 only)
+  * Install [leiningen](http://leiningen.org/)
+  * Execute `lein new mygroup/myproject`
+   
+In the `myproject` directory, edit the `project.clj` to include the following:
 
 {% highlight clojure %}
 (defproject mygroup/myproject "1.0.0"
-  :description "FIXME: write"
-  :dependencies [[org.clojure/clojure "1.2.0"]
-                 [org.clojure/clojure-contrib "1.2.0"]
-		 [org.jclouds/jclouds-allblobstore "1.1.0"]])
-{% endhighlight %}
-
-    * for jclouds 1.2 / snapshot (clojure 1.2 and 1.3)
-{% highlight clojure %}
-(defproject mygroup/myproject "1.0.0"
-  :description "FIXME: write"
+  :description "FIXME: write description"
   :dependencies [[org.clojure/clojure "1.3.0"]
                  [org.clojure/core.incubator "0.1.0"]
                  [org.clojure/tools.logging "0.2.3"]
-                 [org.jclouds/jclouds-allcompute "1.2.0-SNAPSHOT"]]
-  :repositories {"jclouds-snapshot" "https://oss.sonatype.org/content/repositories/snapshots"})
+                 [org.apache.jclouds/jclouds-allcompute "1.7.1"]]
+  :repositories {"apache-snapshots" "https://repository.apache.org/content/repositories/snapshots"})
 {% endhighlight %}
 
-  * Execute `lein deps`
+Execute `lein deps` to download the specified dependencies.
+
 
 ## Usage
 
-Execute `lein repl` to get a repl, then paste the following or write your own code.
-Clearly, you need to substitute your accounts and keys below.
+Execute `lein repl` to get a repl, then paste the following or write your own code. Clearly, you
+need to substitute your accounts and keys below.
 
 {% highlight clojure %}
 (use 'org.jclouds.blobstore2)
@@ -330,59 +288,88 @@ Clearly, you need to substitute your accounts and keys below.
 (create-container *blobstore* "mycontainer")
 (put-blob *blobstore* "mycontainer" (blob "test" :payload "testdata"))
 {% endhighlight %}
+  
 
 # Advanced Concepts
+---
 
 This section covers advanced topics typically needed by developers of clouds.
 
-## Signing requests
+## Signing Requests
 
-### java example
+### Java Example
 {% highlight java %}
 
-HttpRequest request = context.getSigner().
-                              signGetBlob("adriansmovies",
-                                          "sushi.avi");
-{% endhighlight %}
-### clojure example
+HttpRequest request = context.getSigner().signGetBlob("adriansmovies", "sushi.avi");
+{% endhighlight%}
 
+### Clojure Example
 {% highlight clojure %}
-(let [request (sign-blob-request "adriansmovies"
-                                 "sushi.avi" {:method :get})])
+
+(let [request (sign-blob-request "adriansmovies" "sushi.avi" {:method :get})])
 
 {% endhighlight %}
 
-## Configure multipart upload strategies ==
-There are two `MultipartUploadStrategy` implementations: `SequentialMultipartUploadStrategy` and `ParallelMultipartUploadStrategy`.
-Default strategy is the `ParallelMultipartUploadStrategy`. With parallel strategy the number of threads running in parallel can be configured using `jclouds.mpu.parallel.degree` property, the default value is 4.
+## Multipart Upload Strategies
 
-# Design
-<!-- TODO -->
+There are two multipart upload implementations of that jclouds employs for uploading objects to a
+BlobStore service. Amazon S3 and OpenStack Swift both support these strategies.
 
-## Marker Files
+###_ParallelMultipartUploadStrategy_
+By default, jclouds uses a parallel upload strategy that will split an object up in to individual
+parts and upload them in parallel to the BlobStore. There are two configurable properties for this strategy:
 
-Marker Files allow you to establish presence of directories in a flat key-value store.
-Azure, S3, and Rackspace all use pseudo-directories, but in a different ways.  For example, some tools look for a
-content type "application/directory", while others look for naming patterns such as a trailing slash or the suffix `_$folder$`.
+  `jclouds.mpu.parallel.degree` the number of threads (default is 4)
+  `jclouds.mpu.parts.size` the size of a part (default is 32MB)
 
-In jclouds, we attempt to detect whether a blob is pretending to be a directory, and if so, type it as StorageType.RELATIVE_PATH.
-Then, in a `list()` command, it will appear as a normal directory.   The two objects responsible for this
-are `IfDirectoryReturnNameStrategy` and `MkdirStrategy`.
+###_SequentialMultipartUploadStrategy_
+Similar to the parallel strategy, the sequential strategy will split an object up into parts and upload
+them to the BlobStore sequentially.
 
-There is a problem with this approach, there are multiple ways to suggest presence of a directory.  For example, it is
-entirely possible that both the trailing slash and _$folder$ suffixes exist.  For this reason, a simple remove,
-or `rmDir` will not work, as may be the case that there are multiple tokens relating to the same directory.
+## Large Lists
 
-For this reason, we have a `DeleteDirectoryStrategy` strategy.  The default version of this used
-for flat trees removes all known deviations of directory markers.
+A listing is a set of metadata about items in a _container_.  It is normally associated with a
+single GET request against your container.
 
-## Content Metadata : Content Disposition
+Large lists are those who exceed the default or maximum list size of the blob store.  In S3, Azure,
+and Swift, this is 1000, 5000, and 10000 respectively.  Upon hitting this threshold, you need to
+continue the list in another HTTP request.
 
-You may be using jclouds to upload some photos to the cloud, show thumbnails of them to the user
-via a website and allow to download the original image.  When the user clicks on the thumbnail,
-a the download dialog appears.  To control the name of the file in the "save as" dialog,
-you must set [Content Disposition](http://www.jtricks.com/bits/content_disposition.html).  Here's how you can do
-it with BlobStore API:
+For continued iteration of large lists, the BlobStore `list()` API returns a `PageSet` that allows
+to access the next marker identifier. The `getNextMarker()` method will either return the next
+marker, or `null` if the page size is less than the maximum.
+
+The marker object can then be used as input to `afterMarker` in the `ListContainerOptions` class.
+
+
+### Marker Files
+
+Marker files allow you to establish presence of directories in a flat key-value store. Azure, S3,
+and OpenStack Swift all use pseudo-directories, but in a different ways.  For example, some tools
+look for a content type of `application/directory`, while others look for naming patterns such as a
+trailing slash `/` or the suffix `_$folder$`.
+
+In jclouds, we attempt to detect whether a blob is pretending to be a directory, and if so, type it
+as `StorageType.RELATIVE_PATH`. Then, in a `list()` command, it will appear as a normal directory.
+The two strategies responsible for this are `IfDirectoryReturnNameStrategy` and `MkdirStrategy`.
+
+The challenge with this approach is that  there are multiple ways to suggest presence of a
+directory. For example, it is entirely possible that _both_ the trailing slash `/` and `_$folder$`
+suffixes exist. For this reason, a simple remove, or `rmdir` will not work, as it may be the case that
+there are multiple tokens relating to the same directory.
+
+For this reason, we have a `DeleteDirectoryStrategy` strategy. The default version of this used for
+flat trees removes all known types of directory markers.
+
+## Content Disposition
+
+You may be using jclouds to upload some photos to the cloud, show thumbnails of them to the user via
+a website, and allow to download the original image.
+
+When the user clicks on the thumbnail, a download dialog appears. To control the name of the file in
+the "Save As" dialog, you must set [Content
+Disposition](http://www.iana.org/assignments/cont-disp/cont-disp.xhtml).  Here's how you can do it with
+the BlobStore API:
 
 {% highlight java %}
 ByteSource payload = Files.asByteSource(new File("sushi.jpg"));
@@ -395,49 +382,29 @@ Blob blob = context.getBlobStore().blobBuilder("sushi.jpg")
     .build();
 {% endhighlight %}
 
-
-## Large Lists
-
-A listing is a set of metadata about items in a container.  It is normally associated with a single GET request
-against your container.
-
-Large lists are those who exceed the default or maximum list size of the blob store.  In S3, Azure, and
-Rackspace, this is 1000, 5000, and 10000 respectively.  Upon hitting this threshold, you need to continue the
-list in another HTTP request.
-
-In the new `BlobStore` API, list responses return a `PageSet` object.
-
-A `PageSet` object is the same as a normal `Set`, except that it has a new method
-
-{% highlight java %}
-String getNextMarker();
-{% endhighlight %}
-
-If this returns `null`, you have the entire listing.  If not, you can choose to continue iterating the list by
-specifying the `ListContainerOption`
-`afterMarker` to this value.
-
-Our Map API knows how to concatenate lists via the `ListMetadataStrategy` object.
-
 ## Return Null on Not Found
 
-All APIs, provider-specific or abstraction, must return null when an object is requested, but not found.
-Throwing exceptions is only appropriate when there is a state problem, for example requesting an object from a container
-that does not exist is a state problem, and should throw an exception.
+All APIs, provider-specific or abstraction, must return null when an object is requested, but not
+found. Throwing exceptions is only appropriate when there is a state problem. For example, requesting
+an object from a container that does not exist is a state problem, and should throw an exception.
 
-## Uploading Large Files
+## Large File Support
+<!--update to use ByteSource -->
 
-As long as you use either `InputStream` or File as the payload your blob, you should be fine.
-Note that in S3, you must calculate the length ahead of time, since it doesn't support chunked encoding.
-Our integration tests ensure that we don't rebuffer in memory on upload:
-[testUploadBigFile](http://github.com/jclouds/jclouds/blob/master/core/src/test/java/org/jclouds/http/BaseHttpCommandExecutorServiceIntegrationTest.java).
+### Uploading 
+As long as you use either `InputStream` or `File` as the payload for your blob, you should
+be fine. Note that in S3, you must calculate the length ahead of time, since it doesn't support
+chunked encoding.
 
-This is verified against all of our http clients, conceding that it isn't going to help limited environments such as
-google app engine.
+Our integration tests ensure that we don't rebuffer in memory on upload: 
+[testUploadBigFile](http://github.com/jclouds/jclouds/blob/master/core/src/test/java/org/jclouds/http/BaseHtt
+pCommandExecutorServiceIntegrationTest.java).
 
-## Downloading Large Files
+This is verified against all of our HTTP clients, conceding that it isn't going to help limited
+environments such as Google App Engine.
 
-A blob you've downloaded via `blobstore.getBlob()` can be accessed via `blob.getPayload().getInput()` or
-`blob.getPayload().writeTo(outputStream)`.  Since these are streaming, you shouldn't have a problem with memory
-unless you rebuffer it.
+### Downloading
 
+A blob you've downloaded via `blobstore.getBlob()` can be accessed via
+`blob.getPayload().getInput()` or `blob.getPayload().writeTo(outputStream)`.  Since these are
+streaming, you shouldn't have a problem with memory unless you rebuffer the payload.

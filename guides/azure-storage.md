@@ -36,7 +36,7 @@ context.createInputStreamMap(bucket).put("blob.txt", inputStream);
 AzureBlobClient client = AzureBlobClient.class.cast(context.getProviderSpecificContext().getApi());
 
 // create a root-level container with a public acl
-client.createRootContainer(withPublicAc());
+client.createRootContainer(withPublicAcl());
 
 context.close();
 {% endhighlight %}

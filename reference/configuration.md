@@ -45,7 +45,6 @@ Aggregate commands will take as long as necessary to complete, as controlled by 
 
 ## *NULL* Return values
 
-All API methods, either provider-specific or abstracti, must return _null_ when an requested object is not found.
-Throwing exceptions is only appropriate when there is a state problem, for example requesting an object from a container that does not
-exist is a state problem, and should throw an exception.
+All API methods, either provider or API specific, must return _null_ when a requested object is not found.
+Throwing exceptions is only appropriate when there is a state problem. For example, when requesting an object from a container that does not exist.
 
