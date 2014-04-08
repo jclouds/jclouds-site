@@ -41,7 +41,7 @@ Likewise you can go to the [Rackspace Cloud (UK)](https://buyonline.rackspace.co
     * `mkdir jclouds`
     * `cd jclouds`
 1. Make a local copy of this [pom.xml](https://github.com/jclouds/jclouds-examples/blob/master/rackspace/pom.xml) file in the jclouds directory.
-    * mvn dependency:copy-dependencies "-DoutputDirectory=./lib"
+    * `mvn dependency:copy-dependencies "-DoutputDirectory=./lib"`
 1. You should now have a directory with the following structure:
     * `jclouds/`
         * `pom.xml`
