@@ -18,7 +18,7 @@ The following is the list of providers that are supported by the jclouds API.
 ## <a id="compute"></a>ComputeService
 ### <a id="compute-providers"></a>Providers
 
-The Maven Group ID for all supported providers below is [org.apache.jclouds.provider](http://search.maven.org/#search%7Cga%7C1%7Corg.apache.jclouds.provider)
+The Maven Group ID for all supported providers below is [org.apache.jclouds.provider](http://search.maven.org/#search%7Cga%7C1%7Corg.apache.jclouds.provider). Providers in labs (denoted by \*) are under [org.apache.jclouds.labs](http://search.maven.org/#search%7Cga%7C1%7Corg.apache.jclouds.labs).
 
 <table class="table table-striped table-hover">
     <thead>
@@ -55,7 +55,7 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
             <td>US-DC</td>
         </tr>
         <tr>
-            <td>DigitalOcean</td>
+            <td>DigitalOcean*</td>
             <td>digitalocean</td>
             <td></td>
         </tr>
@@ -83,6 +83,11 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
             <td><a href="/guides/go-grid/">GoGrid</a></td>
             <td>gogrid</td>
             <td>US-CA,US-VA</td>
+        </tr>
+        <tr>
+            <td>Google Compute Engine*</td>
+            <td>google-compute-engine</td>
+            <td></td>
         </tr>
         <tr>
             <td>Green House Data</td>
@@ -146,7 +151,7 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
 
 You can also set the context property `[Artifact ID].endpoint` to use the following APIs for your private cloud.
 
-The Maven Group ID for all supported APIs below is [org.apache.jclouds.api](http://search.maven.org/#search%7Cga%7C1%7Corg.apache.jclouds.api)
+The Maven Group ID for all supported APIs below is [org.apache.jclouds.api](http://search.maven.org/#search%7Cga%7C1%7Corg.apache.jclouds.api). Providers in labs (denoted by \*) are under [org.apache.jclouds.labs](http://search.maven.org/#search%7Cga%7C1%7Corg.apache.jclouds.labs).
 
 <table class="table table-striped table-hover">
     <thead>
@@ -157,7 +162,7 @@ The Maven Group ID for all supported APIs below is [org.apache.jclouds.api](http
     </thead>
     <tbody>
         <tr>
-            <td><a href="/guides/abiquo/">Abiquo</a></td>
+            <td><a href="/guides/abiquo/">Abiquo</a>*</td>
             <td>abiquo</td>
         </tr>
         <tr>
@@ -195,7 +200,7 @@ The Maven Group ID for all supported APIs below is [org.apache.jclouds.api](http
 ## <a id="blobstore"></a>BlobStore
 ### <a id="blobstore-providers"></a>Providers
 
-The Maven Group ID for all supported providers below is [org.apache.jclouds.provider](http://search.maven.org/#search%7Cga%7C1%7Corg.apache.jclouds.provider)
+The Maven Group ID for all supported providers below is [org.apache.jclouds.provider](http://search.maven.org/#search%7Cga%7C1%7Corg.apache.jclouds.provider). Providers in labs (denoted by \*) are under [org.apache.jclouds.labs](http://search.maven.org/#search%7Cga%7C1%7Corg.apache.jclouds.labs).
 
 <table class="table table-striped table-hover">
     <thead>
@@ -240,7 +245,7 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
 
 You can also set the context property `[Artifact ID].endpoint` to use the following APIs for your private cloud.
 
-The Maven Group ID for all supported APIs below is [org.apache.jclouds.api](http://search.maven.org/#search%7Cga%7C1%7Corg.apache.jclouds.api)
+The Maven Group ID for all supported APIs below is [org.apache.jclouds.api](http://search.maven.org/#search%7Cga%7C1%7Corg.apache.jclouds.api). Providers in labs (denoted by \*) are under [org.apache.jclouds.labs](http://search.maven.org/#search%7Cga%7C1%7Corg.apache.jclouds.labs).
 
 <table class="table table-striped table-hover">
     <thead>
@@ -276,7 +281,7 @@ The Maven Group ID for all supported APIs below is [org.apache.jclouds.api](http
 ## <a id="loadbalancer"></a>LoadBalancer (Beta)
 ### <a id="loadbalancer-providers"></a>Providers
 
-The Maven Group ID for all supported providers below is [org.apache.jclouds.provider](http://search.maven.org/#search%7Cga%7C1%7Corg.apache.jclouds.provider) and [org.apache.jclouds.labs](http://search.maven.org/#search%7Cga%7C1%7Corg.apache.jclouds.labs).
+The Maven Group ID for all supported providers below is [org.apache.jclouds.provider](http://search.maven.org/#search%7Cga%7C1%7Corg.apache.jclouds.provider). Providers in labs (denoted by \*) are under [org.apache.jclouds.labs](http://search.maven.org/#search%7Cga%7C1%7Corg.apache.jclouds.labs).
 
 <table class="table table-striped table-hover">
     <thead>
@@ -287,7 +292,7 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
     </thead>
     <tbody>
         <tr>
-            <td><a href="/guides/aws/">AWS Elastic Load Balancer</a></td>
+            <td><a href="/guides/aws/">AWS Elastic Load Balancer</a>*</td>
             <td>aws-elb</td>
         </tr>
         <tr>
