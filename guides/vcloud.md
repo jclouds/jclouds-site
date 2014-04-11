@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "VMWare vCloud: Getting Started Guide"
+permalink: /guides/vcloud/
 ---
 
 jclouds currently supports most of the VMware vCloud API. We also provide tools that make developing to it easier.
@@ -13,13 +14,13 @@ Here are the providers of the VMware vCloud API and the level of support in jclo
 |-----------|------------|-----------------------|--------------------------|
 | <img src="http://www.vmware.com/files/images/vam/img-terremark.gif"> | [vCloud Express](http://vcloudexpress.terremark.com/blog.aspx) | trmk-vcloudexpress | 0.8a-ext1.6 |
 | <img src="http://www.vmware.com/files/images/vam/img-terremark.gif">| [Enterprise Cloud](http://www.terremark.com/services/cloudcomputing/theenterprisecloud.aspx) | trmk-ecloud | 0.8b-ext2.3 |
-| <img src="http://www.vmware.com/files/images/vam/img-bluelock.gif"> | [vCloud Enterprise](http://www.bluelock.com/bluelock-cloud-hosting/virtual-cloud-enterprise/)| bluelock-vcdirector | 1.0 | 
+| <img src="http://www.vmware.com/files/images/vam/img-bluelock.gif"> | [vCloud Enterprise](http://www.bluelock.com/bluelock-cloud-hosting/virtual-cloud-enterprise/)| bluelock-vcdirector | 1.0 |
 | <a href="http://www.stratogen.net/products/vmware-hosting.html"><img src="http://www.stratogen.net/images/footerlogo.gif"></a> | [VMware Hosting](http://www.stratogen.net/products/vmware-hosting.html)| stratogen-vcloud-mycloud | 1.0 |
 
 ## Obtaining a context to vCloud
 
-Once you have jclouds libraries loaded, the easiest way to get started is to use the 
-`*ContextBuilder`.  This takes your username and password and gives you a context 
+Once you have jclouds libraries loaded, the easiest way to get started is to use the
+`*ContextBuilder`.  This takes your username and password and gives you a context
 to either get a portable cloud computing interface (`getComputeService()` ), or the direct vCloud API ( `getProviderContext().getApi()` ).
 
 * Getting a context to connect to Terremark vCloud Express:
@@ -31,7 +32,7 @@ ComputeServiceContext context = ContextBuilder.newBuilder("trmk-vcloudexpress")
                       .modules(ImmutableSet.<Module> of(new Log4JLoggingModule(),
                                                         new SshjSshClientModule()))
                       .buildView(ComputeServiceContext.class);
- 
+
 // use context to obtain vcloud objects with terremark vCloud express extensions
 RestContext<TerremarkVCloudExpressClient, TerremarkVCloudExpressAsyncClient>  providerContext = context.getProviderContext();
 
@@ -67,18 +68,18 @@ RestContext<VCloudClient, VCloudAsyncClient> providerContext = context.getProvid
 
 {% endhighlight %}
 
-* Here's an example of getting a context to StratoGen vCloud Director                                                                                                      
+* Here's an example of getting a context to StratoGen vCloud Director
 
-{% highlight java %}                                                                                                                                                                      
-      // add the ssh module, if you are using ComputeService, otherwise leave it out                                                                                     
+{% highlight java %}
+      // add the ssh module, if you are using ComputeService, otherwise leave it out
       ComputeServiceContext context = ContextBuilder.newBuilder("stratogen-vcloud-mycloud")
                       .credentials(user, password)
                       .modules(ImmutableSet.<Module> of(new Log4JLoggingModule(),
                                                         new SshjSshClientModule()))
                       .buildView(ComputeServiceContext.class);
-                                                                                                                                                                         
-      RestContext<VCloudClient, VCloudAsyncClient> providerContext = context.getProviderContext();                                                                       
-{% endhighlight %}                                                                                                                                                                  
+
+      RestContext<VCloudClient, VCloudAsyncClient> providerContext = context.getProviderContext();
+{% endhighlight %}
 
 
 * Getting a context to any portable version 1.0 vCloud:
@@ -99,9 +100,9 @@ RestContext<VCloudClient, VCloudAsyncClient> providerContext = context.getProvid
 {% endhighlight %}
 
 
-## Portability 
+## Portability
 
-All vClouds (Express or Director) extend the same interfaces `CommonVCloudClient` and 
+All vClouds (Express or Director) extend the same interfaces `CommonVCloudClient` and
 `CommonVCloudAsyncClient`  You can always use this in place of the vendor-specific interface.
 
 {% highlight text %}
@@ -109,7 +110,7 @@ All vClouds (Express or Director) extend the same interfaces `CommonVCloudClient
 CommonVCloudClient client = context.getApi()
 {% endhighlight %}
 
-If you are interacting with Terremark, you can cast to `VCloudExpressClient` and `VCloudExpressAsyncClient` 
+If you are interacting with Terremark, you can cast to `VCloudExpressClient` and `VCloudExpressAsyncClient`
 to use the common features between eCloud and vCloud Express.
 
 ### Locating a vApp template to instantiate
@@ -120,12 +121,12 @@ In order to instantiate a vApp template, you must first find one.  Here's how to
 // lookup the item holding the vAppTemplate you wish to deploy by name
 // note that if you don't specify a parameter for org and catalog, jclouds will search the default catalog
 CatalogItem item = client.findCatalogItemInOrgCatalogNamed(null, null, "Ubuntu JeOS 9.04 (32-bit)");
-     
+
 // note that the href of the catalog item isn't necessarily the same as the actual template
-// always get the "real" template from the catalog item's entity 
+// always get the "real" template from the catalog item's entity
 VAppTemplate vAppTemplate = client.getVAppTemplate(item.getEntity().getHref());
 
-// note that vcloud 0.8 vApp template is not compatible with 1.0.  
+// note that vcloud 0.8 vApp template is not compatible with 1.0.
 // Use VCloudExpressVAppTemplate in that case
 VCloudExpressVAppTemplate vAppTemplate = client.getVAppTemplate(item.getEntity().getHref());
 
@@ -133,7 +134,7 @@ VCloudExpressVAppTemplate vAppTemplate = client.getVAppTemplate(item.getEntity()
 
 ### Instantiate, deploy, and powerOn a vApp template in vCloud 0.8 (Terremark)
 
-To make use of a vApp, you must first instantiate it, then deploy it, finally power it on. 
+To make use of a vApp, you must first instantiate it, then deploy it, finally power it on.
 
 {% highlight java %}
 // lookup the datacenter you are deploying into, nulls for default
@@ -150,20 +151,20 @@ RetryablePredicate<String> taskTester = new RetryablePredicate<String>(new TaskS
          .getAsyncApi()), 300, 10, TimeUnit.SECONDS);
 
 // block until deployment task shows success
-if (!taskTester.apply(deployTask.getHref()) 
+if (!taskTester.apply(deployTask.getHref())
       throw new Exception("could not deploy "+vApp.getHref());
 
 // turn on vApp
 Task onTask = client.powerOnVApp(vApp.getHref());
 
 // block until poweron task shows success
-if (!taskTester.apply(onTask.getHref())) 
+if (!taskTester.apply(onTask.getHref()))
       throw new Exception("could not turn on "+vApp.getHref());
 {% endhighlight %}
 
-### Instantiate, deploy, and powerOn a vApp template in vCloud 1.0 
+### Instantiate, deploy, and powerOn a vApp template in vCloud 1.0
 
-To make use of a vApp, you must first instantiate it, then deploy it, finally power it on.  Default in vCloud 1.0 is 
+To make use of a vApp, you must first instantiate it, then deploy it, finally power it on.  Default in vCloud 1.0 is
 to transition to powerOn state from instantiate.
 
 {% highlight java %}
@@ -175,13 +176,13 @@ VApp = client.instantiateVAppTemplateInVDC(vdc.getHref(), vAppTemplate.getHref()
 
 // the task inside the app will complete when the power is on
 Task task = vAppResponse.getTasks().get(0);
- 
+
 // this object will loop up to 5 minutes for any task to complete on apply()
 RetryablePredicate<String> taskTester = new RetryablePredicate<String>(new TaskSuccess(context
           .getAsyncApi()), 300, 10, TimeUnit.SECONDS);
 
 // block until task shows success
-if (!taskTester.apply(task.getHref()) 
+if (!taskTester.apply(task.getHref())
      throw new Exception("could not deploy and powerOn "+vApp.getHref());
 {% endhighlight %}
 
@@ -190,7 +191,7 @@ if (!taskTester.apply(task.getHref())
 In order to get details such as the private IP address, the vApp must at least be deployed.
 
 {% highlight java %}
-     // after deployment, the vApp will have all details. 
+     // after deployment, the vApp will have all details.
      // note that 0.8 or VCloudExpress objects are not compatible with 1.0 ones
 
      // for terremark or other vCloud Express 0.8 based services
@@ -201,7 +202,7 @@ In order to get details such as the private IP address, the vApp must at least b
 
 {% endhighlight %}
 
-### Closing the context 
+### Closing the context
 
 The context object uses threads and other resources.  When you are finished, close it.
 
@@ -215,13 +216,13 @@ vApp Templates are like images in other systems.  However, these also include vi
 
 ### FAQ
 
- 
+
 * Can I tell the template that my vApp was created from?
  No.
-	
+
 * How do I list the vApp instances in a VDC?
 
-vApps are listed as ResourceEntities in the vDC. 
+vApps are listed as ResourceEntities in the vDC.
 
 {% highlight java %}
 for (ReferenceType item :  vdc.getResourceEntities().values()) {

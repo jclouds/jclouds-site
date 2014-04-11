@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Cloud Sigma: Getting Started Guide"
+title: "CloudSigma: Getting Started Guide"
 permalink: /guides/cloudsigma/
 ---
 

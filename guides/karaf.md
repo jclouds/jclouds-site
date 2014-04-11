@@ -1,15 +1,16 @@
 ---
 layout: page
 title: "Apache Karaf: Getting Started Guide"
+permalink: /guides/karaf/
 ---
 
 ## Introduction
 
-[Apache Karaf](http://karaf.apache.org) is an OSGi runtime that runs on top of most OSGi containers like [Apache Felix](http://felix.apache.org) and 
+[Apache Karaf](http://karaf.apache.org) is an OSGi runtime that runs on top of most OSGi containers like [Apache Felix](http://felix.apache.org) and
 [Eclipse Equinox](http://www.eclipse.org/equinox/).  jclouds provides easy integration with Apache Karaf by leveraging the Karaf _"Feature"_ concept.
 
-This section will describe how to install jclouds on Apache Karaf and run some examples that demonstrate the power of jclouds in a dynamic environment 
-such as Karaf. 
+This section will describe how to install jclouds on Apache Karaf and run some examples that demonstrate the power of jclouds in a dynamic environment
+such as Karaf.
 
 jclouds provides the following Karaf "features":
 
@@ -78,8 +79,8 @@ features:install jclouds-aws-s3
 
 ## Running the examples
 
-The following example demonstrates how using jclouds inside Karaf can make it easy to use jclouds.  The example leverages the Karaf shell and the 
-configuration administrator to provide two shell commands that read and write data to a blobstore.  The BlobStore provider and the access information 
+The following example demonstrates how using jclouds inside Karaf can make it easy to use jclouds.  The example leverages the Karaf shell and the
+configuration administrator to provide two shell commands that read and write data to a blobstore.  The BlobStore provider and the access information
 can change dynamically, and they may be configured or reconfigured using the OSGi configuration administrator.
 
 The first step is to get and build the example:
@@ -101,16 +102,16 @@ The command above installs in Karaf two new commands:
   * jclouds:blobstore-write
   * jclouds:blobstore-read
 
-In order to use those commands, you first need to configure the provider. The configuration is done 
+In order to use those commands, you first need to configure the provider. The configuration is done
 using the org.jclouds.blobstore PID. You can create the configuration either from inside the shell or
-by dropping  a file named org.jclouds.blobstore.cfg under karaf's etc folder. 
+by dropping  a file named org.jclouds.blobstore.cfg under karaf's etc folder.
 Let's see how it can be done using the Karaf shell:
 
 {% highlight text %}
 config:edit org.jclouds.blobstore
 config:propset provider aws-s3
-config:propset accessKeyId XXXXXX 
-config:propset secretKey XXXXXX 
+config:propset accessKeyId XXXXXX
+config:propset secretKey XXXXXX
 config:update
 {% endhighlight %}
 
@@ -121,8 +122,8 @@ jclouds:blobstore-write mybucket myblob JCloudsRocks
 jclouds:blobstore-write mybucket myblob
 {% endhighlight %}
 
-At any point in time, you can edit the configuration, either using the shell or 
-by editing the configuration file. The commands will pick up the changes immediately. 
+At any point in time, you can edit the configuration, either using the shell or
+by editing the configuration file. The commands will pick up the changes immediately.
 This way you can even switch providers.
 
 
