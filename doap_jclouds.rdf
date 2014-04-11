@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl"?>
+<rdf:RDF xml:lang="en"
+         xmlns="http://usefulinc.com/ns/doap#" 
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+         xmlns:asfext="http://projects.apache.org/ns/asfext#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/">
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
+   
+         http://www.apache.org/licenses/LICENSE-2.0
+   
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+  <Project rdf:about="http://jclouds.apache.org">
+    <created>2014-04-11</created>
+    <license rdf:resource="http://usefulinc.com/doap/licenses/asl20" />
+    <name>Apache jclouds</name>
+    <homepage rdf:resource="http://jclouds.apache.org" />
+    <asfext:pmc rdf:resource="http://jclouds.apache.org" />
+    <shortdesc>The Java Multi-Cloud Toolkit</shortdesc>
+    <description>Apache jclouds is an open source multi-cloud toolkit for the Java platform that gives you the freedom to create applications that are portable across clouds while giving you full control to use cloud-specific features.</description>
+    <bug-database rdf:resource="https://issues.apache.org/jira/browse/JCLOUDS" />
+    <mailing-list rdf:resource="http://jclouds.apache.org/community/" />
+    <download-page rdf:resource="http://jclouds.apache.org/start/install/" />
+    <programming-language>Java</programming-language>
+    <category rdf:resource="http://projects.apache.org/category/cloud" />
+    <category rdf:resource="http://projects.apache.org/category/library" />
+    <release>
+      <Version>
+        <name>Apache jclouds 1.7.1</name>
+        <created>2014-02-11</created>
+        <revision>1.7.1</revision>
+      </Version>
+    </release>
+    <release>
+      <Version>
+        <name>Apache jclouds 1.7.0</name>
+        <created>2013-12-23</created>
+        <revision>1.7.0</revision>
+      </Version>
+    </release>
+    <release>
+      <Version>
+        <name>Apache jclouds 1.6.3</name>
+        <created>2013-11-30</created>
+        <revision>1.6.3</revision>
+      </Version>
+    </release>
+    <repository>
+      <SVNRepository>
+        <location rdf:resource="https://git-wip-us.apache.org/repos/asf/jclouds.git"/>
+        <browse rdf:resource="https://git-wip-us.apache.org/repos/asf?p=jclouds.git;a=summary"/>
+      </SVNRepository>
+    </repository>
+    <maintainer>
+      <foaf:Person>
+        <foaf:name>Apache jclouds PMC</foaf:name>
+          <foaf:mbox rdf:resource="mailto:private@jclouds.apache.org"/>
+      </foaf:Person>
+    </maintainer>
+  </Project>
+</rdf:RDF>
