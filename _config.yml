@@ -6,5 +6,5 @@ paginate: 5
 paginate_path: "blog/page:num"
 permalink: /blog/:categories/:year/:month/:day/:title
 relative_permalinks: false
-latest_version: 1.7.1
+latest_version: 1.7.2
 latest_snapshot: 1.8.0-SNAPSHOT
