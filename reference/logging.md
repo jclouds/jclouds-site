@@ -114,14 +114,21 @@ You'll also need a logback.xml configuration file on your classpath. Here's an e
 
 ## <a id="enable"></a>Enable Logging
 
-Below is some example code of how to enable your code to use SLF4J. The SLF4JLoggingModule needs to be passed in to the ContextBuilder of whatever context you're building.
+Below is some example code of how to enable your code to use SLF4J. The `SLF4JLoggingModule` needs to be added to the `modules` collection that is passed into the `ContextBuilder.modules(Iterable)` method of whatever Context or Api you're building.
 
 {% highlight java %}
 Iterable<Module> modules = ImmutableSet.<Module> of(
     new SLF4JLoggingModule());
 
-ComputeServiceContext context = ContextBuilder.newBuilder("a-compute-provider")
-    .credentials("myUsername", "myPasswordOrApiKey")
+MyContext context = ContextBuilder.newBuilder("my-cloud-provider")
+    .credentials("myIdentity", "myCredential")
     .modules(modules)
-    .buildView(ComputeServiceContext.class);
+    .buildView(MyContext.class);
+
+// Or
+
+MyApi myApi = ContextBuilder.newBuilder("my-cloud-provider")
+    .credentials("myIdentity", "myCredential")
+    .modules(modules)
+    .buildApi(MyApi.class);
 {% endhighlight %}
