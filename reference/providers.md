@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Providers
-permalink: /guides/providers/
+permalink: /reference/providers/
 ---
 
 The following is the list of providers that are supported by the jclouds API.
