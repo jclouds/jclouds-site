@@ -8,7 +8,6 @@ We know folks from a good many places.  While this may just be a list of applica
 
 <table class="table table-striped table-hover">
 <tbody>
-</tr>
 <tr>
     <td><a href="http://www.abiquo.com/">Abiquo</a></td>
     <td>Uses jclouds for OpsCode Chef integration, for AWS integration, and internally to communicate the UI with the Abiquo API</td>
