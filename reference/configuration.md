@@ -4,15 +4,6 @@ title: Configuration
 permalink: /reference/configuration/
 ---
 
-## HTTP Proxy
-
-In order to use jclouds with an http proxy, you must use the default http engine and
-specify the proxy parameters as system properties to the java virtual machine.
-
-```
--Dhttps.proxyHost=proxy  -Dhttps.proxyPort=3128
-```
-
 ## Enterprise
 Enterprise configuration attempts to make the best choices for you, with regards to which components to use to power your connections to the cloud. Specifically, this chooses `joda` dates, `bouncycastle` encryption, and `apache HTTP Client 4.0` connection pools.
 
