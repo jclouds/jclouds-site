@@ -8,8 +8,8 @@ permalink: /guides/openstack/
 1. [Get OpenStack](#openstack)
 1. [Get jclouds](#install)
 1. [Terminology](#terminology)
-1. [List Servers](#nova)
-1. [List Containers](#swift)
+1. [Nova: List Servers](#nova)
+1. [Swift: Use Containers](#swift)
 1. [Next Steps](#next)
 1. [OpenStack Dependencies](#pom)
 
@@ -19,7 +19,10 @@ permalink: /guides/openstack/
 ## <a id="openstack"></a>Get OpenStack
 You can either install a private OpenStack cloud for yourself or use an existing OpenStack public cloud.
 
-### <a id="clouds"></a>Public Clouds
+### <a id="private"></a>Private Clouds
+If you don't have a private OpenStack cloud but still want to try it out, you can use [DevStack](http://devstack.org/) to create your own mini-OpenStack cloud.
+
+### <a id="public"></a>Public Clouds
 Because the OpenStack API is also open, the jclouds APIs that talk to private OpenStack clouds work just as well with public OpenStack clouds. OpenStack is used by several large public clouds, both the [HP Cloud](https://www.hpcloud.com/) ([HP Cloud Getting Started Guide](/guides/hpcloud)) and [Rackspace Cloud](http://www.rackspace.com/cloud/) ([Rackspace Getting Started Guide](/guides/rackspace)) are based on it. If you don't want to sign up for a paid public cloud, you can use [TryStack](http://trystack.org/).
 
 ## <a id="install"></a>Get jclouds
@@ -32,7 +35,7 @@ Because the OpenStack API is also open, the jclouds APIs that talk to private Op
     * `mkdir jclouds`
     * `cd jclouds`
 1. Make a local copy of the [pom.xml](#pom) file below in the jclouds directory.
-    * mvn dependency:copy-dependencies "-DoutputDirectory=./lib"
+    * `mvn dependency:copy-dependencies "-DoutputDirectory=./lib"`
 1. You should now have a directory with the following structure:
     * `jclouds/`
         * `pom.xml`
@@ -89,7 +92,7 @@ There are some differences in terminology between jclouds and OpenStack that sho
   </div>
 </div>
 
-## <a id="nova"></a>List Servers
+## <a id="nova"></a>Nova: List Servers
 ### <a id="nova-intro"></a>Introduction
 
 [OpenStack Compute](http://www.openstack.org/software/openstack-compute/) (aka Nova) is an easy to use service that provides on-demand servers that you can use to to build dynamic websites, deliver mobile apps, or crunch big data.
@@ -106,81 +109,70 @@ There are some differences in terminology between jclouds and OpenStack that sho
 1. Open JCloudsNova.java for editing, read the code below, and copy it in.
 
 {% highlight java %}
-import static com.google.common.io.Closeables.closeQuietly;
-
-import java.io.Closeable;
-import java.util.Set;
-
+import com.google.common.collect.ImmutableSet;
+import com.google.common.io.Closeables;
+import com.google.inject.Module;
 import org.jclouds.ContextBuilder;
-import org.jclouds.compute.ComputeService;
-import org.jclouds.compute.ComputeServiceContext;
 import org.jclouds.logging.slf4j.config.SLF4JLoggingModule;
 import org.jclouds.openstack.nova.v2_0.NovaApi;
-import org.jclouds.openstack.nova.v2_0.NovaAsyncApi;
 import org.jclouds.openstack.nova.v2_0.domain.Server;
 import org.jclouds.openstack.nova.v2_0.features.ServerApi;
-import org.jclouds.rest.RestContext;
 
-import com.google.common.collect.ImmutableSet;
-import com.google.inject.Module;
+import java.io.Closeable;
+import java.io.IOException;
+import java.util.Set;
 
 public class JCloudsNova implements Closeable {
-   private ComputeService compute;
-   private RestContext<NovaApi, NovaAsyncApi> nova;
-   private Set<String> zones;
+    private final NovaApi novaApi;
+    private final Set<String> zones;
 
-   public static void main(String[] args) {
-      JCloudsNova jCloudsNova = new JCloudsNova();
+    public static void main(String[] args) throws IOException {
+        JCloudsNova jcloudsNova = new JCloudsNova();
 
-      try {
-         jCloudsNova.init();
-         jCloudsNova.listServers();
-         jCloudsNova.close();
-      }
-      catch (Exception e) {
-         e.printStackTrace();
-      }
-      finally {
-         jCloudsNova.close();
-      }
-   }
+        try {
+            jcloudsNova.listServers();
+            jcloudsNova.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            jcloudsNova.close();
+        }
+    }
 
-   private void init() {
-      Iterable<Module> modules = ImmutableSet.<Module> of(new SLF4JLoggingModule());
+    public JCloudsNova() {
+        Iterable<Module> modules = ImmutableSet.<Module>of(new SLF4JLoggingModule());
 
-      String provider = "openstack-nova";
-      String identity = "demo:demo"; // tenantName:userName
-      String password = "devstack"; // demo account uses ADMIN_PASSWORD too
+        String provider = "openstack-nova";
+        String identity = "demo:demo"; // tenantName:userName
+        String credential = "devstack";
 
-      ComputeServiceContext context = ContextBuilder.newBuilder(provider)
-            .endpoint("http://172.16.0.1:5000/v2.0/")
-            .credentials(identity, password)
-            .modules(modules)
-            .buildView(ComputeServiceContext.class);
-      compute = context.getComputeService();
-      nova = context.unwrap();
-      zones = nova.getApi().getConfiguredZones();
-   }
+        novaApi = ContextBuilder.newBuilder(provider)
+                .endpoint("http://xxx.xxx.xxx.xxx:5000/v2.0/")
+                .credentials(identity, credential)
+                .modules(modules)
+                .buildApi(NovaApi.class);
+        zones = novaApi.getConfiguredZones();
+    }
 
-   private void listServers() {
-      for (String zone: zones) {
-         ServerApi serverApi = nova.getApi().getServerApiForZone(zone);
+    private void listServers() {
+        for (String zone : zones) {
+            ServerApi serverApi = novaApi.getServerApiForZone(zone);
 
-         System.out.println("Servers in " + zone);
+            System.out.println("Servers in " + zone);
 
-         for (Server server: serverApi.listInDetail().concat()) {
-            System.out.println("  " + server);
-         }
-      }
-   }
+            for (Server server : serverApi.listInDetail().concat()) {
+                System.out.println("  " + server);
+            }
+        }
+    }
 
-   public void close() {
-      closeQuietly(compute.getContext());
-   }
+    public void close() throws IOException {
+        Closeables.close(novaApi, true);
+    }
 }
 {% endhighlight %}
 
-In the init() method note that
+In the constructor note that
 
 * `String provider = "openstack-nova";`
   * This ones pretty self explanatory, we're using the OpenStack Nova provider in jclouds
@@ -188,24 +180,24 @@ In the init() method note that
   * Here we use the tenant name and user name with a colon between them instead of just a user name
 * `String password = "devstack";`
   *  The demo account uses ADMIN_PASSWORD too
-* `.endpoint("http://172.16.0.1:5000/v2.0/")`
+* `.endpoint("http://xxx.xxx.xxx.xxx:5000/v2.0/")`
   * This is the Keystone endpoint that jclouds needs to connect with to get more info (services and endpoints) from OpenStack
-  * When the devstack installation completes successfully, one of the last few lines will read something like "`Keystone is serving at http://172.16.0.1:5000/v2.0/`"
+  * When a DevStack installation completes successfully, one of the last few lines will read something like "`Keystone is serving at http://xxx.xxx.xxx.xxx:5000/v2.0/`"
   * Set the endpoint to this URL depending on the method used to get OpenStack above.
 
 ### <a id="nova-compile"></a>Compile and Run
 
-    javac -classpath ".:lib/*" JCloudsNova.java
+    $ javac -classpath ".:lib/*" JCloudsNova.java
 
-    java -classpath ".:lib/*" JCloudsNova
+    $ java -classpath ".:lib/*" JCloudsNova
 
-    [logging output]
     Servers in RegionOne
-    [logging output]
-      Server{uuid=...}
+      Server{id=...}
       ...
 
-## <a id="swift"></a>List Containers
+    # You'll see a lot of logging in the output
+
+## <a id="swift"></a>Swift: Use Containers
 ### <a id="swift-intro"></a>Introduction
 
 [OpenStack Object Storage](http://www.openstack.org/software/openstack-storage/) (aka Swift) provides redundant, scalable object storage using clusters of standardized servers capable of storing petabytes of data.
@@ -222,140 +214,150 @@ In the init() method note that
 1. Open JCloudsSwift.java for editing, read the code below, and copy it in.
 
 {% highlight java %}
-import static com.google.common.io.Closeables.closeQuietly;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
+import com.google.common.io.Closeables;
+import com.google.inject.Module;
+import org.jclouds.ContextBuilder;
+import org.jclouds.io.Payload;
+import org.jclouds.logging.slf4j.config.SLF4JLoggingModule;
+import org.jclouds.openstack.swift.v1.SwiftApi;
+import org.jclouds.openstack.swift.v1.domain.Container;
+import org.jclouds.openstack.swift.v1.features.ContainerApi;
+import org.jclouds.openstack.swift.v1.features.ObjectApi;
+import org.jclouds.openstack.swift.v1.options.CreateContainerOptions;
 
 import java.io.Closeable;
+import java.io.IOException;
 import java.util.Set;
 
-import org.jclouds.ContextBuilder;
-import org.jclouds.blobstore.BlobStore;
-import org.jclouds.blobstore.BlobStoreContext;
-import org.jclouds.logging.slf4j.config.SLF4JLoggingModule;
-import org.jclouds.openstack.swift.CommonSwiftAsyncClient;
-import org.jclouds.openstack.swift.CommonSwiftClient;
-import org.jclouds.openstack.swift.domain.ContainerMetadata;
-import org.jclouds.rest.RestContext;
-
-import com.google.common.collect.ImmutableSet;
-import com.google.inject.Module;
+import static com.google.common.io.ByteSource.wrap;
+import static org.jclouds.io.Payloads.newByteSourcePayload;
 
 public class JCloudsSwift implements Closeable {
-   private BlobStore storage;
-   private RestContext<CommonSwiftClient, CommonSwiftAsyncClient> swift;
+    public static final String CONTAINER_NAME = "jclouds-example";
+    public static final String OBJECT_NAME = "jclouds-example.txt";
 
-   public static void main(String[] args) {
-      JCloudsSwift jCloudsSwift = new JCloudsSwift();
+    private SwiftApi swiftApi;
 
-      try {
-         jCloudsSwift.init();
-         jCloudsSwift.listContainers();
-         jCloudsSwift.close();
-      }
-      catch (Exception e) {
-         e.printStackTrace();
-      }
-      finally {
-         jCloudsSwift.close();
-      }
-   }
+    public static void main(String[] args) throws IOException {
+        JCloudsSwift jcloudsSwift = new JCloudsSwift();
 
-   private void init() {
-      Iterable<Module> modules = ImmutableSet.<Module> of(
-            new SLF4JLoggingModule());
+        try {
+            jcloudsSwift.createContainer();
+            jcloudsSwift.uploadObjectFromString();
+            jcloudsSwift.listContainers();
+            jcloudsSwift.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            jcloudsSwift.close();
+        }
+    }
 
-      String provider = "swift-keystone";
-      String identity = "demo:demo"; // tenantName:userName
-      String password = "devstack"; // demo account uses ADMIN_PASSWORD too
+    public JCloudsSwift() {
+        Iterable<Module> modules = ImmutableSet.<Module>of(
+                new SLF4JLoggingModule());
 
-      BlobStoreContext context = ContextBuilder.newBuilder(provider)
-            .endpoint("http://172.16.0.1:5000/v2.0/")
-            .credentials(identity, password)
-            .modules(modules)
-            .buildView(BlobStoreContext.class);
-      storage = context.getBlobStore();
-      swift = context.unwrap();
-   }
+        String provider = "openstack-swift";
+        String identity = "demo:demo"; // tenantName:userName
+        String credential = "devstack";
 
-   private void listContainers() {
-      System.out.println("List Containers");
-      Set<ContainerMetadata> containers = swift.getApi().listContainers();
+        swiftApi = ContextBuilder.newBuilder(provider)
+                .endpoint("http://xxx.xxx.xxx.xxx:5000/v2.0/")
+                .credentials(identity, credential)
+                .modules(modules)
+                .buildApi(SwiftApi.class);
+    }
 
-      for (ContainerMetadata container: containers) {
-         System.out.println("  " + container);
-      }
-   }
+    private void createContainer() {
+        System.out.println("Create Container");
 
-   public void close() {
-      closeQuietly(storage.getContext());
-   }
+        ContainerApi containerApi = swiftApi.containerApiInRegion("RegionOne");
+        CreateContainerOptions options = CreateContainerOptions.Builder
+                .metadata(ImmutableMap.of(
+                        "key1", "value1",
+                        "key2", "value2"));
+
+        containerApi.createIfAbsent(CONTAINER_NAME, options);
+
+        System.out.println("  " + CONTAINER_NAME);
+    }
+
+    private void uploadObjectFromString() {
+        System.out.println("Upload Object From String");
+
+        ObjectApi objectApi = swiftApi.objectApiInRegionForContainer("RegionOne", CONTAINER_NAME);
+        Payload payload = newByteSourcePayload(wrap("Hello World".getBytes()));
+
+        objectApi.replace(OBJECT_NAME, payload, ImmutableMap.of("key1", "value1"));
+
+        System.out.println("  " + OBJECT_NAME);
+    }
+
+    private void listContainers() {
+        System.out.println("List Containers");
+
+        ContainerApi containerApi = swiftApi.containerApiInRegion("RegionOne");
+        Set<Container> containers = containerApi.list().toSet();
+
+        for (Container container : containers) {
+            System.out.println("  " + container);
+        }
+    }
+
+    public void close() throws IOException {
+        Closeables.close(swiftApi, true);
+    }
 }
+
 {% endhighlight %}
 
 ### <a id="swift-compile"></a>Compile and Run
 
-    javac -classpath ".:lib/*" JCloudsSwift.java
+    $ javac -classpath ".:lib/*" JCloudsSwift.java
 
-    java -classpath ".:lib/*" JCloudsSwift
+    $ java -classpath ".:lib/*" JCloudsSwift
 
-    [logging output]
+    Create Container
+      jclouds-example
+    Upload Object From String
+      jclouds-example.txt
     List Containers
-    [logging output]
-      ContainerMetadata{name=...}
+      Container{name=...}
       ...
+
+    # You'll see a lot of logging in the output
 
 ## <a id="next"></a>Next Steps
 
-* Try the example above with a keystone endpoint that defines multiple storage regions. For this init() becomes:
+* Try the List Servers example above with one of the public clouds. For the Rackspace Cloud the constructor becomes:
 
 {% highlight java %}
-private void init() {
-   Iterable<Module> modules = ImmutableSet.<Module> of(new SLF4JLoggingModule());
+import org.jclouds.Constants;
+import org.jclouds.openstack.keystone.v2_0.config.CredentialTypes;
+import org.jclouds.openstack.keystone.v2_0.config.KeystoneProperties;
 
-   String provider = "swift-keystone"; //Region selection is limited to swift-keystone provider
-   String identity = "demo:demo";
-   String password = "devstack";
-   String endpoint = "http://keystone-endpoint.example.com/v2.0";
-   String region = "RegionOne";
+// snip
 
-   // If your keystone endpoint has multiple storage regions
-   // then it is recommended that you specify which region to use.
-   // You can do this via the "jclouds.region" property
-   Properties properties = new Properties();
-   properties.setProperty(LocationConstants.PROPERTY_REGION, region);
+public JCloudsNova() {
+    Iterable<Module> modules = ImmutableSet.<Module>of(new SLF4JLoggingModule());
 
-   BlobStoreContext context = ContextBuilder.newBuilder(provider)
-         .endpoint(endpoint)
-         .credentials(identity, password)
-         .modules(modules)
-         .overrides(properties)
-         .buildView(BlobStoreContext.class);
-   storage = context.getBlobStore();
-   swift = context.unwrap();
-}
-{% endhighlight %}
+    Properties overrides = new Properties();
+    overrides.setProperty(KeystoneProperties.CREDENTIAL_TYPE, CredentialTypes.PASSWORD_CREDENTIALS);
+    overrides.setProperty(Constants.PROPERTY_API_VERSION, "2");
 
-* Try the example above with one of the public clouds. For the Rackspace Cloud init() becomes:
+    String provider = "openstack-nova";
+    String identity = "username";
+    String credential = "password";
 
-{% highlight java %}
-private void init() {
-   Iterable<Module> modules = ImmutableSet.<Module> of(new SLF4JLoggingModule());
-   Properties overrides = new Properties();
-   overrides.setProperty(KeystoneProperties.CREDENTIAL_TYPE, CredentialTypes.PASSWORD_CREDENTIALS);
-   overrides.setProperty(Constants.PROPERTY_API_VERSION, "2");
-
-   String provider = "openstack-nova";
-   String identity = "myUsername"; // userName
-   String password = "myPassword";
-
-   ComputeServiceContext context = ContextBuilder.newBuilder(provider)
-         .endpoint("https://identity.api.rackspacecloud.com/v2.0/")
-         .credentials(identity, password)
-         .modules(modules)
-         .overrides(overrides)
-         .buildView(ComputeServiceContext.class);
-   compute = context.getComputeService();
-   nova = context.unwrap();
-   zones = nova.getApi().getConfiguredZones();
+    novaApi = ContextBuilder.newBuilder(provider)
+            .endpoint("https://identity.api.rackspacecloud.com/v2.0/")
+            .credentials(identity, credential)
+            .modules(modules)
+            .overrides(overrides)
+            .buildApi(NovaApi.class);
+    zones = novaApi.getConfiguredZones();
 }
 {% endhighlight %}
 
@@ -367,14 +369,14 @@ private void init() {
 
 ## <a id="pom"></a>OpenStack Dependencies
 
-This pom.xml file specifies all of the dependencies you'll need to work with OpenStack. Replace the jclouds.version X.X.X with the latest version available according to the [Release Notes](/releasenotes/).
+This pom.xml file specifies all of the dependencies you'll need to work with OpenStack.
 
 {% highlight xml %}
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <properties>
-    <jclouds.version>X.X.X</jclouds.version>
+    <jclouds.version>{{ site.latest_version }}</jclouds.version>
   </properties>
   <groupId>org.apache.jclouds.examples</groupId>
   <artifactId>openstack-examples</artifactId>
@@ -391,7 +393,7 @@ This pom.xml file specifies all of the dependencies you'll need to work with Ope
       <artifactId>jclouds-sshj</artifactId>
       <version>${jclouds.version}</version>
     </dependency>
-    <!-- OpenStack dependencies -->
+    <!-- jclouds OpenStack dependencies -->
     <dependency>
       <groupId>org.apache.jclouds.api</groupId>
       <artifactId>openstack-keystone</artifactId>
@@ -403,8 +405,8 @@ This pom.xml file specifies all of the dependencies you'll need to work with Ope
       <version>${jclouds.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.apache.jclouds.api</groupId>
-      <artifactId>swift</artifactId>
+      <groupId>org.apache.jclouds.labs</groupId>
+      <artifactId>openstack-swift</artifactId>
       <version>${jclouds.version}</version>
     </dependency>
     <dependency>
