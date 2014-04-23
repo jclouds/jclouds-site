@@ -14,7 +14,7 @@ rm -rf site-content/site-content
 rm site-content/deploy-site.sh
 #add new files
 cd site-content
-svn status | awk '/^?/{print $2}' | \
+svn status | awk '/^\?/{print $2}' | \
     while read filename; do svn --no-auto-props add $filename; done
 
 USERNAME_ARG=""
