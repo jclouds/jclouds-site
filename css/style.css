@@ -9,6 +9,10 @@ body { padding-top: 40px; }
     #home-content { padding-top: 0px; }
 }
 
+code {
+    white-space: normal;
+}
+
 .img-list  {
     height: 50px;
     padding-left: 10px;
@@ -34,3 +38,4 @@ body { padding-top: 40px; }
 .quicknew {
     padding-left: 10px;
 }
+
