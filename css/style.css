@@ -39,3 +39,6 @@ code {
     padding-left: 10px;
 }
 
+.navbar-nav.navbar-right:last-child {
+    margin-right: 0px;
+}
