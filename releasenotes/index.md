@@ -6,10 +6,10 @@ permalink: /releasenotes/
 
 The Release Notes and Javadocs for every major release of Apache jclouds are listed chronologically below.
 
-* [1.7.3](/releasenotes/1.7.3) | TBD
-* [1.7.2](/releasenotes/1.7.2) | [Javadoc](/reference/javadoc/1.7.2/)
-* [1.7.1](/releasenotes/1.7.1) | [Javadoc](http://demobox.github.io/jclouds-maven-site-1.7.1/1.7.1/jclouds/apidocs/)
-* [1.7.0](/releasenotes/1.7.0) | [Javadoc](http://demobox.github.io/jclouds-maven-site-1.7.0/1.7.0/jclouds/apidocs/)
+* [1.7.3](/releasenotes/1.7.3) | [Javadoc](/reference/javadoc/1.7.x/)
+* [1.7.2](/releasenotes/1.7.2) | [Javadoc](/reference/javadoc/1.7.x/)
+* [1.7.1](/releasenotes/1.7.1) | [Javadoc](/reference/javadoc/1.7.x/)
+* [1.7.0](/releasenotes/1.7.0) | [Javadoc](/reference/javadoc/1.7.x/)
 * [1.6.3](/releasenotes/1.6.3) | [Javadoc](http://demobox.github.io/jclouds-maven-site-1.6.3/1.6.3/jclouds/apidocs/)
 * [1.6.2](/releasenotes/1.6.2) | [Javadoc](http://demobox.github.io/jclouds-maven-site-1.6.2/1.6.2-incubating/jclouds/apidocs/)
 * [1.6.1](/releasenotes/1.6.1) | [Javadoc](http://demobox.github.io/jclouds-maven-site-1.6.1/1.6.1-incubating/jclouds/apidocs/)
