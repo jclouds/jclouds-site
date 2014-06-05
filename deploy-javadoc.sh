@@ -46,12 +46,10 @@ done
 cd jclouds
 mvn clean javadoc:aggregate -Dnotimestamp=true -DadditionalJOption=-J-Xmx512m
 
-cd $DIR
+cd $DIR/site-content
 
 mkdir -p reference/javadoc/$JCLOUDS_VERSION_X/
 rsync -r --ignore-times $TMPDIR/jclouds/target/site/apidocs/ reference/javadoc/$JCLOUDS_VERSION_X/
-
-cd site-content
 
 svn status | awk '/^\?/{print $2}' | \
     while read filename; do svn --no-auto-props add $filename; done
