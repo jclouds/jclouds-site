@@ -19,6 +19,10 @@ code {
     padding-right: 10px;
 }
 
+.img-right {
+  float: right;
+}
+
 .section-divider {
     background: url('../img/divider.png') 0 7px repeat-x;
     text-align: center;
