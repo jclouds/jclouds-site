@@ -226,6 +226,7 @@ import org.jclouds.openstack.swift.v1.domain.Container;
 import org.jclouds.openstack.swift.v1.features.ContainerApi;
 import org.jclouds.openstack.swift.v1.features.ObjectApi;
 import org.jclouds.openstack.swift.v1.options.CreateContainerOptions;
+import org.jclouds.openstack.swift.v1.options.PutOptions;
 
 import java.io.Closeable;
 import java.io.IOException;
@@ -235,82 +236,81 @@ import static com.google.common.io.ByteSource.wrap;
 import static org.jclouds.io.Payloads.newByteSourcePayload;
 
 public class JCloudsSwift implements Closeable {
-    public static final String CONTAINER_NAME = "jclouds-example";
-    public static final String OBJECT_NAME = "jclouds-example.txt";
+   public static final String CONTAINER_NAME = "jclouds-example";
+   public static final String OBJECT_NAME = "jclouds-example.txt";
 
-    private SwiftApi swiftApi;
+   private SwiftApi swiftApi;
 
-    public static void main(String[] args) throws IOException {
-        JCloudsSwift jcloudsSwift = new JCloudsSwift();
+   public static void main(String[] args) throws IOException {
+      JCloudsSwift jcloudsSwift = new JCloudsSwift();
 
-        try {
-            jcloudsSwift.createContainer();
-            jcloudsSwift.uploadObjectFromString();
-            jcloudsSwift.listContainers();
-            jcloudsSwift.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            jcloudsSwift.close();
-        }
-    }
+      try {
+         jcloudsSwift.createContainer();
+         jcloudsSwift.uploadObjectFromString();
+         jcloudsSwift.listContainers();
+         jcloudsSwift.close();
+      } catch (Exception e) {
+         e.printStackTrace();
+      } finally {
+         jcloudsSwift.close();
+      }
+   }
 
-    public JCloudsSwift() {
-        Iterable<Module> modules = ImmutableSet.<Module>of(
-                new SLF4JLoggingModule());
+   public JCloudsSwift() {
+      Iterable<Module> modules = ImmutableSet.<Module>of(
+            new SLF4JLoggingModule());
 
-        String provider = "openstack-swift";
-        String identity = "demo:demo"; // tenantName:userName
-        String credential = "devstack";
+      String provider = "openstack-swift";
+      String identity = "demo:demo"; // tenantName:userName
+      String credential = "devstack";
 
-        swiftApi = ContextBuilder.newBuilder(provider)
-                .endpoint("http://xxx.xxx.xxx.xxx:5000/v2.0/")
-                .credentials(identity, credential)
-                .modules(modules)
-                .buildApi(SwiftApi.class);
-    }
+      swiftApi = ContextBuilder.newBuilder(provider)
+            .endpoint("http://xxx.xxx.xxx.xxx:5000/v2.0/")
+            .credentials(identity, credential)
+            .modules(modules)
+            .buildApi(SwiftApi.class);
+   }
 
-    private void createContainer() {
-        System.out.println("Create Container");
+   private void createContainer() {
+      System.out.println("Create Container");
 
-        ContainerApi containerApi = swiftApi.containerApiInRegion("RegionOne");
-        CreateContainerOptions options = CreateContainerOptions.Builder
-                .metadata(ImmutableMap.of(
-                        "key1", "value1",
-                        "key2", "value2"));
+      ContainerApi containerApi = swiftApi.getContainerApiForRegion("RegionOne");
+      CreateContainerOptions options = CreateContainerOptions.Builder
+            .metadata(ImmutableMap.of(
+                  "key1", "value1",
+                  "key2", "value2"));
 
-        containerApi.createIfAbsent(CONTAINER_NAME, options);
+      containerApi.create(CONTAINER_NAME, options);
 
-        System.out.println("  " + CONTAINER_NAME);
-    }
+      System.out.println("  " + CONTAINER_NAME);
+   }
 
-    private void uploadObjectFromString() {
-        System.out.println("Upload Object From String");
+   private void uploadObjectFromString() {
+      System.out.println("Upload Object From String");
 
-        ObjectApi objectApi = swiftApi.objectApiInRegionForContainer("RegionOne", CONTAINER_NAME);
-        Payload payload = newByteSourcePayload(wrap("Hello World".getBytes()));
+      ObjectApi objectApi = swiftApi.getObjectApiForRegionAndContainer("RegionOne", CONTAINER_NAME);
+      Payload payload = newByteSourcePayload(wrap("Hello World".getBytes()));
 
-        objectApi.replace(OBJECT_NAME, payload, ImmutableMap.of("key1", "value1"));
+      objectApi.put(OBJECT_NAME, payload, PutOptions.Builder.metadata(ImmutableMap.of("key1", "value1")));
 
-        System.out.println("  " + OBJECT_NAME);
-    }
+      System.out.println("  " + OBJECT_NAME);
+   }
 
-    private void listContainers() {
-        System.out.println("List Containers");
+   private void listContainers() {
+      System.out.println("List Containers");
 
-        ContainerApi containerApi = swiftApi.containerApiInRegion("RegionOne");
-        Set<Container> containers = containerApi.list().toSet();
+      ContainerApi containerApi = swiftApi.getContainerApiForRegion("RegionOne");
+      Set<Container> containers = containerApi.list().toSet();
 
-        for (Container container : containers) {
-            System.out.println("  " + container);
-        }
-    }
+      for (Container container : containers) {
+         System.out.println("  " + container);
+      }
+   }
 
-    public void close() throws IOException {
-        Closeables.close(swiftApi, true);
-    }
+   public void close() throws IOException {
+      Closeables.close(swiftApi, true);
+   }
 }
-
 {% endhighlight %}
 
 ### <a id="swift-compile"></a>Compile and Run
