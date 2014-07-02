@@ -10,6 +10,7 @@ Use these guides for getting started with any of the cloud providers below:
 * [Azure Storage](azure-storage)
 * [BlueLock vCloud](bluelock)
 * [Cloud Sigma](cloudsigma)
+* [Docker](docker)
 * [Go Grid](go-grid)
 * [Google Cloud Platform](google)
 * [HP Cloud](hpcloud)

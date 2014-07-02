@@ -60,6 +60,11 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
             <td></td>
         </tr>
         <tr>
+            <td><a href="/guides/docker/">Docker*</a></td>
+            <td>docker</td>
+            <td></td>
+        </tr>        
+        <tr>
             <td>ElasticHosts GB</td>
             <td>elastichosts-lon-b</td>
             <td>GB-LND</td>
