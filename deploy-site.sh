@@ -1,8 +1,21 @@
 #!/bin/bash
 
+# Usage examples:
+#
+# Build the site using the default Jekyll version:
+# $ ./deploy-site.sh [username] [password]
+#
+# Build the site using a specific version of the Jekyll gem:
+# $ JEKYLL=1.5.1 ./deploy-site.sh [username] [password]
+
 set -o errexit
 
-jekyll build --safe
+JEKYLL_VERSION=`jekyll --version | awk '{print $2}'`
+JEKYLL_BUILD_VERSION=${JEKYLL:-$JEKYLL_VERSION}
+
+echo "Using Jekyll ${JEKYLL_BUILD_VERSION}..."
+jekyll _${JEKYLL_BUILD_VERSION}_ build --safe
+
 
 if [ ! -d "site-content" ]; then
   svn co https://svn.apache.org/repos/asf/jclouds/site-content
