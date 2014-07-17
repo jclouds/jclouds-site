@@ -63,7 +63,7 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
             <td><a href="/guides/docker/">Docker*</a></td>
             <td>docker</td>
             <td></td>
-        </tr>        
+        </tr>
         <tr>
             <td>ElasticHosts GB</td>
             <td>elastichosts-lon-b</td>
@@ -90,7 +90,7 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
             <td>US-CA,US-VA</td>
         </tr>
         <tr>
-            <td>Google Compute Engine*</td>
+            <td><a href="/guides/google/">Google Compute Engine*</a></td>
             <td>google-compute-engine</td>
             <td></td>
         </tr>
