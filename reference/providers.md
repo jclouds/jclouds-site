@@ -135,7 +135,7 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
             <td>US-IL,US-TX</td>
         </tr>
         <tr>
-            <td>SeverLove</td>
+            <td>ServerLove</td>
             <td>serverlove-z1-man</td>
             <td>GB-MAN</td>
         </tr>
