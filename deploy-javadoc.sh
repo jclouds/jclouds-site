@@ -12,6 +12,7 @@ fi
 
 if [ -z "$1" ]; then
   echo "Usage: $0 <JCLOUDS_VERSION>"
+  echo "Example: $0 1.8.0"
   exit 1
 fi
 
