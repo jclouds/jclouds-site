@@ -6,6 +6,7 @@ layout: post
 slug: 1-release-2-committers
 title: 1 release, 2 committers...a busy week for jclouds!
 image: /img/posts/chris-and-andrea.jpg
+quicknews: jclouds adds two new committers, Andrea Turli and Chris Custine
 ---
 
 <img class="img-right" src="/img/posts/chris-and-andrea.png"/>There's a lot going on this week for the jclouds community. Most importantly, we're really pleased to introduce two new committers: Andrea Turli and Chris Custine.
