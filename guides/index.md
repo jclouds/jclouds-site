@@ -25,7 +25,8 @@ Use these guides for more in depth usage:
 * Amazon Web Services
     * [Elastic Block Store (EBS)](aws-ebs)
     * [Elastic Compute Cloud (EC2)](aws-ec2)
-    * [Simple Storage Service (SQS)](aws-s3)
+    * [Glacier](glacier)
+    * [Simple Storage Service (S3)](aws-s3)
     * [Simple Queue Service (SQS)](aws-sqs)
 
 Use these guides for getting started with other technologies that jclouds is compatible with:
