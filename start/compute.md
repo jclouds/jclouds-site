@@ -38,7 +38,7 @@ As of jclouds beta-9, you can now supply a map to persist credentials of your no
 this means you can keep track of all of your cloud nodes' credentials in a single place.
 
 ### Supported Providers
-See [Compute API: Supported Providers](/documentation/reference/supported-providers#compute) for providers that can be used equally in any Compute API tool.
+See [Compute API: Supported Providers](/reference/providers/#compute) for providers that can be used equally in any Compute API tool.
 
 *Note, that if you use the `jclouds-allcompute` dependency, your project will have all of the above!*
 
