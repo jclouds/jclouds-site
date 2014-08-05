@@ -19,7 +19,7 @@ if you need functionality that is not available in our abstraction.
 
 Our location API helps you to portably identify a container within context, such as Americas or Europe.
 
-We use the same model across the [ComputeGuide](/documentation/userguide/compute) which allows you to facilitate collocation of processing and data.
+We use the same model across the [ComputeGuide](/start/compute/) which allows you to facilitate collocation of processing and data.
 
 ### Asynchronous API
 
@@ -44,7 +44,7 @@ Our file system BlobStore allows you to use the same API when persisting to disk
 
 ## Supported Providers
 
-See [Blobstore API: Supported Providers](/documentation/reference/supported-providers#blobstore) for providers that can be used equally in any Blobstore API tool.
+See [Blobstore API: Supported Providers](/reference/providers/#blobstore) for providers that can be used equally in any Blobstore API tool.
 
 
 ## Concepts
