@@ -1,7 +1,7 @@
 ---
 author: <a href="http://blog.xebialabs.com/author/aphillips/">Andrew Phillips</a>
 comments: true
-date: 2014-08-02 14:00:00+00:00
+date: 2014-08-04 23:00:00+00:00
 layout: post
 slug: 1-release-2-committers
 title: 1 release, 2 committers...a busy week for jclouds!
