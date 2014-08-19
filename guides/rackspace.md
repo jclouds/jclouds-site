@@ -25,11 +25,10 @@ The [Rackspace Cloud](http://www.rackspace.com/cloud/public/) platform includes 
 This guide assumes you're familiar with Java and its technologies. To get started you'll need access to the Rackspace cloud and jclouds.
 
 ## <a id="account"></a>Get a Username and API Key
-1. Sign up for the Developer Discount for the [Rackspace Cloud (US)](http://developer.rackspace.com/devtrial/).
-1. Login to the [Cloud Control Panel (US)](https://mycloud.rackspace.com/).
+1. If you don't have a Username and API Key already, sign up for [developer+](https://developer.rackspace.com/signup/) to try the Rackspace Cloud.
+    * developer+ gives you a 12-month infrastructure credit that can be used with all of the Rackspace services.
+1. Login to the [Cloud Control Panel (US)](https://mycloud.rackspace.com/) or the [Cloud Control Panel (UK)](https://mycloud.rackspace.co.uk/).
 1. In the top right corner click on your username and then click Account Settings to locate your API Key.
-
-Likewise you can go to the [Rackspace Cloud (UK)](https://buyonline.rackspace.co.uk/cloud/) and login to the [Cloud Control Panel (UK)](https://mycloud.rackspace.co.uk/).
 
 ## <a id="install"></a>Get jclouds
 
