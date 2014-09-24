@@ -8,7 +8,7 @@ title: Get in touch!
     <p>We'd love to have your feedback, suggestions, and will be happy to help with anything you need. Just get in touch!</p>
 
     <ul>
-      <li><a href="https://webchat.freenode.net/?channels=jclouds">Chat</a> with us on IRC at #jclouds on Freenode</li>
+      <li><a href="https://webchat.freenode.net/?channels=jclouds">Chat</a> with us on IRC at <a href="https://botbot.me/freenode/jclouds/">#jclouds on Freenode</a></li>
       <li><a href="mailto:jclouds-user-subscribe@apache.org">Subscribe</a> to the <a href="http://www.mail-archive.com/user@jclouds.apache.org/">jclouds-user mailing list</a></li>
       <li><a href="mailto:jclouds-dev-subscribe@apache.org">Subscribe</a> to the <a href="http://www.mail-archive.com/dev@jclouds.apache.org/">jclouds-dev mailing list</a></li>
       <li><a href="http://www.meetup.com/jclouds/">Attend a jclouds event!</a></li>
