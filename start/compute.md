@@ -194,7 +194,7 @@ if (node.getCredentials().credential.startsWith("-----BEGIN RSA PRIVATE KEY-----
 Note: If all you want to do is execute a script at bootup, you should consider use of the runScript option.
 
 ### Predicate Commands
-Commands ending in `Matching` allow you to decide which subset of nodes you with to affect.
+Commands ending in `Matching` allow you to decide which subset of nodes you want to affect.
 All predicate commands are run in parallel for highest efficiency.
 
 #### Example Predicates
