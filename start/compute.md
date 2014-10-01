@@ -122,7 +122,7 @@ Use the _Get Node Metadata_ command to retrieve commonly required information ab
 
 {% highlight java %}
 
-NodeMetadata metadata = client.getNodeMetadata(node);
+NodeMetadata metadata = client.getNodeMetadata(node.getId());
 metadata.getId();
 metadata.getProviderId();
 metadata.getLocation();
