@@ -95,7 +95,7 @@ ComputeServiceContext context = ContextBuilder.newBuilder("trmk-ecloud")
                                                         new SshjSshClientModule()))
                       .buildView(ComputeServiceContext.class);
 
-ComputeService computeService = context.getComputeService();
+ComputeService client = context.getComputeService();
 
 {% endhighlight %}
 
