@@ -4,18 +4,19 @@
 #
 # Build the site using the default Jekyll version:
 # $ ./deploy-site.sh [username] [password]
-#
-# Build the site using a specific version of the Jekyll gem:
-# $ JEKYLL=1.5.1 ./deploy-site.sh [username] [password]
+
+JEKYLL_VERSION=1.5.1
+
+# Verify that the configured version of Jekyll is installed
+jekyll _${JEKYLL_VERSION}_ --version >/dev/null 2>&1
+if [[ $? -ne 0 ]]; then
+    echo "Jekyll ${JEKYLL_VERSION} is required"
+    exit 1
+fi
 
 set -o errexit
 
-JEKYLL_VERSION=`jekyll --version | awk '{print $2}'`
-JEKYLL_BUILD_VERSION=${JEKYLL:-$JEKYLL_VERSION}
-
-echo "Using Jekyll ${JEKYLL_BUILD_VERSION}..."
-jekyll _${JEKYLL_BUILD_VERSION}_ build --safe
-
+jekyll _${JEKYLL_VERSION}_ build --safe
 
 if [ ! -d "site-content" ]; then
   svn co https://svn.apache.org/repos/asf/jclouds/site-content
