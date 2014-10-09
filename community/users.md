@@ -133,6 +133,10 @@ We know folks from a good many places.  While this may just be a list of applica
     <td>Uses jclouds via Pallet in order to provision carbon-neutral Hadoop services</td>
 </tr>
 <tr>
+    <td><a href="https://mesosphere.com/">Mesosphere</a></td>
+    <td>Uses jclouds to provision Mesosphere clusters on both <a href="https://google.mesosphere.com/">Google Compute Engine</a> and <a href="https://elastic.mesosphere.io/">Amazon EC2</a></td>
+</tr>
+<tr>
     <td><a href="http://www.meteorite.bi/">Meteorite Hosting</a></td>
     <td>Enables users to spawn BI environments across a range of cloud providers in a hassle-free way</td>
 </tr>
