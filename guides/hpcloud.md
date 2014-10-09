@@ -1,33 +1,35 @@
 ---
 layout: page
-title: "HP Cloud: Getting Started Guide"
+title: "HP Helion Public Cloud: Getting Started Guide"
 permalink: /guides/hpcloud/
 ---
+![HP Helion](/img/logos/hp-helion.png)
 
-This page helps you get started with jclouds API with
+This page helps you get started using the jclouds API with HP Helion Public Cloud (Formerly HP Cloud).
 
-1. Sign up for [HP Cloud Services](http://hpcloud.com/).
-2. Get your Account ID and Access Key by going to this [page](https://account.hpcloud.com/account/api_keys).
+# About HP Helion Public Cloud
+HP Helion Public Cloud is an OpenStack® based public cloud provider offering on-demand, pay-as-you-go cloud services for computing and storage infrastructure as well as platform services.
+
+## Getting Started
+1. Sign up for [HP Helion Public Cloud](http://www.hpcloud.com/cloud-credit).
+2. Get your Project ID, Access Key, and Secret Key:
+    - Sign in to your [HP Cloud Console](https://horizon.hpcloud.com)
+    - Click on your userid (drop down in the top right of the page)
+    - Click on "Manage Access Keys"
 3. Ensure you are using a recent version of Java 6.
 4. Setup your project to include `hpcloud-objectstorage` and `hpcloud-compute`.
 	* Get the dependencies `org.jclouds.provider/hpcloud-objectstorage` and `org.jclouds.provider/hpcloud-compute` using jclouds [Installation](/start/install).
 5. Start coding.
 
-** Note: The identity for hpcloud is the same now as of 1.5.0 which is "tenantName:userName" and the credential is "userPassword"
-
-By default, the authentication mechanism for all OpenStack Keystone based APIs will use your password as the credential to log in.
-
-The following specifications may serve as a guide if you wish to set API Access Keys:
-properties.setProperty(KeystoneProperties.CREDENTIAL_TYPE, CredentialTypes.API_ACCESS_KEY_CREDENTIALS)
-
-To get the CredentialTypes class, find the CredentialTypes class in the latest [Javadoc](http://demobox.github.com/jclouds-maven-site/latest/apidocs).
+** Note: As of 1.8.0, the HP Cloud provider uses tenantName:accessKey as identity and secretKey as credentials. Previous 
+versions of the HP Cloud provider (prior to 1.8.0) default to using tenantName:userid as identity and password as credentials. 
 
 ## HP Cloud Object Storage
 
 {% highlight java %}
 // Get a context with hpcloud that offers the portable BlobStore API
 BlobStoreContext context = ContextBuilder.newBuilder("hpcloud-objectstorage")
-                 .credentials("tenantName:accessKey", "password")
+                 .credentials("tenantName:accessKey", "secretKey")
                  .buildView(BlobStoreContext.class);
 
 // Create a container in the default location
@@ -69,7 +71,7 @@ context.close();
 {% highlight java %}
 // Get a context with hpcloud-compute that offers the portable ComputeService API
 ComputeServiceContext ctx = ContextBuilder.newBuilder("hpcloud-compute")
-                      .credentials("tenantName:accessKey", "password")
+                      .credentials("tenantName:accessKey", "secretKey")
                       .modules(ImmutableSet.<Module> of(new Log4JLoggingModule(),
                                                         new SshjSshClientModule()))
                       .buildView(ComputeServiceContext.class);
