@@ -145,9 +145,9 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
             <td>MY-10</td>
         </tr>
         <tr>
-            <td>SoftLayer</td>
+            <td><a href="/guides/softlayer/">SoftLayer</a></td>
             <td>softlayer</td>
-            <td></td>
+            <td>SG,US-CA,US-TX,US-VA,US-WA,<p/>NL,HK,NSFTW-IL,AU,CA-ON,GB</td>
         </tr>
     </tbody>
 </table>

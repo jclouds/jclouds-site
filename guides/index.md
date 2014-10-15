@@ -15,6 +15,7 @@ Use these guides for getting started with any of the cloud providers below:
 * [OpenStack](openstack)
 * [ProfitBricks](profitbricks)
 * [Rackspace](rackspace)
+* [SoftLayer](softlayer)
 
 Use these guides for more in depth usage:
 
