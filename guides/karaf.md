@@ -9,38 +9,61 @@ permalink: /guides/karaf/
 [Apache Karaf](http://karaf.apache.org) is an OSGi runtime that runs on top of most OSGi containers like [Apache Felix](http://felix.apache.org) and
 [Eclipse Equinox](http://www.eclipse.org/equinox/).  jclouds provides easy integration with Apache Karaf by leveraging the Karaf _"Feature"_ concept.
 
-This section will describe how to install jclouds on Apache Karaf and run some examples that demonstrate the power of jclouds in a dynamic environment
-such as Karaf.
+This section will describe how to install jclouds on Apache Karaf and run some examples that demonstrate the power of jclouds in a dynamic environment such as Karaf.
 
 jclouds provides the following Karaf "features":
 
+  * jclouds-api-byon
+  * jclouds-api-chef
+  * jclouds-api-cloudstack
+  * jclouds-api-ec2
+  * jclouds-api-openstack-cinder
+  * jclouds-api-openstack-keystone
+  * jclouds-api-openstack-nova
+  * jclouds-api-rackspace-clouddns
+  * jclouds-api-rackspace-cloudidentity
+  * jclouds-api-route53
+  * jclouds-api-s3
+  * jclouds-api-sqs
+  * jclouds-api-sts
+  * jclouds-api-swift
+  * jclouds-aws-cloudwatch
   * jclouds-aws-ec2
-  * jclouds-googlestorage
-  * jclouds-gogrid
-  * jclouds-eucalyptus-s3
-  * jclouds-eucalyptus-ec2
+  * jclouds-aws-route53
+  * jclouds-aws-s3
+  * jclouds-aws-sqs
+  * jclouds-aws-sts
   * jclouds-azureblob
+  * jclouds-chef
   * jclouds-cloudfiles-uk
   * jclouds-cloudfiles-us
-  * jclouds-cloudloadbalancers-us
-  * jclouds-cloudonestorage
-  * jclouds-cloudserver-uk
-  * jclouds-cloudserver-us
-  * jclouds-cloudsigma-zrh
+  * jclouds-digitalocean
+  * jclouds-dynect
+  * jclouds-elastichosts-lax-p
   * jclouds-elastichosts-lon-b
   * jclouds-elastichosts-lon-p
   * jclouds-elastichosts-sat-p
-  * jclouds-hosteurope-storage
-  * jclouds-ninefold-storage
+  * jclouds-elastichosts-tor-p
+  * jclouds-glesys
+  * jclouds-go2cloud-jhb1
+  * jclouds-gogrid
+  * jclouds-hpcloud-compute
+  * jclouds-hpcloud-objectstorage
   * jclouds-openhosting-east1
-  * jclouds-savvis-symphonyvpdc
-  * jclouds-scaleup-storage
+  * jclouds-rackspace-cloudblockstorage-uk
+  * jclouds-rackspace-cloudblockstorage-us
+  * jclouds-rackspace-clouddns-uk
+  * jclouds-rackspace-clouddns-us
+  * jclouds-rackspace-cloudfiles-uk
+  * jclouds-rackspace-cloudfiles-us
+  * jclouds-rackspace-cloudloadbalancers-uk
+  * jclouds-rackspace-cloudloadbalancers-us
+  * jclouds-rackspace-cloudservers-uk
+  * jclouds-rackspace-cloudservers-us
   * jclouds-serverlove-z1-man
   * jclouds-skalicloud-sdg-my
-  * jclouds-synaptic-storage
-  * jclouds-tiscali-storage
-  * jclouds-trmk-ecloud
-  * jclouds-trmk-vcloudexpress
+  * jclouds-softlayer
+
 
 ## Installation
 

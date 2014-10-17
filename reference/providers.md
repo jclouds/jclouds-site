@@ -32,27 +32,22 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
         <tr>
             <td><a href="/guides/aws/">AWS</a></td>
             <td>aws-ec2</td>
-            <td>US-VA,US-CA,IE,SG</td>
+            <td>US-VA,US-CA,US-OR,BR-SP,IE,SG,AU-NSW,JP-13</td>
         </tr>
         <tr>
-            <td><a href="/guides/bluelock/">Bluelock</a></td>
-            <td>bluelock-vcloud-zone01</td>
-            <td>US-IN</td>
-        </tr>
-        <tr>
-            <td><a href="/guides/cloudsigma/">CloudSigma US</a></td>
-            <td>cloudsigma-lvs</td>
+            <td><a href="/guides/cloudsigma/">CloudSigma NV</a>*</td>
+            <td>cloudsigma2-lvs</td>
             <td>US-NV</td>
         </tr>
         <tr>
-            <td><a href="/guides/cloudsigma/">CloudSigma CH</a></td>
-            <td>cloudsigma-zrh</td>
-            <td>CH-ZH</td>
+            <td><a href="/guides/cloudsigma/">CloudSigma DC</a>*</td>
+            <td>cloudsigma2-wdc</td>
+            <td>US-DC</td>
         </tr>
         <tr>
-            <td><a href="/guides/cloudsigma/">CloudSigma DC</a></td>
-            <td>cloudsigma-wdc</td>
-            <td>US-DC</td>
+            <td><a href="/guides/cloudsigma/">CloudSigma CH</a>*</td>
+            <td>cloudsigma2-zrh</td>
+            <td>CH-ZH</td>
         </tr>
         <tr>
             <td>DigitalOcean*</td>
@@ -76,8 +71,18 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
         </tr>
         <tr>
             <td>ElasticHosts US</td>
+            <td>elastichosts-lax-p</td>
+            <td>US-CA</td>
+        </tr>
+        <tr>
+            <td>ElasticHosts US</td>
             <td>elastichosts-sat-p</td>
             <td>US-TX</td>
+        </tr>
+        <tr>
+            <td>ElasticHosts US</td>
+            <td>elastichosts-tor-p</td>
+            <td>CA-ON</td>
         </tr>
         <tr>
             <td>Go2Cloud</td>
@@ -87,7 +92,7 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
         <tr>
             <td><a href="/guides/go-grid/">GoGrid</a></td>
             <td>gogrid</td>
-            <td>US-CA,US-VA</td>
+            <td>US-CA,US-VA,NL-NH</td>
         </tr>
         <tr>
             <td><a href="/guides/google/">Google Compute Engine*</a></td>
@@ -95,19 +100,9 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
             <td></td>
         </tr>
         <tr>
-            <td>Green House Data</td>
-            <td>greenhousedata-element-vcloud</td>
-            <td>US-WY</td>
-        </tr>
-        <tr>
-            <td><a href="/guides/hpcloud/">HP</a></td>
+            <td><a href="/guides/hpcloud/">HP Helion</a></td>
             <td>hpcloud-compute</td>
-            <td>US-NV</td>
-        </tr>
-        <tr>
-            <td>Ninefold</td>
-            <td>ninefold-compute</td>
-            <td>AU-NSW</td>
+            <td>US-NV,US-VA</td>
         </tr>
         <tr>
             <td>OpenHosting</td>
@@ -179,7 +174,7 @@ The Maven Group ID for all supported APIs below is [org.apache.jclouds.api](http
             <td>byon</td>
         </tr>
         <tr>
-            <td><a href="/guides/cloudsigma/">CloudSigma</a></td>
+            <td><a href="/guides/cloudsigma/">CloudSigma</a>*</td>
             <td>cloudsigma</td>
         </tr>
         <tr>
@@ -220,11 +215,7 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
             <td>aws-s3</td>
         </tr>
         <tr>
-            <td>CloudOne</td>
-            <td>cloudonestorage</td>
-        </tr>
-        <tr>
-            <td><a href="/guides/hpcloud/">HP</a></td>
+            <td><a href="/guides/hpcloud/">HP Helion</a></td>
             <td>hpcloud-objectstorage</td>
         </tr>
         <tr>
@@ -232,16 +223,12 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
             <td>azureblob</td>
         </tr>
         <tr>
-            <td>Ninefold</td>
-            <td>ninefold-storage</td>
+            <td><a href="/guides/rackspace/">Rackspace US</a>*</td>
+            <td>rackspace-cloudfiles-us</td>
         </tr>
         <tr>
-            <td><a href="/guides/rackspace/">Rackspace US</a></td>
-            <td>cloudfiles-us</td>
-        </tr>
-        <tr>
-            <td><a href="/guides/rackspace/">Rackspace UK</a></td>
-            <td>cloudfiles-uk</td>
+            <td><a href="/guides/rackspace/">Rackspace UK</a>*</td>
+            <td>rackspace-cloudfiles-uk</td>
         </tr>
     </tbody>
 </table>
