@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<comments
+  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+  xsi:noNamespaceSchemaLocation='comments.xsd'
+  name="openstack-swift-180_to_openstack-swift-181"
+  jdversion="1.1.1">
+
+<!-- This file contains comments for a JDiff report. -->
+<!-- It is used only in generating the report, and does not need to ship with the final report. -->
+
+<!-- The id attribute in an identifier element identifies the change as noted in the report. -->
+<!-- An id has the form package[.class[.[ctor|method|field].signature]], where [] indicates optional text. -->
+<!-- A comment element can have multiple identifier elements, which will -->
+<!-- will cause the same text to appear at each place in the report, but -->
+<!-- will be converted to separate comments when the comments file is used. -->
+<!-- HTML tags in the text field will appear in the report. -->
+<!-- You also need to close p HTML elements, used for paragraphs - see the top-level documentation. -->
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1.SwiftApi"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1.SwiftApi.accountApiInRegion_removed(java.lang.String)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1.SwiftApi.bulkApiInRegion_removed(java.lang.String)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1.SwiftApi.configuredRegions_removed()"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1.SwiftApi.containerApiInRegion_removed(java.lang.String)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1.SwiftApi.getAccountApiForRegion_removed(java.lang.String)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1.SwiftApi.getAccountApi_added(java.lang.String)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1.SwiftApi.getBulkApiForRegion_removed(java.lang.String)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1.SwiftApi.getBulkApi_added(java.lang.String)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1.SwiftApi.getContainerApiForRegion_removed(java.lang.String)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1.SwiftApi.getContainerApi_added(java.lang.String)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1.SwiftApi.getObjectApiForRegionAndContainer_removed(java.lang.String, java.lang.String)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1.SwiftApi.getObjectApi_added(java.lang.String, java.lang.String)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1.SwiftApi.getStaticLargeObjectApiForRegionAndContainer_removed(java.lang.String, java.lang.String)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1.SwiftApi.getStaticLargeObjectApi_added(java.lang.String, java.lang.String)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1.SwiftApi.objectApiInRegionForContainer_removed(java.lang.String, java.lang.String)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1.SwiftApi.staticLargeObjectApiInRegionForContainer_removed(java.lang.String, java.lang.String)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1.SwiftFallbacks"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1.SwiftFallbacks.TrueOn404FalseOn409"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1.domain"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1.domain.Segment"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1.domain.Segment.getEtag_removed()"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1.features"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1.features.ContainerApi"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1.features.ContainerApi.createIfAbsent_removed(java.lang.String, org.jclouds.openstack.swift.v1.options.CreateContainerOptions)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1.features.ContainerApi.head_removed(java.lang.String)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1.features.ObjectApi"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1.features.ObjectApi.head_removed(java.lang.String)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.jclouds.openstack.swift.v1.features.ObjectApi.replace_removed(java.lang.String, Payload, java.util.Map&lt;java.lang.String, java.lang.String&gt;)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+
+</comments>

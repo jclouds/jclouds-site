@@ -1,0 +1,7 @@
+NO DOC BLOCK: org.jclouds.openstack.swift.v1.SwiftFallbacks Class
+NO DOC BLOCK: org.jclouds.openstack.swift.v1.SwiftFallbacks.TrueOn404FalseOn409 Class
+NO DOC BLOCK: org.jclouds.openstack.swift.v1.SwiftApi Method getAccountApi(java.lang.String)
+NO DOC BLOCK: org.jclouds.openstack.swift.v1.SwiftApi Method getBulkApi(java.lang.String)
+NO DOC BLOCK: org.jclouds.openstack.swift.v1.SwiftApi Method getContainerApi(java.lang.String)
+NO DOC BLOCK: org.jclouds.openstack.swift.v1.SwiftApi Method getObjectApi(java.lang.String, java.lang.String)
+NO DOC BLOCK: org.jclouds.openstack.swift.v1.SwiftApi Method getStaticLargeObjectApi(java.lang.String, java.lang.String)
