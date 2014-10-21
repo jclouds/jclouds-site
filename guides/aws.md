@@ -10,8 +10,8 @@ This page helps you get started with `jclouds` API with Amazon Web Services
 2. Get your Access Key ID and Secret Access Key by going to this [page](https://aws-portal.amazon.com/gp/aws/developer/account/index.html?ie=UTF8&action=access-key).
 3. Ensure you are using a recent JDK 6 version.
 4. Setup your project to include aws-ec2 and aws-s3.
-	* Get the dependencies `org.jclouds.provider/aws-ec2` and `org.jclouds.provider/aws-s3` using jclouds [Installation](/start/install).
-	* In order to use the SshjSshClientModule and Log4JLoggingModule you have to get dependencies `org.jclouds.driver/jclouds-sshj` and `org.jclouds.driver/jclouds-sl4j`.
+	* Get the dependencies `org.apache.jclouds.provider/aws-ec2` and `org.apache.jclouds.provider/aws-s3` using jclouds [Installation](/start/install).
+	* In order to use the SshjSshClientModule and Log4JLoggingModule you have to get dependencies `org.apache.jclouds.driver/jclouds-sshj` and `org.apache.jclouds.driver/jclouds-sl4j`.
 5. Start coding
 
 ## Using S3
