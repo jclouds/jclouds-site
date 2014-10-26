@@ -30,7 +30,7 @@ for name in jclouds jclouds-labs-openstack; do
   cd ..
 done
 
-apis="openstack-glance openstack-neutron openstack-swift openstack-marconi rackspace-autoscale rackspace-cloudfiles"
+apis="openstack-glance openstack-neutron openstack-marconi rackspace-autoscale rackspace-cloudfiles"
 
 for api in ${apis}; do
   mv jclouds-labs-openstack/${api} jclouds/apis/
