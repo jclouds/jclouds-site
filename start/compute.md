@@ -5,7 +5,7 @@ permalink: /start/compute/
 ---
 
 ## Introduction
-The jclouds Compute API provides a basic abstraction across Compute APIs such as Amazon EC2 and VMware vCloud.
+The jclouds Compute API provides a basic abstraction across Compute APIs such as Amazon EC2 and OpenStack Nova.
 We also have integrations for popular tools such as Ant and Maven.
 
 ## Features
@@ -76,7 +76,7 @@ and we really had no clean way to address this before. Operating System as a typ
 We previously had a class called Size which held a combination of size and hardware configuration data.
 While simple, it limited our ability to address fine grained concerns, as it assumed there is
 only a single disk, processor, etc. Our new Hardware type is much more robust, while still extremely simple to use.
-While mounted volume information is read-only at the moment, expect us to add portability over systems like EBS and vCloud volumes in the near future.
+While mounted volume information is read-only at the moment, expect us to add portability over systems like EBS in the near future.
 
 ### Usage
 
@@ -506,9 +506,6 @@ _This is significantly out of date._
 
 | *provider* | *default template* |
 |------------|--------------------|
-| vcloud/bluelock-vcdirector | osFamily(UBUNTU).os64Bit(true) |
-| trmk-vcloudexpress | osFamily(UBUNTU).osDescriptionMatches(".*JeOS.*").os64Bit(true) |
-| trmk-ecloud | osFamily(CENTOS).os64Bit(true) |
 | ec2 | osFamily(AMZN_LINUX).os64Bit(true) |
 | gogrid | osFamily(CENTOS).imageNameMatches(".*w/ None.*") |
 

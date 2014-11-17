@@ -189,10 +189,6 @@ The Maven Group ID for all supported APIs below is [org.apache.jclouds.api](http
             <td><a href="/guides/openstack/">OpenStack</a></td>
             <td>openstack-nova</td>
         </tr>
-        <tr>
-            <td><a href="/guides/vcloud/">vCloud</a></td>
-            <td>vcloud</td>
-        </tr>
     </tbody>
 </table>
 

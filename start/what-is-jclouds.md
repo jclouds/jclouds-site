@@ -7,7 +7,7 @@ permalink: /start/what-is-jclouds/
 Apache jclouds&reg; is an open source library that helps you get started in the cloud and utilizes your [Java](http://www.oracle.com/technetwork/java/index.html)
 or [Clojure](http://clojure.org) development skills. The jclouds API gives you the freedom to use portable abstractions or cloud-specific features.
 
-jclouds tests support of 30 cloud providers and cloud software stacks including Amazon, Azure, GoGrid, Ninefold, OpenStack, Rackspace, and vCloud.  Please see the
+jclouds tests support of 30 cloud providers and cloud software stacks including Amazon, Azure, GoGrid, OpenStack, Rackspace, and Google.  Please see the
 complete list of [jclouds supported providers](/reference/providers) that are supported by the jclouds API.
 
 jclouds offers several API abstractions as Java and Clojure libraries. The most mature of these are BlobStore and ComputeService.

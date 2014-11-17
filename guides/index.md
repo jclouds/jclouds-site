@@ -15,8 +15,6 @@ Use these guides for getting started with any of the cloud providers below:
 * [HP Helion Public Cloud (formerly HP Cloud)](hpcloud)
 * [OpenStack](openstack)
 * [Rackspace](rackspace)
-* [VMware vCloud](vcloud)
-* [VMware vCloud Director](vcloud-director)
 
 Use these guides for more in depth usage:
 
