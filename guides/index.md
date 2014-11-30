@@ -5,7 +5,6 @@ title: User Guides
 
 Use these guides for getting started with any of the cloud providers below:
 
-* [Abiquo](abiquo)
 * [Amazon Web Services](aws)
 * [Azure Storage](azure-storage)
 * [CloudSigma](cloudsigma)
@@ -18,7 +17,6 @@ Use these guides for getting started with any of the cloud providers below:
 
 Use these guides for more in depth usage:
 
-* [Abiquo](abiquo-cloud)
 * Amazon Web Services
     * [Elastic Block Store (EBS)](aws-ebs)
     * [Elastic Compute Cloud (EC2)](aws-ec2)
