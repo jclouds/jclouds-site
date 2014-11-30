@@ -4,7 +4,6 @@ comments: true
 date: 2014-10-19 14:00:00+00:00
 layout: post
 slug: apachecon-eu
-quicknews: The Apache jclouds team will be at ApacheCon Europe on November 17-21, 2014. Don't miss our talks!
 title: ApacheCon EU 2014 talks
 ---
 
