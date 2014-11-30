@@ -5,7 +5,7 @@ permalink: /guides/filesystem/
 ---
 
 1. Setup your project to include filesystem
-	* Get the dependency `org.jclouds.api/filesystem` using jclouds [Installation](/start/install).
+	* Get the dependency `org.apache.jclouds.api/filesystem` using jclouds [Installation](/start/install).
 2. Start coding
 
 {% highlight java %}

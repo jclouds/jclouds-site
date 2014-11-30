@@ -18,7 +18,7 @@ This involves [dockerizing an SSH daemon service](https://docs.docker.com/exampl
 * Install [Docker](http://docs.docker.com/installation/)
 * Ensure you are using a recent JDK 7
 * Setup your project to include `docker`
-	* Get the dependency `org.jclouds.labs/docker` using jclouds [Installation](/start/install).
+	* Get the dependency `org.apache.jclouds.labs/docker` using jclouds [Installation](/start/install).
 * Start coding
 
 {% highlight java %}

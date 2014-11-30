@@ -15,7 +15,7 @@ permalink: /guides/azure-storage/
 		* Primary Access Key is the key you use in jclouds
 3. Ensure you are using a recent JDK 6
 4. Setup your project to include `azureblob`
-	* Get the dependency `org.jclouds.provider/azureblob` using jclouds [Installation](/start/install).
+	* Get the dependency `org.apache.jclouds.provider/azureblob` using jclouds [Installation](/start/install).
 5. Start coding
 
 {% highlight java %}

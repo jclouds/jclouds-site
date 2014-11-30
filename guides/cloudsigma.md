@@ -7,7 +7,7 @@ permalink: /guides/cloudsigma/
 1. Signup for [CloudSigma](http://www.cloudsigma.com/)
 2. Ensure you are using a recent JDK 6
 3. Setup your project to include `cloudsigma-zrh`
-	* Get the dependency `org.jclouds.provider/cloudsigma-zrh` using jclouds [Installation](/start/install).
+	* Get the dependency `org.apache.jclouds.provider/cloudsigma-zrh` using jclouds [Installation](/start/install).
 4. Start coding
 
 {% highlight java %}

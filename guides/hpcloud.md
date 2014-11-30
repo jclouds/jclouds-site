@@ -18,7 +18,7 @@ HP Helion Public Cloud is an OpenStack® based public cloud provider offering on
     - Click on "Manage Access Keys"
 3. Ensure you are using a recent version of Java 6.
 4. Setup your project to include `hpcloud-objectstorage` and `hpcloud-compute`.
-	* Get the dependencies `org.jclouds.provider/hpcloud-objectstorage` and `org.jclouds.provider/hpcloud-compute` using jclouds [Installation](/start/install).
+	* Get the dependencies `org.apache.jclouds.provider/hpcloud-objectstorage` and `org.apache.jclouds.provider/hpcloud-compute` using jclouds [Installation](/start/install).
 5. Start coding.
 
 ** Note: As of 1.8.0, the HP Cloud provider uses tenantName:accessKey as identity and secretKey as credentials. Previous 
