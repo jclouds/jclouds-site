@@ -19,8 +19,8 @@ title: Get in touch!
     <p>We will also be happy to help you getting involved in the project. If you want to start hacking, just check out these guides:</p>
 
     <ul>
-      <li><a href="http://wiki.apache.org/jclouds/How%20to%20Contribute">How to contribute code</a></li>
-      <li><a href="http://wiki.apache.org/jclouds/How%20to%20Contribute%20Documentation">How to contribute documentation</a></li>
+      <li><a href="https://cwiki.apache.org/confluence/display/JCLOUDS/How+to+Contribute">How to contribute code</a></li>
+      <li><a href="https://cwiki.apache.org/confluence/display/JCLOUDS/How+to+Contribute+Documentation">How to contribute documentation</a></li>
     </ul>
   </div>
   <div class="col-md-6">

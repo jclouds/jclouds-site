@@ -28,7 +28,7 @@ Another important change that has kept us busy has been the rebranding of the ma
 * Pages look cleaner and are easier to read.
 * The entire style and structure of the pages is more consistent.
 
-We have focused on the design and on making the important documentation more accessible. An upcoming effort to improve the contents is coming, and we'd love your feedback, or even better, [your help](http://wiki.apache.org/jclouds/How%20to%20Contribute%20Documentation)!.
+We have focused on the design and on making the important documentation more accessible. An upcoming effort to improve the contents is coming, and we'd love your feedback, or even better, [your help](https://cwiki.apache.org/confluence/display/JCLOUDS/How+to+Contribute+Documentation)!.
 
 ## jclouds 1.7.0 and 1.7.1 released!
 
@@ -51,7 +51,7 @@ Want to see all this in action? [Download](/start/install) and start using the l
 
 ## Special thanks
 
-These have been very busy months and many things have been going on. We'd especially like to thank all [providers that are helping](http://wiki.apache.org/jclouds/Test%20Provider%20Thanks) us improve the quality of the project by giving us testing accounts. This is helping us a lot and allows us to perform better testing of supported providers before every release.
+These have been very busy months and many things have been going on. We'd especially like to thank all [providers that are helping](https://cwiki.apache.org/confluence/display/JCLOUDS/Test+Provider+Thanks) us improve the quality of the project by giving us testing accounts. This is helping us a lot and allows us to perform better testing of supported providers before every release.
 
 We also want to thank [everyone that helped](http://www.ohloh.net/p/jclouds/contributors?query=&sort=latest_commit) by contributing code, documentation, or participating in the [mailing lists](/community). We love having your feedback and contributions!
 

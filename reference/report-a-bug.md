@@ -56,4 +56,4 @@ Please remember to __remove all credentials and other sensitive information__ fr
 
 ## <a id="doc"></a>Documentation
 
-If you find a bug in the documentation, you can report that via JIRA or the user mailing list too. However it is quite easy to fix the documentation (this website) and we encourage you to do so by reading [How to Contribute Documentation](https://wiki.apache.org/jclouds/How%20to%20Contribute%20Documentation).
+If you find a bug in the documentation, you can report that via JIRA or the user mailing list too. However it is quite easy to fix the documentation (this website) and we encourage you to do so by reading [How to Contribute Documentation](https://cwiki.apache.org/confluence/display/JCLOUDS/How+to+Contribute+Documentation).
