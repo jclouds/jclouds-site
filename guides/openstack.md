@@ -405,7 +405,7 @@ This pom.xml file specifies all of the dependencies you'll need to work with Ope
       <version>${jclouds.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.apache.jclouds.labs</groupId>
+      <groupId>org.apache.jclouds.api</groupId>
       <artifactId>openstack-swift</artifactId>
       <version>${jclouds.version}</version>
     </dependency>
