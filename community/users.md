@@ -49,6 +49,10 @@ We know folks from a good many places.  While this may just be a list of applica
     <td>Orchestrates provisioning workflows over jclouds provider APIs using Scala</td>
 </tr>
 <tr>
+    <td><a href="http://cloudesire.com/">ClouDesire</a></td>
+    <td>Uses jclouds to provide multi-cloud deployments of its applications</td>
+</tr>
+<tr>
     <td><a href="http://www.cloudsoftcorp.com/">Cloudsoft</a></td>
     <td>Uses jclouds to underpin <a href="http://brooklyn.incubator.apache.org/">Apache Brooklyn</a></td>
 </tr>
