@@ -397,8 +397,7 @@ be fine. Note that in S3, you must calculate the length ahead of time, since it 
 chunked encoding.
 
 Our integration tests ensure that we don't rebuffer in memory on upload: 
-[testUploadBigFile](http://github.com/jclouds/jclouds/blob/master/core/src/test/java/org/jclouds/http/BaseHtt
-pCommandExecutorServiceIntegrationTest.java).
+[testUploadBigFile](http://github.com/jclouds/jclouds/blob/master/core/src/test/java/org/jclouds/http/BaseHttpCommandExecutorServiceIntegrationTest.java).
 
 This is verified against all of our HTTP clients, conceding that it isn't going to help limited
 environments such as Google App Engine.
