@@ -465,4 +465,4 @@ This is a list of providers that work with the Rackspace Cloud that you can use 
 
 Your feedback is appreciated! If you have specific issues with Rackspace support in jclouds, we'd prefer that you file an issue via [JIRA](https://issues.apache.org/jira/browse/JCLOUDS).
 
-For general feedback and support requests, send an email to: [sdk-support@rackspace.com](mailto:sdk-support@rackspace.com)
+For general feedback and support requests, please join the [jclouds community](/community/).
