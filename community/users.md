@@ -181,6 +181,10 @@ We know folks from a good many places.  While this may just be a list of applica
     <td>Uses jclouds to deploy OpenShift Flex applications to Terremark, Rackspace, and EC2</td>
 </tr>
 <tr>
+    <td><a href="http://roboconf.net">Roboconf</a></td>
+    <td>Uses jclouds in target handlers for various cloud providers</td>
+</tr>
+<tr>
     <td><a href="https://github.com/gschueler/rundeck-jclouds">RunDeck integration</a></td>
     <td>Uses <a href="/start/compute">ComputeService</a> as a resource provider for runbook automation</td>
 </tr>
