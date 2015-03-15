@@ -5,3 +5,4 @@ _site
 *.iml
 *~
 site-content/
+.ruby-version
