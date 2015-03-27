@@ -64,7 +64,7 @@ There are some differences in terminology between jclouds and OpenStack that sho
           <td>Server</td>
         </tr>
         <tr>
-          <td>Location/Zone</td>
+          <td>Location/Region</td>
           <td>Region</td>
         </tr>
         <tr>
@@ -124,7 +124,7 @@ import java.util.Set;
 
 public class JCloudsNova implements Closeable {
     private final NovaApi novaApi;
-    private final Set<String> zones;
+    private final Set<String> regions;
 
     public static void main(String[] args) throws IOException {
         JCloudsNova jcloudsNova = new JCloudsNova();
@@ -151,14 +151,14 @@ public class JCloudsNova implements Closeable {
                 .credentials(identity, credential)
                 .modules(modules)
                 .buildApi(NovaApi.class);
-        zones = novaApi.getConfiguredZones();
+        regions = novaApi.getConfiguredRegions();
     }
 
     private void listServers() {
-        for (String zone : zones) {
-            ServerApi serverApi = novaApi.getServerApiForZone(zone);
+        for (String region : regions) {
+            ServerApi serverApi = novaApi.getServerApi(region);
 
-            System.out.println("Servers in " + zone);
+            System.out.println("Servers in " + region);
 
             for (Server server : serverApi.listInDetail().concat()) {
                 System.out.println("  " + server);
@@ -274,7 +274,7 @@ public class JCloudsSwift implements Closeable {
    private void createContainer() {
       System.out.println("Create Container");
 
-      ContainerApi containerApi = swiftApi.getContainerApiForRegion("RegionOne");
+      ContainerApi containerApi = swiftApi.getContainerApi("RegionOne");
       CreateContainerOptions options = CreateContainerOptions.Builder
             .metadata(ImmutableMap.of(
                   "key1", "value1",
@@ -288,7 +288,7 @@ public class JCloudsSwift implements Closeable {
    private void uploadObjectFromString() {
       System.out.println("Upload Object From String");
 
-      ObjectApi objectApi = swiftApi.getObjectApiForRegionAndContainer("RegionOne", CONTAINER_NAME);
+      ObjectApi objectApi = swiftApi.getObjectApi("RegionOne", CONTAINER_NAME);
       Payload payload = newByteSourcePayload(wrap("Hello World".getBytes()));
 
       objectApi.put(OBJECT_NAME, payload, PutOptions.Builder.metadata(ImmutableMap.of("key1", "value1")));
@@ -299,7 +299,7 @@ public class JCloudsSwift implements Closeable {
    private void listContainers() {
       System.out.println("List Containers");
 
-      ContainerApi containerApi = swiftApi.getContainerApiForRegion("RegionOne");
+      ContainerApi containerApi = swiftApi.getContainerApi("RegionOne");
       Set<Container> containers = containerApi.list().toSet();
 
       for (Container container : containers) {
@@ -357,7 +357,7 @@ public JCloudsNova() {
             .modules(modules)
             .overrides(overrides)
             .buildApi(NovaApi.class);
-    zones = novaApi.getConfiguredZones();
+    regions = novaApi.getConfiguredRegions();
 }
 {% endhighlight %}
 
