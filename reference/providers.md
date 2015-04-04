@@ -162,7 +162,7 @@ The Maven Group ID for all supported APIs below is [org.apache.jclouds.api](http
     </thead>
     <tbody>
         <tr>
-            <td><a href="/guides/abiquo/">Abiquo</a>*</td>
+            <td>Abiquo*</td>
             <td>abiquo</td>
         </tr>
         <tr>

@@ -24,13 +24,21 @@ else
   svn up site-content
 fi
 
-cp -r _site/* site-content/
-#jekyll copy site-content to _site so remove it
-rm -rf site-content/site-content
-rm site-content/deploy-site.sh
+rsync -ar --delete \
+    --exclude deploy-site.sh \
+    --exclude deploy-javadoc.sh \
+    --exclude site-content \
+    --filter='protect .svn/' \
+    --filter='protect reference/javadoc/**/*' \
+    --filter='protect jclouds-site.iml' \
+    _site/ site-content/
+
+cd site-content
+
+#delete removed files
+for f in `svn status | grep '^!' | awk '{print $NF}'`; do svn rm $f; done
 
 #add new files
-cd site-content
 svn status | awk '/^\?/{print $2}' | \
     while read filename; do svn --no-auto-props add $filename; done
 
