@@ -8,6 +8,7 @@ This page helps you get started with `jclouds` API with Amazon Web Services
 
 1. Sign up for [Amazon Web Services Signup](https://aws-portal.amazon.com/gp/aws/developer/registration/index.html).
 2. Get your Access Key ID and Secret Access Key by going to this [page](https://aws-portal.amazon.com/gp/aws/developer/account/index.html?ie=UTF8&action=access-key).
+   As a best practise, do NOT use AWS account level credentials. Instead create a new user through AWS Identity and Access Management (IAM) and grant adequate permissions to the user. Use Access Key ID and Secret Access Key for this newly created user.
 3. Ensure you are using a recent JDK 6 version.
 4. Setup your project to include aws-ec2 and aws-s3.
 	* Get the dependencies `org.apache.jclouds.provider/aws-ec2` and `org.apache.jclouds.provider/aws-s3` using jclouds [Installation](/start/install).
