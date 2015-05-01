@@ -42,7 +42,7 @@ remote `BlobStore`.
 ---
 jclouds supports a wide range of blobstore providers that can be used equally in any `BlobStore`.
 
-Please refer to the [Supported BlobStore Providers](/guides/providers/#blobstore-providers) page for
+Please refer to the [Supported BlobStore Providers](/reference/providers/#blobstore-providers) page for
 more information.
 
 
