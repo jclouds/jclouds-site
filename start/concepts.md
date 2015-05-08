@@ -11,17 +11,17 @@ permalink: /start/concepts/
 
 ## <a id="views"></a>Views
 
-[**Views**](http://javadocs.jclouds.cloudbees.net/org/jclouds/View.html) are portable abstractions that are designed to allow you to write code that uses cloud services without tying yourself to a specific vendor. Take [JDBC](http://docs.oracle.com/javase/7/docs/technotes/guides/jdbc/index.html) as an example: rather than writing code directly for a specific type of database, you can make generic database requests, and the JDBC specification and drivers translate these into specific commands and statements for a certain type of database.
+[**Views**](http://jclouds-javadocs.elasticbeanstalk.com/org/jclouds/View.html) are portable abstractions that are designed to allow you to write code that uses cloud services without tying yourself to a specific vendor. Take [JDBC](http://docs.oracle.com/javase/7/docs/technotes/guides/jdbc/index.html) as an example: rather than writing code directly for a specific type of database, you can make generic database requests, and the JDBC specification and drivers translate these into specific commands and statements for a certain type of database.
 
 Views generally make sense only once a reasonably broad set of functionality is supported by multiple vendors. In the cloud space, jclouds currently supports three such views:
 
  * [BlobStore](/start/blobstore/)
  * [ComputeService](/start/compute/)
- * [LoadBalancerService](http://javadocs.jclouds.cloudbees.net/org/jclouds/loadbalancer/LoadBalancerService.html)
+ * [LoadBalancerService](http://jclouds-javadocs.elasticbeanstalk.com/org/jclouds/loadbalancer/LoadBalancerService.html)
 
 ## <a id="apis"></a>APIs
 
-An **API** in jclouds describes the actual calls (often, but not always, HTTP requests) that can be executed against a specific cloud service to "do stuff". In the case of popular APIs, such as the [EC2 compute API](http://javadocs.jclouds.cloudbees.net/org/jclouds/ec2/EC2Api.html), or the [S3 storage API](http://javadocs.jclouds.cloudbees.net/org/jclouds/s3/S3Client.html), there may be multiple vendors with cloud services that support that particular API. For example, EC2 is supported by [Amazon](/guides/aws-ec2/) and [OpenStack](/guides/openstack/), amongst others.
+An **API** in jclouds describes the actual calls (often, but not always, HTTP requests) that can be executed against a specific cloud service to "do stuff". In the case of popular APIs, such as the [EC2 compute API](http://jclouds-javadocs.elasticbeanstalk.com/org/jclouds/ec2/EC2Api.html), or the [S3 storage API](http://jclouds-javadocs.elasticbeanstalk.com/org/jclouds/s3/S3Client.html), there may be multiple vendors with cloud services that support that particular API. For example, EC2 is supported by [Amazon](/guides/aws-ec2/) and [OpenStack](/guides/openstack/), amongst others.
 
 A vendor may also support an API in multiple geographic locations. For example, [Rackspace](/guides/rackspace/)'s Cloud Servers API is available both in the [US](/reference/providers/#compute-providers) and the [UK](/reference/providers/#compute-providers).
 
@@ -61,7 +61,7 @@ It's like writing your database layer purely against the JDBC specification: you
 
 #### You can use API-specific calls where needed
 
-If the particular views you are working with do not allow you to do exactly what you want, but the API supports the desired functionality, you can ["unwrap"](http://javadocs.jclouds.cloudbees.net/org/jclouds/View.html#unwrap(\)) the view to access the underlying API. This reduces the portability of your code, but you can still move between providers that support this API.
+If the particular views you are working with do not allow you to do exactly what you want, but the API supports the desired functionality, you can ["unwrap"](http://jclouds-javadocs.elasticbeanstalk.com/org/jclouds/View.html#unwrap(\)) the view to access the underlying API. This reduces the portability of your code, but you can still move between providers that support this API.
 
 For example, if you unwrap the EC2 API from a ComputeService view and talk directly to EC2, you will not be able move to vCloud without code changes any more. You will still be able to switch to a different provider that also supports the EC2 API, however.
 
@@ -77,7 +77,7 @@ Finally, we have...
 
 A context represents a specific connection to a particular provider. From the perspective of our database analogy, this would be broadly similar to a database connection against a specific DB.
 
-Once you have created a context via the [ContextBuilder](http://javadocs.jclouds.cloudbees.net/org/jclouds/ContextBuilder.html) and are "connected" to a particular cloud service, you can either get any of the views that are supported by that provider, or go straight to the API or even to the provider level.
+Once you have created a context via the [ContextBuilder](http://jclouds-javadocs.elasticbeanstalk.com/org/jclouds/ContextBuilder.html) and are "connected" to a particular cloud service, you can either get any of the views that are supported by that provider, or go straight to the API or even to the provider level.
 
 Creating a context is an expensive operation, so in general it is a good idea to create one context per credential and target cloud when the application starts and close it when it terminates. Contexts are thread-safe, so can be shared across your application.
 
