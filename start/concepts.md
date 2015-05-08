@@ -84,5 +84,3 @@ Creating a context is an expensive operation, so in general it is a good idea to
 It is important to [close a context](http://jclouds-javadocs.elasticbeanstalk.com/org/jclouds/Context.html) when you no longer need it, to free its associated resources.
 
 You can also get a view back from the ContextBuilder and _later_ unwrap it to access the underlying API or provider.
-
-The context also provides access to some low level resources, such as the dependency injection framework or the executors used to perform concurrent operations, so it is important to close it once you are done, to free all its associated resources.
