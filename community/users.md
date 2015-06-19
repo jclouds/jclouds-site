@@ -133,6 +133,10 @@ We know folks from a good many places.  While this may just be a list of applica
     <td>Uses jclouds to integrate with a variety of object stores</td>
 </tr>
 <tr>
+    <td><a href="https://manageacloud.com/">Manageacloud</a></td>
+    <td>Uses jclouds to orchestrate servers in different clouds</td>
+</tr>
+<tr>
     <td><a href="https://www.mastodonc.com/">Mastodon C</a></td>
     <td>Uses jclouds via Pallet in order to provision carbon-neutral Hadoop services</td>
 </tr>
