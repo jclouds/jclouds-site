@@ -95,7 +95,7 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
             <td>US-CA,US-VA,NL-NH</td>
         </tr>
         <tr>
-            <td><a href="/guides/google/">Google Compute Engine*</a></td>
+            <td><a href="/guides/google/">Google Compute Engine</a></td>
             <td>google-compute-engine</td>
             <td></td>
         </tr>
@@ -219,11 +219,11 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
             <td>azureblob</td>
         </tr>
         <tr>
-            <td><a href="/guides/rackspace/">Rackspace US</a>*</td>
+            <td><a href="/guides/rackspace/">Rackspace US</a></td>
             <td>rackspace-cloudfiles-us</td>
         </tr>
         <tr>
-            <td><a href="/guides/rackspace/">Rackspace UK</a>*</td>
+            <td><a href="/guides/rackspace/">Rackspace UK</a></td>
             <td>rackspace-cloudfiles-uk</td>
         </tr>
     </tbody>
