@@ -13,6 +13,7 @@ Use these guides for getting started with any of the cloud providers below:
 * [Google Cloud Platform](google)
 * [HP Helion Public Cloud (formerly HP Cloud)](hpcloud)
 * [OpenStack](openstack)
+* [ProfitBricks](profitbricks)
 * [Rackspace](rackspace)
 
 Use these guides for more in depth usage:

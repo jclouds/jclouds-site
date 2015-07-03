@@ -110,6 +110,11 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
             <td>US-VA</td>
         </tr>
         <tr>
+            <td><a href="/guides/profitbricks/">ProfitBricks</a>*</td>
+            <td>profitbricks</td>
+            <td>DE-BW,DE-HE,US-NV</td>
+        </tr>
+        <tr>
             <td>Rackspace UK (<a href="http://www.rackspace.com/knowledge_center/article/next-gen-vs-first-gen-feature-comparison">First Gen</a>)</td>
             <td>cloudservers-uk</td>
             <td>GB-SLG</td>
