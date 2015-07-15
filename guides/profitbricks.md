@@ -26,12 +26,12 @@ This guide will show you how to programmatically use the ProfitBricks provider i
 
 --------------
 
-## Concepts
+## <a id="concepts"></a>Concepts
 
 The jclouds library wraps the [ProfitBricks API](https://devops.profitbricks.com/api/soap/). All operations are performed over SSL and authenticated using your ProfitBricks portal credentials. The API can be accessed within an instance running in ProfitBricks or directly over the Internet from any application that can send an HTTPS request and receive an HTTPS response.
 
 
-## Getting Started
+## <a id="getting-started"></a>Getting Started
 
 Before you begin you will need to have [signed-up](https://www.profitbricks.com/signup) for a ProfitBricks account. The credentials you setup during sign-up will be used to authenticate against the API.
  
@@ -93,7 +93,7 @@ Connecting to ProfitBricks can be done by creating a compute connection with the
 
 **Caution:** You will want to ensure you follow security best practices when using credentials within your code or stored in a file.
 
-##Portable Abstraction Usage
+## <a id="portable-abstraction-usage"></a>Portable Abstraction Usage
 
 ### Terms
 Like any cloud provider, ProfitBricks has its own set of terms in cloud computing. To abstract this into jclouds' Compute interface, these terms were associated:
@@ -160,7 +160,7 @@ To enable jclouds to execute script, we need to use a custom image. The easiest 
 > Take note that these features are still accessible by *unwraping* the ProfitBricks API, but this'll reduce portability of your code. See [Concepts](https://jclouds.apache.org/start/concepts/).
 
 # How To's
-## How to: Create a Data Center
+## <a id="how-to-create-a-data-center"></a>How to: Create a Data Center
 
 ProfitBricks introduces the concept of Virtual Data Centers. These are logically separated from one another and allow you to have a self-contained environment for all servers, volumes, networking, snapshots, and so forth. The goal is to give you the same experience as you would have if you were running your own physical data center.
 
@@ -176,7 +176,7 @@ The following code example shows you how to programmatically create a data cente
 
 This responds with the datacenter object once created.
 
-## How to: Delete a Data Center
+## <a id="how-to-delete-a-data-center"></a>How to: Delete a Data Center
 
 You will want to exercise a bit of caution here. Removing a data center will **destroy** all objects contained within that data center -- servers, volumes, snapshots, and so on.
 
@@ -188,7 +188,7 @@ The code to remove a data center is as follows. This example assumes you want to
 {% endhighlight %}
 
 
-## How to: Create a Server
+## <a id="how-to-create-a-server"></a>How to: Create a Server
 
 The server create method has a list of required parameters followed by a hash of optional parameters. The optional parameters are specified within the "options" hash and the variable names match the [SOAP API](https://devops.profitbricks.com/api/soap/) parameters.
 
@@ -215,7 +215,7 @@ The server can take time to provision. The "waitUntilAvailable" server object me
 {% endhighlight %}
 
 
-## How to: List Available Disk and ISO Images
+## <a id="how-to-list-available-disk-and-iso-images"></a>How to: List Available Disk and ISO Images
 
 A list of disk and ISO images are available from ProfitBricks for immediate use. These can be easily viewed and selected. The following shows you how to get a list of images. This list represents both CDROM images and HDD images.
 
@@ -225,7 +225,7 @@ A list of disk and ISO images are available from ProfitBricks for immediate use.
 {% endhighlight %}
 
 
-## How to: Create a Storage Volume
+## <a id="how-to-create-a-storage-volume"></a>How to: Create a Storage Volume
 
 ProfitBricks allows for the creation of multiple storage volumes that can be attached and detached as needed. It is useful to attach an image when creating a storage volume. The storage size is in gigabytes.
 
@@ -240,7 +240,7 @@ ProfitBricks allows for the creation of multiple storage volumes that can be att
 {% endhighlight %}
 
 
-## How to: Update Cores, Memory, and Disk
+## <a id="how-to-update-cores-memory-and-disk"></a>How to: Update Cores, Memory, and Disk
 
 ProfitBricks allows users to dynamically update cores, memory, and disk independently of each other. This removes the restriction of needing to upgrade to the next size available size to receive an increase in memory. You can now simply increase the instances memory keeping your costs in-line with your resource needs.
 
@@ -280,7 +280,7 @@ The server object may need to be refreshed in order to show the new configuratio
 {% endhighlight %}
 
 
-## How to: Attach and Detach a Storage Volume
+## <a id="how-to-attach-and-detach-a-storage-volume"></a>How to: Attach and Detach a Storage Volume
 
 ProfitBricks allows for the creation of multiple storage volumes. You can detach and reattach these on the fly. This allows for various scenarios such as re-attaching a failed OS disk to another server for possible recovery or moving a volume to another location and spinning it up. 
 
@@ -292,7 +292,7 @@ The following illustrates how you would attach and detach a volume from a server
 {% endhighlight %}
 
 
-## How to: List Servers, Volumes, and Data Centers
+## <a id="how-to-list-servers-volumes-and-data-centers"></a>How to: List Servers, Volumes, and Data Centers
 
 jclouds provides standard functions for retrieving a list of volumes, servers, and datacenters. 
 
@@ -308,7 +308,7 @@ The following code illustrates how to pull these three list types:
 {% endhighlight %}
 
 
-## Example:
+## <a id="example"></a>Example:
 
 
 {% highlight java %}
@@ -439,5 +439,5 @@ The following code illustrates how to pull these three list types:
 {% endhighlight %}
 
 
-## Support and Feedback
+## <a id="support-and-feedback"></a>Support and Feedback
 Your feedback is welcome! If you have comments or questions regarding using ProfitBricks via jclouds, please reach out to us at [DevOps Central](https://devops.profitbricks.com).
