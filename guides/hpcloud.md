@@ -31,12 +31,14 @@ versions of the HP Cloud provider (prior to 1.8.0) default to using tenantName:u
 BlobStoreContext context = ContextBuilder.newBuilder("hpcloud-objectstorage")
                  .credentials("tenantName:accessKey", "secretKey")
                  .buildView(BlobStoreContext.class);
+BlobStore blobStore = context.getBlobStore();
 
 // Create a container in the default location
-context.getBlobStore().createContainerInLocation(null, container);
+blobStore.createContainerInLocation(null, container);
 
-// Use the map interface for easy access to put/get things, keySet, etc.
-context.createInputStreamMap(container).put("blob.txt", inputStream);
+// Upload an empty blob
+Blob blob = blobStore.blobBuilder("blob-name").payload(new byte[0]).build();
+blobStore.putBlob(container, blob);
 
 // When you need access to hpcloud specific features, use the provider-specific context
 HPCloudObjectStorageClient hpcloudClient =
