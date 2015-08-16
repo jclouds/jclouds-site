@@ -29,4 +29,5 @@ Use these guides for getting started with other technologies that jclouds is com
 
 * [Chef](chef)
 * [File System](filesystem)
+* [JDBC](jdbc)
 * [Karaf](karaf)
