@@ -23,21 +23,20 @@ cd $TMPDIR
 
 for name in jclouds jclouds-labs-openstack; do
   rm -rf ${name}
-  git clone https://github.com/jclouds/${name}.git
+  git clone https://git-wip-us.apache.org/repos/asf/${name}.git
   cd ${name}
-  git checkout ${JCLOUDS_VERSION_X}
-  git reset --hard ${name}-${JCLOUDS_VERSION}
+  git checkout rel/${name}-${JCLOUDS_VERSION}
   cd ..
 done
 
-apis="openstack-glance openstack-neutron openstack-marconi rackspace-autoscale rackspace-cloudfiles"
+apis="openstack-glance openstack-neutron openstack-marconi rackspace-autoscale"
 
 for api in ${apis}; do
   mv jclouds-labs-openstack/${api} jclouds/apis/
   sed -i "" "s#<module>route53</module>#<module>route53</module><module>${api}</module>#g" jclouds/apis/pom.xml
 done
 
-providers="rackspace-autoscale-us rackspace-cloudqueues-us rackspace-cloudqueues-uk rackspace-cloudfiles-uk rackspace-cloudfiles-us"
+providers="rackspace-autoscale-us rackspace-cloudqueues-us rackspace-cloudqueues-uk"
 
 for provider in ${providers}; do
   mv jclouds-labs-openstack/${provider} jclouds/providers/
@@ -62,7 +61,9 @@ else
 
     svn status
 
-    read -p "Are you sure you want to deploy the above changes? (y|n) " -n 1 -r
+    read -p "Are you sure you want to deploy the above changes? (y|n) "
+    [[ ${REPLY} == "y" ]] || exit 0 ]]
+    
     echo
 
     svn commit --message 'deploy jclouds javadoc site content'
