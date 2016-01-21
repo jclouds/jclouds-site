@@ -211,6 +211,10 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
             <td>aws-s3</td>
         </tr>
         <tr>
+            <td>Google Cloud Storage*</td>
+            <td>google-cloud-storage</td>
+        </tr>
+        <tr>
             <td>Microsoft</td>
             <td>azureblob</td>
         </tr>
@@ -244,7 +248,7 @@ The Maven Group ID for all supported APIs below is [org.apache.jclouds.api](http
             <td>atmos</td>
         </tr>
         <tr>
-            <td><a href="/guides/aws-s3/">AWS</a></td>
+            <td>S3</td>
             <td>s3</td>
         </tr>
         <tr>
@@ -254,10 +258,6 @@ The Maven Group ID for all supported APIs below is [org.apache.jclouds.api](http
         <tr>
             <td><a href="/guides/openstack/">OpenStack</a></td>
             <td>swift</td>
-        </tr>
-        <tr>
-            <td><a href="/guides/rackspace/">Rackspace</a></td>
-            <td>cloudfiles</td>
         </tr>
     </tbody>
 </table>
