@@ -11,7 +11,6 @@ Use these guides for getting started with any of the cloud providers below:
 * [Docker](docker)
 * [GoGrid](go-grid)
 * [Google Cloud Platform](google)
-* [HP Helion Public Cloud (formerly HP Cloud)](hpcloud)
 * [OpenStack](openstack)
 * [ProfitBricks](profitbricks)
 * [Rackspace](rackspace)

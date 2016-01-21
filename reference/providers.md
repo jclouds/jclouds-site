@@ -50,7 +50,7 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
             <td>CH-ZH</td>
         </tr>
         <tr>
-            <td>DigitalOcean*</td>
+            <td>DigitalOcean</td>
             <td>digitalocean</td>
             <td></td>
         </tr>
@@ -98,11 +98,6 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
             <td><a href="/guides/google/">Google Compute Engine</a></td>
             <td>google-compute-engine</td>
             <td></td>
-        </tr>
-        <tr>
-            <td><a href="/guides/hpcloud/">HP Helion</a></td>
-            <td>hpcloud-compute</td>
-            <td>US-NV,US-VA</td>
         </tr>
         <tr>
             <td>OpenHosting</td>
@@ -214,10 +209,6 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
         <tr>
             <td><a href="/guides/aws-s3/">AWS</a></td>
             <td>aws-s3</td>
-        </tr>
-        <tr>
-            <td><a href="/guides/hpcloud/">HP Helion</a></td>
-            <td>hpcloud-objectstorage</td>
         </tr>
         <tr>
             <td>Microsoft</td>
