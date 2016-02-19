@@ -105,7 +105,7 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
             <td>US-VA</td>
         </tr>
         <tr>
-            <td><a href="/guides/profitbricks/">ProfitBricks</a>*</td>
+            <td><a href="/guides/profitbricks/">ProfitBricks</a></td>
             <td>profitbricks</td>
             <td>DE-BW,DE-HE,US-NV</td>
         </tr>
