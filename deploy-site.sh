@@ -49,10 +49,9 @@ else
 
     svn status
 
-    read -p "Are you sure you want to deploy the above changes? (y|n) " -n 1 -r
-    echo
+    read -p "Are you sure you want to deploy the above changes? (y|n) "
 
-    if [[ $REPLY =~ ^[y]$ ]]; then
+    if [[ "$REPLY" == "y" ]]; then
         USERNAME_ARG=""
         if [ -n "$1" ]; then
             USERNAME_ARG="--username $1"
