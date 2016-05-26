@@ -73,10 +73,6 @@ We know folks from a good many places.  While this may just be a list of applica
     <td>Uses jclouds for Rackspace, GoGrid, Azure, and Terremark integration</td>
 </tr>
 <tr>
-    <td><a href="http://www.docuharvest.com/">DocuHarvest</a></td>
-    <td>Uses Pallet with jclouds EC2 Clojure features to bootstrap Apache CouchDB, Compojure, etc.</td>
-</tr>
-<tr>
     <td><a href="http://www.elasticinbox.com/">ElasticInbox</a></td>
     <td>Uses jclouds to store email messages on blobstores such as AWS S3 and Apache Whirr to deploy ElasticInbox and Cassandra instances</td>
 </tr>
@@ -175,6 +171,10 @@ We know folks from a good many places.  While this may just be a list of applica
 <tr>
     <td><a href="http://www.paremus.com/psf">Paremus Service Fabric</a></td>
     <td>Uses jclouds OSGi integration to deploy Paremus Service Fabric across public clouds including Amazon EC2, GoGrid and Rackspace</td>
+</tr>
+<tr>
+    <td><a href="http://www.pdfdata.io/">PDFDATA.io</a></td>
+    <td>Uses Pallet with jclouds EC2 Clojure features to bootstrap PostgreSQL, Compojure, etc.</td>
 </tr>
 <tr>
     <td><a href="http://docs.rackspace.com/sdks/guide/content/java.html">Rackspace</a></td>
