@@ -1,7 +1,7 @@
 ---
 author: <a href="https://github.com/ivanlomba">Iván Lomba</a>
 comments: true
-date: 2016-08-15 07:00:00+00:00
+date: 2016-08-22 07:00:00+00:00
 layout: post
 slug: arbitrary-cpu-ram
 title: Arbitrary CPU and RAM supported in the ComputeService
