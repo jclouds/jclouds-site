@@ -5,6 +5,7 @@ date: 2016-08-22 07:00:00+00:00
 layout: post
 slug: arbitrary-cpu-ram
 title: Arbitrary CPU and RAM supported in the ComputeService
+quicknews: Read about our <strong>GSoC 2016 project</strong>! Support for arbitrary CPU and RAM has been added to the Compute abstraction
 ---
 
 As part of a [Google Summer of Code](https://developers.google.com/open-source/gsoc/) project has been added a feature to allow users to set manually specific values of CPU and RAM.
