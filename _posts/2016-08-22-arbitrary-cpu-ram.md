@@ -4,29 +4,33 @@ comments: true
 date: 2016-08-22 07:00:00+00:00
 layout: post
 slug: arbitrary-cpu-ram
-title: Arbitrary CPU and RAM supported in the ComputeService
+title: Adding support for arbitrary CPU and RAM to ComputeService
 quicknews: Read about our <strong>GSoC 2016 project</strong>! Support for arbitrary CPU and RAM has been added to the Compute abstraction
 ---
 
-As part of a [Google Summer of Code](https://developers.google.com/open-source/gsoc/) project has been added a feature to allow users to set manually specific values of CPU and RAM.
+Through of a [Google Summer of Code](https://developers.google.com/open-source/gsoc/) project, Apache jclouds now allows users to manually set arbitrary values for desired CPU and RAM of compute instances.
 <!--more-->
 
-The previous Compute Service abstraction assumed that all providers had hardware profiles, a list of profiles describing different cpu, memory and disk configurations that can be used to run a node. Some providers, such as [ProfitBricks](https://www.profitbricks.com/) or [ElasticHosts](https://www.elastichosts.com/), do not have the hardware profiles concept and the previous implementation provides a fixed configuration with a fixed (hardcoded) list just to conform the interface. The new implementation allows to use custom hardwares or both (when supported) hardware profiles and custom hardwares.
+The previous ComputeService abstraction assumed that all providers have hardware profiles: a list of "specs" of available CPU, memory and disk configurations that can be used when creating a node. Some providers, such as [ProfitBricks](https://www.profitbricks.com/) or [ElasticHosts](https://www.elastichosts.com/), do not have the concept of hardware profiles; the previous implementation provided a fixed configuration with a fixed, hard-coded list of "fake" profiles just to conform to the Apache jclouds interface. The new implementation allows  users to create nodes with arbitrary settings or, where supported, to choose between provided hardware profiles or custom settings.
 
-Note that using hardware profiles provides hardware optimization or in some cases cheaper pricings.
+Note that pre-defined hardware profiles can sometimes be more performant and/or cheaper than custom settings.
 
-### How to use custom hardwares
-There are two ways to use a custom hardware: setting in on the hardwareId or specifying cores and ram values using minCores and minRam.
+### How to create a node with custom settings
+There are two ways to use the new feature: setting an appropriate value for the `hardwareId` property, or specifying the desired number of cores, amount of RAM and, in some cases, disk size via the `minCores`, `minRam` and `minDisk` properties.
 
-#### Custom hardware using hardwareId
+#### Creating a node with custom settings using the `hardwareId`
 
-When user set the hardwareId, the Template Builder first check if the provided hardwareId corresponds with an existent hardware profile, and if it corresponds, it would use it. In case that the provided hardwareId do not match with an existing hardware profile and have the automatic hardwareId format, it would use a custom hardware.
+If the user sets the `hardwareId` property, the Apache jclouds [TemplateBuilder](/reference/javadoc/1.9.x/org/jclouds/compute/domain/TemplateBuilder.html) implementation first checks if the provided ID matches an existing hardware profile. If so, the matching profile is used.
 
-To set CPU and RAM with hardwareId you have to set the hardwareId using template builder with the format:
+If the provided ID does _not_ match an existing hardware profile, and it has the format of an "automatic" hardware ID, Apache jclouds will create a node with custom settings.
 
-`automatic:cores=2;ram=4096`
+To set CPU and RAM via an automatic hardware ID, [set the  `hardwareId`](https://jclouds.apache.org/reference/javadoc/1.9.x/org/jclouds/compute/domain/TemplateBuilder.html#hardwareId\(java.lang.String\)) property on your `TemplateBuilder` to a value with the format:
 
-as you can see in the following example:
+```
+automatic:cores=<num-cores>;ram=<memory-size>
+```
+
+For example:
 
 {% highlight Java %}
 Template template = templateBuilder
@@ -35,7 +39,7 @@ Template template = templateBuilder
 compute.createNodesInGroup("jclouds", 1, template);
 {% endhighlight %}
 
-In providers that configure disks based on the volume information provided in the hardware profile you have to specify also the disk size, like in ProfitBricks, where disk is mandatory, you need to specify it to use custom machines:
+For providers such as ProfitBricks that configure disks based on the volume information provided in the hardware profile, you will also need to specify the desired disk size:
 
 {% highlight Java %}
 Template template = templateBuilder
@@ -44,7 +48,7 @@ Template template = templateBuilder
 compute.createNodesInGroup("jclouds", 1, template);
 {% endhighlight %}
 
-To help building the automatic hardwareId, the `automaticHardwareIdSpecBuilder` utility creates an automaticHardwareId string with the provided values of cores, ram and optional disk size.
+You can use the `AutomaticHardwareIdSpec` to more easily construct automatic hardware IDs:
 
 {% highlight Java %}
 Template template = templateBuilder
@@ -55,13 +59,11 @@ Template template = templateBuilder
 compute.createNodesInGroup("jclouds", 1, template);
 {% endhighlight %}
 
+#### Creating a node with custom settings using `minCores`, `minRam` and `minDisk`
 
+If the user sets the `minCores`, `minRam` and, where required, `minDisk` properties, Apache jclouds first checks if a hardware profile matching the desired values exists. If no such profile can be found, Apache jclouds will create a node with custom settings.
 
-#### Custom hardware using minCores and minRam
-
-When user set minCores and minRam, first the template builder checks if a hardware profile matches with the provided minRam and minCores. If not, the templateBuilder will use the automatic hardware.
-
-To set up custom hardwares using minRam and minCores you have to set them using template builder.
+Set the appropriate properties on your `TemplateBuilder`:
 
 {% highlight Java %}
 Template template = templateBuilder
@@ -71,7 +73,7 @@ Template template = templateBuilder
 compute.createNodesInGroup("jclouds", 1, template);
 {% endhighlight %}
 
-In providers that need to specify disk, set also minDisk:
+For providers that need a disk size specification also set `minDisk`:
 
 {% highlight Java %}
 Template template = templateBuilder
@@ -82,30 +84,30 @@ Template template = templateBuilder
 compute.createNodesInGroup("jclouds", 1, template);
 {% endhighlight %}
 
-### Providers supported
-There are several providers that support arbitrary values of CPU and RAM like Docker, ElasticHosts, Google Compute Engine, etc. The first available providers supported by the new feature are:
+### Supported providers
 
-* [Google Compute Engine](https://cloud.google.com/compute/)
-* [ProfitBricks](https://www.profitbricks.com/)
+There are several providers that support arbitrary values of CPU and RAM, such as Docker, ElasticHosts, Google Compute Engine, etc. The first available Apache jclouds providers to support this feature are:
 
-To configure the new feature in other providers add a bind() to the `ArbitraryCpuRamTemplateBuilderImpl` class at the provider's context module:
+* [Google Compute Engine](/guides/google/)
+* [ProfitBricks](/guides/profitbricks/)
+
+To add this feature to other providers, bind the  `ArbitraryCpuRamTemplateBuilderImpl` class in the provider's context module:
 
 {% highlight Java %}
 bind(TemplateBuilderImpl.class).to(ArbitraryCpuRamTemplateBuilderImpl.class);
 {% endhighlight %}
 
-Also is necessary to modify the function that transform a node from the provider model to the portable model of jclouds, to include the new automatic hardwareId (if apply).
+You will also need to modify the function that converts the representation of a node from the provider's model to the jclouds representation, so that the required automatic `hardwareId` is included.
 
 ### Further development
 
-* **Support other providers**: add support for other providers such as [ElasticHosts](https://www.elastichosts.com/) and [Docker](https://www.docker.com/).
-* **Improve AutomaticHardwareSpec**: improve the AutomaticHardwareSpec with specific parsers for every parameter in order to support more custom parameters and some fields, like bootDisk and durable (part of volumes), that are currently hardcoded to true.
-* **Usage examples of the new features**: create examples of the new features in the jclouds-examples repo.
-* **Custom TemplateBuilderImpl for ProfitBricks**: add a custom implementation of the TemplateBuilderImpl to fail early when users don't set the minDisk.
-
+* **Support other providers**: add support for other providers such as [ElasticHosts](https://www.elastichosts.com/) or [Docker](https://www.docker.com/).
+* **Improve `AutomaticHardwareSpec`**: add parsers to `AutomaticHardwareSpec` for further properties that can have arbitrary values, such as `bootDisk` or `durable` (part of a volume description).
+* **Usage examples of the new features**: add examples of using the new features to the [jclouds-examples](http://github.com/jclouds/jclouds-examples) repo.
+* **Custom `TemplateBuilderImpl` for ProfitBricks**: add a custom implementation of the `TemplateBuilderImpl` that fails fast if `minDisk` is not set.
 
 ### Special thanks
 
 Special thanks to [Ignasi Barrera](https://github.com/nacx) for all the help, [Andrew Phillips](https://github.com/demobox) for code reviews and the rest of jclouds comunity.
 
-Of course, also thanks to Google for running GSoC.
+Of course, thanks also to Google for running GSoC.
