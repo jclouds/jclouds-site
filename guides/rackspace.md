@@ -281,7 +281,6 @@ Cloud Load Balancers works with the Rackspace layer in jclouds that is used to a
 You can access Cloud Databases with the jclouds openstack-trove API by specifying the rackspace clouddatabases providers "rackspace-clouddatabases-us" and "rackspace-clouddatabases-uk". The -us one can be used to access the United States regions, and the -uk one is for the United Kingdom regions. The examples use the -us provider, but the providers are interchangeable (but regions will differ).
 
 1. The Rackspace compatible API for Cloud Databases is org.jclouds.openstack.trove.v1.TroveApi - All other APIs for working with Cloud Databases are accessible via the TroveApi.
-1. You can find these APIs in the latest [Javadoc](http://javadocs-labs-openstack.jclouds.cloudbees.net/).
 
 ### <a id="databases-source"></a>The Source Code
 
@@ -321,8 +320,7 @@ In addition to the create database instance example, by going through the cloudd
 
 You can access Cloud Auto Scale with the jclouds rackspace-autoscale API by specifying the Auto Scale provider "rackspace-autoscale-us". There is no -uk provider at this time.
 
-1. The Rackspace compatible API for Auto Scale is org.jclouds.rackspace.autoscale.v1.AutoscaleApi - All other APIs for working with Auto Scale are accessible via the [AutoscaleApi](http://javadocs-labs-openstack.jclouds.cloudbees.net/org/jclouds/rackspace/autoscale/v1/AutoscaleApi.html).
-1. You can find these APIs in the latest [Javadoc](http://javadocs-labs-openstack.jclouds.cloudbees.net/).
+1. The Rackspace compatible API for Auto Scale is org.jclouds.rackspace.autoscale.v1.AutoscaleApi - All other APIs for working with Auto Scale are accessible via the [AutoscaleApi](http://jclouds-javadocs.elasticbeanstalk.com/org/jclouds/rackspace/autoscale/v1/AutoscaleApi.html).
 
 ### <a id="autoscale-source"></a>The Source Code
 
@@ -364,7 +362,6 @@ In addition to the CreatePolicy example, by going through the Auto Scale example
 Cloud Queues works with the OpenStack layer in jclouds that is used to access features common to all OpenStack Marconi queuing systems.
 
 1. The OpenStack API for Cloud Queues is the org.jclouds.openstack.marconi.v1.MarconiApi. All other APIs for working with queues are accessible via the MarconiApi.
-1. You can find these APIs in the latest [Javadoc](http://javadocs-labs-openstack.jclouds.cloudbees.net).
 
 ### <a id="queues-source"></a>The Source Code
 

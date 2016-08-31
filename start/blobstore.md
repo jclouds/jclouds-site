@@ -153,7 +153,7 @@ context.close();
 {% endhighlight %}
 
 There are many options available for creating a `Context`.  Please see the
-[ContextBuilder](http://javadocs.jclouds.cloudbees.net/org/jclouds/ContextBuilder.html) Javadocs for
+[ContextBuilder](http://jclouds-javadocs.elasticbeanstalk.com/org/jclouds/ContextBuilder.html) Javadocs for
 a detailed description.
 
 
