@@ -5,7 +5,6 @@ date: 2016-08-22 07:00:00+00:00
 layout: post
 slug: arbitrary-cpu-ram
 title: Adding support for arbitrary CPU and RAM to ComputeService
-quicknews: Read about our <strong>GSoC 2016 project</strong>! Support for arbitrary CPU and RAM has been added to the Compute abstraction
 ---
 
 Through of a [Google Summer of Code](https://developers.google.com/open-source/gsoc/) project, Apache jclouds now allows users to manually set arbitrary values for desired CPU and RAM of compute instances.

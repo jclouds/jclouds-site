@@ -1,4 +1,4 @@
-url: http://jclouds.apache.org
+url: https://jclouds.apache.org
 title: Apache jclouds
 markdown: rdiscount
 pygments: true
@@ -6,6 +6,6 @@ paginate: 5
 paginate_path: "blog/page:num"
 permalink: /blog/:categories/:year/:month/:day/:title
 relative_permalinks: false
-latest_version: 1.9.2
-latest_version_date: 2016-01-16
-latest_snapshot: 2.0.0-SNAPSHOT
+latest_version: 2.0.0
+latest_version_date: 2016-11-15
+latest_snapshot: 2.1.0-SNAPSHOT
