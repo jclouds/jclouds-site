@@ -32,12 +32,27 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
         <tr>
             <td><a href="/guides/aws/">AWS</a></td>
             <td>aws-ec2</td>
-            <td>US-VA,US-CA,US-OR,BR-SP,IE,SG,AU-NSW,JP-13</td>
+            <td>US-VA,US-CA,US-OR,BR-SP,IE,DE-HE,SG,AU-NSW,IN-MH,JP-13,KR-11</td>
+        </tr>
+        <tr>
+            <td><a href="/guides/cloudsigma/">CloudSigma HI</a>*</td>
+            <td>cloudsigma2-hnl</td>
+            <td>US-HI</td>
         </tr>
         <tr>
             <td><a href="/guides/cloudsigma/">CloudSigma NV</a>*</td>
             <td>cloudsigma2-lvs</td>
             <td>US-NV</td>
+        </tr>
+        <tr>
+            <td><a href="/guides/cloudsigma/">CloudSigma FL</a>*</td>
+            <td>cloudsigma2-mia</td>
+            <td>US-FL</td>
+        </tr>
+        <tr>
+            <td><a href="/guides/cloudsigma/">CloudSigma CA</a>*</td>
+            <td>cloudsigma2-sjc</td>
+            <td>US-CA</td>
         </tr>
         <tr>
             <td><a href="/guides/cloudsigma/">CloudSigma DC</a>*</td>
@@ -55,9 +70,9 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
             <td></td>
         </tr>
         <tr>
-            <td><a href="/guides/docker/">Docker*</a></td>
-            <td>docker</td>
-            <td></td>
+            <td>ElasticHosts HK</td>
+            <td>elastichosts-hkg-e</td>
+            <td>HK</td>
         </tr>
         <tr>
             <td>ElasticHosts GB</td>
@@ -81,6 +96,16 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
         </tr>
         <tr>
             <td>ElasticHosts US</td>
+            <td>elastichosts-sjc-c</td>
+            <td>US-CA</td>
+        </tr>
+        <tr>
+            <td>ElasticHosts AU</td>
+            <td>elastichosts-syd-v</td>
+            <td>AW-NSW</td>
+        </tr>
+        <tr>
+            <td>ElasticHosts US</td>
             <td>elastichosts-tor-p</td>
             <td>CA-ON</td>
         </tr>
@@ -100,6 +125,16 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
             <td></td>
         </tr>
         <tr>
+            <td>Microsoft Azure*</td>
+            <td>azurecompute</td>
+            <td>AU-NSW,AU-VICBR,HK,IE,JP-11,JP-27,NL,US-CA,US-IA,US_IL,US-VA,US_TX,SG</td>
+        </tr>
+        <tr>
+            <td>Microsoft Azure Resource Manager*</td>
+            <td>azurecompute-arm</td>
+            <td>AU-NSW,AU-VIC,BR,CA-ON,CA-QC,CN-BJ,CN-SH,HK,IE,IN-GA,IN_MH,IN-TN,JP-11,JP-27,NL,US-CA,US-IA,US_IL,US-VA,US_TX,SG</td>
+        </tr>
+        <tr>
             <td>OpenHosting</td>
             <td>openhosting-east1</td>
             <td>US-VA</td>
@@ -107,6 +142,11 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
         <tr>
             <td><a href="/guides/profitbricks/">ProfitBricks</a></td>
             <td>profitbricks</td>
+            <td>DE-BW,DE-HE,US-NV</td>
+        </tr>
+        <tr>
+            <td>ProfitBricks REST v3*</td>
+            <td>profitbricks-rest</td>
             <td>DE-BW,DE-HE,US-NV</td>
         </tr>
         <tr>
@@ -182,6 +222,10 @@ The Maven Group ID for all supported APIs below is [org.apache.jclouds.api](http
             <td>cloudstack</td>
         </tr>
         <tr>
+            <td><a href="/guides/docker/">Docker</a></td>
+            <td>docker</td>
+        </tr>
+        <tr>
             <td>ElasticStack</td>
             <td>elasticstack</td>
         </tr>
@@ -209,6 +253,10 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
         <tr>
             <td><a href="/guides/aws-s3/">AWS</a></td>
             <td>aws-s3</td>
+        </tr>
+        <tr>
+            <td>Backblaze B2*</td>
+            <td>b2</td>
         </tr>
         <tr>
             <td>Google Cloud Storage*</td>
