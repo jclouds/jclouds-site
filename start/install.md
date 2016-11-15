@@ -207,7 +207,7 @@ with
 {% capture m %}
 ## Download the last version
 
-Last version can be downloaded from one of the [Apache mirrors](http://www.apache.org/dyn/closer.cgi/jclouds).
+Last version can be downloaded from one of the [Apache mirrors](http://www.apache.org/dyn/closer.lua/jclouds).
 {% endcapture %}
 {{ m | markdownify }}
 </div>
