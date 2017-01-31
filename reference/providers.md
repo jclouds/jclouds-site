@@ -145,6 +145,11 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
             <td>DE-BW,DE-HE,US-NV</td>
         </tr>
         <tr>
+            <td>Packet*</td>
+            <td>packet</td>
+            <td>US-CA,US-NJ,NL,JP</td>
+        </tr>
+        <tr>
             <td>ProfitBricks REST v3*</td>
             <td>profitbricks-rest</td>
             <td>DE-BW,DE-HE,US-NV</td>
@@ -232,6 +237,10 @@ The Maven Group ID for all supported APIs below is [org.apache.jclouds.api](http
         <tr>
             <td><a href="/guides/openstack/">OpenStack</a></td>
             <td>openstack-nova</td>
+        </tr>
+        <tr>
+            <td>Vagrant*</td>
+            <td>vagrant</td>
         </tr>
     </tbody>
 </table>
