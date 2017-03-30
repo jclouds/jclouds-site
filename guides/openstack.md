@@ -178,7 +178,7 @@ In the constructor note that
   * This ones pretty self explanatory, we're using the OpenStack Nova provider in jclouds
 * `String identity = "demo:demo"; // tenantName:userName`
   * Here we use the tenant name and user name with a colon between them instead of just a user name
-* `String password = "devstack";`
+* `String credential = "devstack";`
   *  The demo account uses ADMIN_PASSWORD too
 * `.endpoint("http://xxx.xxx.xxx.xxx:5000/v2.0/")`
   * This is the Keystone endpoint that jclouds needs to connect with to get more info (services and endpoints) from OpenStack
