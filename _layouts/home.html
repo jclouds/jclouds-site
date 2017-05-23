@@ -43,7 +43,9 @@
                 <p>The <a href="/start/install/">latest version</a> is {{ site.latest_version }} released on {{ site.latest_version_date }}! Read the <a href="/releasenotes/{{ site.latest_version }}/">release notes</a>.</p>
             </div>
 
+            {% comment %}
             {% include apachecon.html %}
+            {% endcomment %}
 
             {% capture news %}{% include news.md %}{% endcapture %}
             {{ news | markdownify }}
