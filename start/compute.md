@@ -548,3 +548,20 @@ The jclouds API allows many `Statements` to be built entirely from high-level co
 without having to resort to OS-specific scripts. This enables developers to express what they mean without having
  to deal with the gory details of various OS flavors.
 To see the commands that will be executed, print the result of `Statement.render(OsFamily.UNIX)`, for example.
+
+### Sharing the credential store between ComputeService instances
+
+By default there's a separate credential store per ComputeService instance. To change that and share the
+same credential store between instances create your ComputeService as follows:
+
+{% highlight java %}
+public static final Map<String, ByteSource> SHARED_CREDENTIAL_STORE = new ConcurrentHashMap<String, ByteSource>();
+...
+Module sharedCredStore = new CredentialStoreModule(SHARED_CREDENTIAL_STORE);
+
+ContextBuilder.newBuilder("provider")
+  .modules(ImmutableSet.of(sharedCredStore, ...))
+...
+{% endhighlight %}
+
+*Note*: The behaviour changed from pre-2.1.0 jclouds where the credential store used to be shared as the default.
