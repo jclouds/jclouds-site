@@ -334,9 +334,6 @@ If you are using the Log4JLoggingModule, here is an example log4j.xml stanza you
 </category>
 {% endhighlight %}
 
-## Usage in Google AppEngine
-Please see [][UsingJCloudsWithGAE]]
-
 ## Advanced Usage
 Almost all advanced features require ssh.  You will likely also want to use log4j and our
 enterprise configuration module.  Here's how to configure these.
@@ -551,13 +548,3 @@ The jclouds API allows many `Statements` to be built entirely from high-level co
 without having to resort to OS-specific scripts. This enables developers to express what they mean without having
  to deal with the gory details of various OS flavors.
 To see the commands that will be executed, print the result of `Statement.render(OsFamily.UNIX)`, for example.
-
-## Tools
-
-We've looked at many tools and chosen a few to spend time integrating with.
-These tools enable developers to focus on working code, as opposed to build and infrastructure engineering
-
-### Ant
-
-Please check [[ApacheAntComputeGuide]] on how to use ant for compute API tasks.
-
