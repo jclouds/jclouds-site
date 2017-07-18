@@ -564,4 +564,4 @@ ContextBuilder.newBuilder("provider")
 ...
 {% endhighlight %}
 
-*Note*: The behaviour changed from pre-2.1.0 jclouds where the credential store used to be shared as the default.
+*Note*: This behaviour changed in jclouds 2.1.0; in older versions, the default behaviour was to share the credential store across instances.
