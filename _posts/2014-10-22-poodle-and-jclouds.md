@@ -30,6 +30,6 @@ If you are using the [Azure Compute provider](https://github.com/jclouds/jclouds
 #### More information
 
 * Discussion on the potential impact of POODLE on your applications: [https://www.netmeister.org/blog/poodle.html](https://www.netmeister.org/blog/poodle.html)
-* Question about Java HTTP clients and POODLE: [http://stackanswers.com/questions/26429751/java-http-clients-and-poodle](http://stackanswers.com/questions/26429751/java-http-clients-and-poodle)
+* Question about Java HTTP clients and POODLE: [https://stackoverflow.com/questions/26429751/java-http-clients-and-poodle](https://stackoverflow.com/questions/26429751/java-http-clients-and-poodle)
 * Umbrella jclouds JIRA issue: [JCLOUDS-753](https://issues.apache.org/jira/browse/JCLOUDS-753)
 * Apache HC HTTP driver issue: [JCLOUDS-759](https://issues.apache.org/jira/browse/JCLOUDS-759)
