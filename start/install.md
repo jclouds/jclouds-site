@@ -44,7 +44,8 @@ If you do not have a *pom.xml* file, you can copy and paste the one below. If yo
 ### Using the daily builds
 
 <div class="alert alert-danger">
-<strong>Warning!</strong> These are untested snapshot builds provided for convenience; they are not official releases of the Apache jclouds project, or the Apache Software Foundation.
+<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+These are untested snapshot builds provided for convenience; they are not official releases of the Apache jclouds project, or the Apache Software Foundation.
 </div>
 
 If you want to use the bleeding edge release of jclouds, you'll need to setup a maven dependency pointing to our snapshot repository. You need to update your repositories and add the following in your project's pom.xml:
@@ -93,7 +94,8 @@ You can add jclouds to your *project.clj* like below, supporting clojure 1.2 and
 ### Using the daily builds
 
 <div class="alert alert-danger">
-<strong>Warning!</strong> These are untested snapshot builds provided for convenience; they are not official releases of the Apache jclouds project, or the Apache Software Foundation.
+<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+These are untested snapshot builds provided for convenience; they are not official releases of the Apache jclouds project, or the Apache Software Foundation.
 </div>
 
 You can add jclouds snapshots to your *project.clj* like below:
@@ -136,7 +138,8 @@ Then, add jclouds to your *build.xml* as shown below:
 ### Using the daily builds
 
 <div class="alert alert-danger">
-<strong>Warning!</strong> These are untested snapshot builds provided for convenience; they are not official releases of the Apache jclouds project, or the Apache Software Foundation.
+<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+These are untested snapshot builds provided for convenience; they are not official releases of the Apache jclouds project, or the Apache Software Foundation.
 </div>
 
 You will need to install [maven ant tasks](http://maven.apache.org/ant-tasks/index.html). Then, add jclouds snapshot dependencies to your *build.xml* as shown below:
