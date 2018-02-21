@@ -23,13 +23,13 @@ cd $TMPDIR
 
 for name in jclouds jclouds-labs-openstack; do
   rm -rf ${name}
-  git clone https://git-wip-us.apache.org/repos/asf/${name}.git
+  git clone --branch rel/${name}-${JCLOUDS_VERSION} --depth 1 https://git-wip-us.apache.org/repos/asf/${name}.git
   cd ${name}
   git checkout rel/${name}-${JCLOUDS_VERSION}
   cd ..
 done
 
-apis="openstack-glance openstack-neutron openstack-marconi rackspace-autoscale"
+apis="openstack-glance openstack-marconi rackspace-autoscale"
 
 for api in ${apis}; do
   mv jclouds-labs-openstack/${api} jclouds/apis/
@@ -46,6 +46,12 @@ done
 cd jclouds
 mvn clean javadoc:aggregate -Dnotimestamp=true -DadditionalJOption=-J-Xmx512m
 
+
+if [ ! -d "site-content" ]; then
+  svn co https://svn.apache.org/repos/asf/jclouds/site-content
+else
+  svn up site-content
+fi
 cd $DIR/site-content
 
 mkdir -p reference/javadoc/$JCLOUDS_VERSION_X/

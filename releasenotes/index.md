@@ -6,6 +6,7 @@ permalink: /releasenotes/
 
 The Release Notes and Javadocs for every major release of Apache jclouds are listed chronologically below.
 
+* [2.1.0](/releasenotes/2.1.0) | [Javadoc](/reference/javadoc/2.1.x/)
 * [2.0.3](/releasenotes/2.0.3) | [Javadoc](/reference/javadoc/2.0.x/)
 * [2.0.2](/releasenotes/2.0.2) | [Javadoc](/reference/javadoc/2.0.x/)
 * [2.0.1](/releasenotes/2.0.1) | [Javadoc](/reference/javadoc/2.0.x/)
