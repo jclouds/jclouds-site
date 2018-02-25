@@ -46,3 +46,18 @@ NovaApi nova = ContextBuilder.newBuilder("openstack-nova")
 {% endhighlight %}
 
 With this configuration the `nova` API is configured to use the linked `neutron` for all networking operations.
+
+## Writing code that accepts a linked context
+
+When writing an API or Provider that needs to use another jclouds API, you can easily leverage the context linking feature by injecting the target API as follows:
+
+{% highlight java %}
+@Inject(optional = true)
+@Named("openstack-neutron")
+private Supplier<Context> neutronContextSupplier;
+{% endhighlight %}
+
+* You must use the **Provider or API id** in the `@Named` annotation.
+* If the linked context is optional you can declare an optional injection.
+
+Then you can access the portble abstraction view or provider-specific API from the injected context.
