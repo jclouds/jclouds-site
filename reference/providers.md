@@ -264,11 +264,11 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
             <td>aws-s3</td>
         </tr>
         <tr>
-            <td>Backblaze B2*</td>
+            <td>Backblaze B2</td>
             <td>b2</td>
         </tr>
         <tr>
-            <td>Google Cloud Storage*</td>
+            <td>Google Cloud Storage</td>
             <td>google-cloud-storage</td>
         </tr>
         <tr>
