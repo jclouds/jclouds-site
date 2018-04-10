@@ -6,8 +6,11 @@
     <body>
         {% include navbar.html %}
         <div id="home-content" class="container">
-            
+
+            {% comment %}
 	    {% include supportapache.html %}
+            {% endcomment %}
+            {% include apachecon.html %}
             
 	    <div class="row clearfix">
                 <div class="col-md-4 column">
@@ -46,10 +49,6 @@
             <div id="releasenews" class="alert alert-info">
                 <p>The <a href="/start/install/">latest version</a> is {{ site.latest_version }} released on {{ site.latest_version_date }}! Read the <a href="/releasenotes/{{ site.latest_version }}/">release notes</a>.</p>
             </div>
-
-            {% comment %}
-            {% include apachecon.html %}
-            {% endcomment %}
 
             {% capture news %}{% include news.md %}{% endcapture %}
             {{ news | markdownify }}
