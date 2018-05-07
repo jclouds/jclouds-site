@@ -8,6 +8,7 @@ permalink: /guides/openstack/
 1. [Get OpenStack](#openstack)
 1. [Get jclouds](#install)
 1. [Terminology](#terminology)
+1. [Keystone v2-v3 authentication](#keystone)
 1. [Nova: List Servers](#nova)
 1. [Swift: Use Containers](#swift)
 1. [Next Steps](#next)
@@ -92,6 +93,220 @@ There are some differences in terminology between jclouds and OpenStack that sho
   </div>
 </div>
 
+## <a id="keystone"></a>Keystone v2-v3 authentication
+
+Openstack Keystone (aka: [OpenStack Identity Service](https://docs.openstack.org/keystone/latest/)) has major changes between v2 and v3 (detail. [Identity API v2.0 and v3 History](https://docs.openstack.org/keystone/latest/contributor/http-api.html)).
+
+Basically to login, you should provide:
+
+* On v2: *tenant*, *user*, *password*.
+* On v3: a *project* (new name for *tenant*), an authentication *domain* for this *project*, a *user*, an authentication *domain* for this *user* (the two domains can be different).
+
+jclouds provides backward compatibility between keystone v2-v3 ... but you should have following section in mind to fully understand the authentication on your Openstack platform (in addition of blog: [OpenStack Keystone V3 Support](https://jclouds.apache.org/blog/2018/01/16/keystone-v3/)).
+
+### v2
+
+This snippet:
+{% highlight java %}
+final Properties overrides = new Properties();
+overrides.put(KeystoneProperties.KEYSTONE_VERSION, "2");
+
+ContextBuilder.newBuilder("openstack-nova")
+   .endpoint("https://host:5000/v2.0")
+   .credentials("myTenant:foo", "bar")
+   .overrides(overrides)
+   .buildApi(NovaApi.class);
+{% endhighlight %}
+
+or 
+
+{% highlight java %}
+final Properties overrides = new Properties();
+overrides.put(KeystoneProperties.KEYSTONE_VERSION, "2");
+overrides.put(KeystoneProperties.TENANT_NAME, "myTenant");
+
+ContextBuilder.newBuilder("openstack-nova")
+   .endpoint("https://host:5000/v2.0")
+   .credentials("foo", "bar")
+   .overrides(overrides)
+   .buildApi(NovaApi.class);
+{% endhighlight %}
+
+Will produce when authentication needed: 
+
+    POST https://host:5000/v2.0/tokens HTTP/1.1
+    {
+        "auth": {
+            "passwordCredentials": {
+                "username": "foo",
+                "password": "bar"
+            },
+            "tenantName": "myTenant"
+        }
+    }    
+
+### v3: Default (unscoped) 
+
+Keystone v3 requires at min a user authentication domain (generally the one you are using to login through UI console), so this snippet: 
+{% highlight java %}
+final Properties overrides = new Properties();
+overrides.put(KeystoneProperties.KEYSTONE_VERSION, "3");
+
+ContextBuilder.newBuilder("openstack-nova")
+   .endpoint("https://host:5000/v3")
+   .credentials("ldap:foo", "bar")
+   .overrides(overrides)
+   .buildApi(NovaApi.class);
+{% endhighlight %}
+
+Will produce when authentication needed: 
+
+    POST https://host:5000/v3/auth/tokens HTTP/1.1
+    {
+        "auth": {
+            "identity": {
+                "methods": ["password"],
+                "password": {
+                    "user": {
+                        "name": "foo",
+                        "domain": {
+                            "name": "ldap"
+                        },
+                        "password": "bar"
+                    }
+                }
+            },
+            "scope": "unscoped"
+        }
+    }
+
+In this case, no *project* (previously *tenant* in Openstack keystone v2) is provided.
+
+### v3: Project-scoped
+
+A common usage of Openstack keystone v3 is to provide the [project scope](https://docs.openstack.org/keystone/latest/api_curl_examples.html#project-scoped), this snippet:
+{% highlight java %}
+final Properties overrides = new Properties();
+overrides.put(KeystoneProperties.KEYSTONE_VERSION, "3");
+overrides.put(KeystoneProperties.SCOPE, "project:myTenant");
+
+ContextBuilder.newBuilder("openstack-nova")
+   .endpoint("https://host:5000/v3")
+   .credentials("ldap:foo", "bar")
+   .overrides(overrides)
+   .buildApi(NovaApi.class);
+{% endhighlight %}
+
+Will produce when authentication needed: 
+
+    POST https://host:5000/v3/auth/tokens HTTP/1.1
+    {
+        "auth": {
+            "identity": {
+                "methods": ["password"],
+                "password": {
+                    "user": {
+                        "name": "foo",
+                        "domain": {
+                            "name": "ldap"
+                        },
+                        "password": "bar"
+                    }
+                }
+            },
+            "scope": {
+                "project": {
+                    "name": "myTenant",
+                    "domain": {
+                        "name": "ldap"
+                    }
+                }
+            }
+        }
+    }
+
+If the project domain is different than the user domain (Use case when 'default' is used for projects and a third-part IAM like ldap is use for user authentication), use this snippet:
+{% highlight java %}
+final Properties overrides = new Properties();
+overrides.put(KeystoneProperties.KEYSTONE_VERSION, "3");
+overrides.put(KeystoneProperties.SCOPE, "project:myTenant");
+overrides.put(KeystoneProperties.PROJECT_DOMAIN_NAME, "default"); // Since jclouds v2.2.0 (see PROJECT_DOMAIN_ID as complement)
+
+ContextBuilder.newBuilder("openstack-nova")
+   .endpoint("https://host:5000/v3")
+   .credentials("ldap:foo", "bar")
+   .overrides(overrides)
+   .buildApi(NovaApi.class);
+{% endhighlight %}
+
+Will produce when authentication needed: 
+
+    POST https://host:5000/v3/auth/tokens HTTP/1.1
+    {
+        "auth": {
+            "identity": {
+                "methods": ["password"],
+                "password": {
+                    "user": {
+                        "name": "foo",
+                        "domain": {
+                            "name": "ldap"
+                        },
+                        "password": "bar"
+                    }
+                }
+            },
+            "scope": {
+                "project": {
+                    "name": "myTenant",
+                    "domain": {
+                        "name": "default"
+                    }
+                }
+            }
+        }
+    }
+
+### v3: Domain-scoped
+
+If your authentication is [domain-scoped](https://docs.openstack.org/keystone/latest/api_curl_examples.html#domain-scoped), this snippet:
+{% highlight java %}
+final Properties overrides = new Properties();
+overrides.put(KeystoneProperties.KEYSTONE_VERSION, "3");
+overrides.put(KeystoneProperties.SCOPE, "domain:default");
+
+ContextBuilder.newBuilder("openstack-nova")
+   .endpoint("https://host:5000/v3")
+   .credentials("ldap:foo", "bar")
+   .overrides(overrides)
+   .buildApi(NovaApi.class);
+{% endhighlight %}
+
+Will produce when authentication needed: 
+
+    POST https://host:5000/v3/auth/tokens HTTP/1.1
+    {
+        "auth": {
+            "identity": {
+                "methods": ["password"],
+                "password": {
+                    "user": {
+                        "name": "foo",
+                        "domain": {
+                            "name": "ldap"
+                        },
+                        "password": "bar"
+                    }
+                }
+            },
+            "scope": {
+                "domain": {
+                    "name": "default"
+                }
+            }
+        }
+    }
+
 ## <a id="nova"></a>Nova: List Servers
 ### <a id="nova-intro"></a>Introduction
 
@@ -146,6 +361,7 @@ public class JCloudsNova implements Closeable {
         String identity = "demo:demo"; // tenantName:userName
         String credential = "devstack";
 
+        // Please refer to 'Keystone v2-v3 authentication' chapter for complete authentication use case
         novaApi = ContextBuilder.newBuilder(provider)
                 .endpoint("http://xxx.xxx.xxx.xxx:5000/v2.0/")
                 .credentials(identity, credential)
@@ -264,6 +480,7 @@ public class JCloudsSwift implements Closeable {
       String identity = "demo:demo"; // tenantName:userName
       String credential = "devstack";
 
+      // Please refer to 'Keystone v2-v3 authentication' chapter for complete authentication use case
       swiftApi = ContextBuilder.newBuilder(provider)
             .endpoint("http://xxx.xxx.xxx.xxx:5000/v2.0/")
             .credentials(identity, credential)
@@ -351,6 +568,7 @@ public JCloudsNova() {
     String identity = "username";
     String credential = "password";
 
+    // Please refer to 'Keystone v2-v3 authentication' chapter for complete authentication use case
     novaApi = ContextBuilder.newBuilder(provider)
             .endpoint("https://identity.api.rackspacecloud.com/v2.0/")
             .credentials(identity, credential)
