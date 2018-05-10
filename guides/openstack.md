@@ -230,7 +230,7 @@ If the project domain is different than the user domain (Use case when 'default'
 final Properties overrides = new Properties();
 overrides.put(KeystoneProperties.KEYSTONE_VERSION, "3");
 overrides.put(KeystoneProperties.SCOPE, "project:myTenant");
-overrides.put(KeystoneProperties.PROJECT_DOMAIN_NAME, "default"); // Since jclouds v2.2.0 (see PROJECT_DOMAIN_ID as complement)
+overrides.put(KeystoneProperties.PROJECT_DOMAIN_NAME, "default"); // Since jclouds > v2.1.0 (see PROJECT_DOMAIN_ID as complement)
 
 ContextBuilder.newBuilder("openstack-nova")
    .endpoint("https://host:5000/v3")
