@@ -95,14 +95,14 @@ There are some differences in terminology between jclouds and OpenStack that sho
 
 ## <a id="keystone"></a>Keystone v2-v3 authentication
 
-Openstack Keystone (aka: [OpenStack Identity Service](https://docs.openstack.org/keystone/latest/)) has major changes between v2 and v3 (detail. [Identity API v2.0 and v3 History](https://docs.openstack.org/keystone/latest/contributor/http-api.html)).
+OpenStack Keystone (aka: [OpenStack Identity Service](https://docs.openstack.org/keystone/latest/)) has major changes between v2 and v3 (detail. [Identity API v2.0 and v3 History](https://docs.openstack.org/keystone/latest/contributor/http-api.html)).
 
-Basically to login, you should provide:
+To login, provide:
 
 * On v2: *tenant*, *user*, *password*.
 * On v3: a *project* (new name for *tenant*), an authentication *domain* for this *project*, a *user*, an authentication *domain* for this *user* (the two domains can be different).
 
-jclouds provides backward compatibility between keystone v2-v3 ... but you should have following section in mind to fully understand the authentication on your Openstack platform (in addition of blog: [OpenStack Keystone V3 Support](https://jclouds.apache.org/blog/2018/01/16/keystone-v3/)).
+jclouds provides backward compatibility between Keystone v2 and v3, but you should keep the following in mind to fully understand authentication against your OpenStack platform (See also the recent [OpenStack Keystone v3 Support](https://jclouds.apache.org/blog/2018/01/16/keystone-v3/) blog post).
 
 ### v2
 
@@ -180,11 +180,11 @@ Will produce when authentication needed:
         }
     }
 
-In this case, no *project* (previously *tenant* in Openstack keystone v2) is provided.
+In this case, no *project* (previously *tenant* in OpenStack keystone v2) is provided.
 
 ### v3: Project-scoped
 
-A common usage of Openstack keystone v3 is to provide the [project scope](https://docs.openstack.org/keystone/latest/api_curl_examples.html#project-scoped), this snippet:
+A common usage of OpenStack keystone v3 is to provide the [project scope](https://docs.openstack.org/keystone/latest/api_curl_examples.html#project-scoped), this snippet:
 {% highlight java %}
 final Properties overrides = new Properties();
 overrides.put(KeystoneProperties.KEYSTONE_VERSION, "3");
@@ -357,11 +357,11 @@ public class JCloudsNova implements Closeable {
     public JCloudsNova() {
         Iterable<Module> modules = ImmutableSet.<Module>of(new SLF4JLoggingModule());
 
+        // Please refer to 'Keystone v2-v3 authentication' section for complete authentication use case
         String provider = "openstack-nova";
         String identity = "demo:demo"; // tenantName:userName
         String credential = "devstack";
 
-        // Please refer to 'Keystone v2-v3 authentication' chapter for complete authentication use case
         novaApi = ContextBuilder.newBuilder(provider)
                 .endpoint("http://xxx.xxx.xxx.xxx:5000/v2.0/")
                 .credentials(identity, credential)
@@ -476,11 +476,11 @@ public class JCloudsSwift implements Closeable {
       Iterable<Module> modules = ImmutableSet.<Module>of(
             new SLF4JLoggingModule());
 
+      // Please refer to 'Keystone v2-v3 authentication' section for complete authentication use case
       String provider = "openstack-swift";
       String identity = "demo:demo"; // tenantName:userName
       String credential = "devstack";
 
-      // Please refer to 'Keystone v2-v3 authentication' chapter for complete authentication use case
       swiftApi = ContextBuilder.newBuilder(provider)
             .endpoint("http://xxx.xxx.xxx.xxx:5000/v2.0/")
             .credentials(identity, credential)
@@ -564,11 +564,11 @@ public JCloudsNova() {
     overrides.setProperty(KeystoneProperties.CREDENTIAL_TYPE, CredentialTypes.PASSWORD_CREDENTIALS);
     overrides.setProperty(Constants.PROPERTY_API_VERSION, "2");
 
+    // Please refer to 'Keystone v2-v3 authentication' section for complete authentication use case
     String provider = "openstack-nova";
     String identity = "username";
     String credential = "password";
 
-    // Please refer to 'Keystone v2-v3 authentication' chapter for complete authentication use case
     novaApi = ContextBuilder.newBuilder(provider)
             .endpoint("https://identity.api.rackspacecloud.com/v2.0/")
             .credentials(identity, credential)
