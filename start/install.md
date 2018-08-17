@@ -5,15 +5,84 @@ permalink: /start/install/
 ---
 
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#maven" data-toggle="tab">Maven</a></li>
+  <li class="active"><a href="#download" data-toggle="tab">Download source</a></li>
+  <li><a href="#maven" data-toggle="tab">Maven</a></li>
   <li><a href="#lein" data-toggle="tab">Lein (Clojure)</a></li>
   <li><a href="#ant" data-toggle="tab">Ant</a></li>
-  <li><a href="#download" data-toggle="tab">Download source</a></li>
 </ul>
 
 <div class="tab-content">
 
-<div class="tab-pane fade in active" id="maven">
+<div class="tab-pane fade in active" id="download">
+{% capture m %}
+## Download the last version
+
+**Apache jclouds {{ site.latest_version }}** is now available. See the [release notes](/releasenotes/{{ site.latest_version }}) for more information on the list of changes in this release.
+
+All Apache jclouds distributions is distributed under the [Apache License, version 2.0](https://www.apache.org/licenses/LICENSE-2.0.html).
+
+The link in the Mirrors column below should display a list of available mirrors with a default selection based on your inferred location. If you do not see that page, try a different browser. The checksum and signature are links to the originals on the main distribution server.
+
+<table class="table table-striped table-hover">
+<thead>
+<tr>
+    <th>Source artifact</th>
+    <th>Checksum</th>
+    <th>Signature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td><a href="http://www.apache.org/dyn/closer.lua/jclouds/{{ site.latest_version }}/jclouds-{{ site.latest_version }}-source-release.tar.gz">jclouds-{{ site.latest_version }}.tar.gz</a></td>
+    <td><a href="http://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-{{ site.latest_version }}-source-release.tar.gz.sha512">SHA 512 checksum</td>
+    <td><a href="http://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-{{ site.latest_version }}-source-release.tar.gz.asc">PGP signature</td>
+</tr>
+<tr>
+    <td><a href="http://www.apache.org/dyn/closer.lua/jclouds/{{ site.latest_version }}/jclouds-labs-{{ site.latest_version }}-source-release.tar.gz">jclouds-labs-{{ site.latest_version }}.tar.gz</a></td>
+    <td><a href="http://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-labs-{{ site.latest_version }}-source-release.tar.gz.sha512">SHA 512 checksum</td>
+    <td><a href="http://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-labs-{{ site.latest_version }}-source-release.tar.gz.asc">PGP signature</td>
+</tr>
+<tr>
+    <td><a href="http://www.apache.org/dyn/closer.lua/jclouds/{{ site.latest_version }}/jclouds-labs-aws-{{ site.latest_version }}-source-release.tar.gz">jclouds-labs-aws-{{ site.latest_version }}.tar.gz</a></td>
+    <td><a href="http://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-labs-aws-{{ site.latest_version }}-source-release.tar.gz.sha512">SHA 512 checksum</td>
+    <td><a href="http://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-labs-aws-{{ site.latest_version }}-source-release.tar.gz.asc">PGP signature</td>
+</tr>
+<tr>
+    <td><a href="http://www.apache.org/dyn/closer.lua/jclouds/{{ site.latest_version }}/jclouds-labs-openstack-{{ site.latest_version }}-source-release.tar.gz">jclouds-labs-openstack-{{ site.latest_version }}.tar.gz</a></td>
+    <td><a href="http://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-labs-openstack-{{ site.latest_version }}-source-release.tar.gz.sha512">SHA 512 checksum</td>
+    <td><a href="http://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-labs-openstack-{{ site.latest_version }}-source-release.tar.gz.asc">PGP signature</td>
+</tr>
+<tr>
+    <td><a href="http://www.apache.org/dyn/closer.lua/jclouds/{{ site.latest_version }}/jclouds-karaf-{{ site.latest_version }}-source-release.tar.gz">jclouds-karaf-{{ site.latest_version }}.tar.gz</a></td>
+    <td><a href="http://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-karaf-{{ site.latest_version }}-source-release.tar.gz.sha512">SHA 512 checksum</td>
+    <td><a href="http://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-karaf-{{ site.latest_version }}-source-release.tar.gz.asc">PGP signature</td>
+</tr>
+<tr>
+    <td><a href="http://www.apache.org/dyn/closer.lua/jclouds/{{ site.latest_version }}/jclouds-cli-{{ site.latest_version }}-source-release.tar.gz">jclouds-cli-{{ site.latest_version }}.tar.gz</a></td>
+    <td><a href="http://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-cli-{{ site.latest_version }}-source-release.tar.gz.sha512">SHA 512 checksum</td>
+    <td><a href="http://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-cli-{{ site.latest_version }}-source-release.tar.gz.asc">PGP signature</td>
+</tr>
+</tbody>
+</table>
+
+## Verify the integrity
+
+It is essential that you verify the integrity of the downloaded files using the `PGP` signatures and `SHA` checksums. Please read [Verifying Apache Releases](http://www.apache.org/info/verification.html) for more information on why you should verify our releases and how to do it.
+
+The [KEYS](http://www.apache.org/dist/jclouds/KEYS) file contains the public PGP keys used by Apache jclodus developers to sign releases.
+
+## Other versions
+Downloads for all versions are hosted (and mirrored) in:
+
+* [Apache's release mirrors](http://www.apache.org/dyn/closer.cgi/jclouds/).
+* [Archive repository](http://archive.apache.org/dist/jclouds/).
+
+You can also read the changelogs for [all versions](/releasenotes).
+{% endcapture %}
+{{ m | markdownify }}
+</div>
+
+<div class="tab-pane fade" id="maven">
 {% capture m %}
 ## Maven configuration
 
@@ -202,15 +271,6 @@ with
 {% highlight xml %}
       <dependency groupId="org.apache.jclouds.provider" artifactId="the-provider-id" version="{{ site.latest_version }}" />
 {% endhighlight %}
-{% endcapture %}
-{{ m | markdownify }}
-</div>
-
-<div class="tab-pane fade" id="download">
-{% capture m %}
-## Download the last version
-
-Last version can be downloaded from one of the [Apache mirrors](http://www.apache.org/dyn/closer.lua/jclouds).
 {% endcapture %}
 {{ m | markdownify }}
 </div>
