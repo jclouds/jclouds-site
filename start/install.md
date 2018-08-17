@@ -33,49 +33,49 @@ The link in the Mirrors column below should display a list of available mirrors 
 </thead>
 <tbody>
 <tr>
-    <td><a href="http://www.apache.org/dyn/closer.lua/jclouds/{{ site.latest_version }}/jclouds-{{ site.latest_version }}-source-release.tar.gz">jclouds-{{ site.latest_version }}.tar.gz</a></td>
-    <td><a href="http://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-{{ site.latest_version }}-source-release.tar.gz.sha512">SHA 512 checksum</td>
-    <td><a href="http://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-{{ site.latest_version }}-source-release.tar.gz.asc">PGP signature</td>
+    <td><a href="https://www.apache.org/dyn/closer.lua/jclouds/{{ site.latest_version }}/jclouds-{{ site.latest_version }}-source-release.tar.gz">jclouds-{{ site.latest_version }}.tar.gz</a></td>
+    <td><a href="https://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-{{ site.latest_version }}-source-release.tar.gz.sha512">SHA 512 checksum</td>
+    <td><a href="https://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-{{ site.latest_version }}-source-release.tar.gz.asc">PGP signature</td>
 </tr>
 <tr>
-    <td><a href="http://www.apache.org/dyn/closer.lua/jclouds/{{ site.latest_version }}/jclouds-labs-{{ site.latest_version }}-source-release.tar.gz">jclouds-labs-{{ site.latest_version }}.tar.gz</a></td>
-    <td><a href="http://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-labs-{{ site.latest_version }}-source-release.tar.gz.sha512">SHA 512 checksum</td>
-    <td><a href="http://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-labs-{{ site.latest_version }}-source-release.tar.gz.asc">PGP signature</td>
+    <td><a href="https://www.apache.org/dyn/closer.lua/jclouds/{{ site.latest_version }}/jclouds-labs-{{ site.latest_version }}-source-release.tar.gz">jclouds-labs-{{ site.latest_version }}.tar.gz</a></td>
+    <td><a href="https://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-labs-{{ site.latest_version }}-source-release.tar.gz.sha512">SHA 512 checksum</td>
+    <td><a href="https://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-labs-{{ site.latest_version }}-source-release.tar.gz.asc">PGP signature</td>
 </tr>
 <tr>
-    <td><a href="http://www.apache.org/dyn/closer.lua/jclouds/{{ site.latest_version }}/jclouds-labs-aws-{{ site.latest_version }}-source-release.tar.gz">jclouds-labs-aws-{{ site.latest_version }}.tar.gz</a></td>
-    <td><a href="http://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-labs-aws-{{ site.latest_version }}-source-release.tar.gz.sha512">SHA 512 checksum</td>
-    <td><a href="http://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-labs-aws-{{ site.latest_version }}-source-release.tar.gz.asc">PGP signature</td>
+    <td><a href="https://www.apache.org/dyn/closer.lua/jclouds/{{ site.latest_version }}/jclouds-labs-aws-{{ site.latest_version }}-source-release.tar.gz">jclouds-labs-aws-{{ site.latest_version }}.tar.gz</a></td>
+    <td><a href="https://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-labs-aws-{{ site.latest_version }}-source-release.tar.gz.sha512">SHA 512 checksum</td>
+    <td><a href="https://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-labs-aws-{{ site.latest_version }}-source-release.tar.gz.asc">PGP signature</td>
 </tr>
 <tr>
-    <td><a href="http://www.apache.org/dyn/closer.lua/jclouds/{{ site.latest_version }}/jclouds-labs-openstack-{{ site.latest_version }}-source-release.tar.gz">jclouds-labs-openstack-{{ site.latest_version }}.tar.gz</a></td>
-    <td><a href="http://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-labs-openstack-{{ site.latest_version }}-source-release.tar.gz.sha512">SHA 512 checksum</td>
-    <td><a href="http://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-labs-openstack-{{ site.latest_version }}-source-release.tar.gz.asc">PGP signature</td>
+    <td><a href="https://www.apache.org/dyn/closer.lua/jclouds/{{ site.latest_version }}/jclouds-labs-openstack-{{ site.latest_version }}-source-release.tar.gz">jclouds-labs-openstack-{{ site.latest_version }}.tar.gz</a></td>
+    <td><a href="https://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-labs-openstack-{{ site.latest_version }}-source-release.tar.gz.sha512">SHA 512 checksum</td>
+    <td><a href="https://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-labs-openstack-{{ site.latest_version }}-source-release.tar.gz.asc">PGP signature</td>
 </tr>
 <tr>
-    <td><a href="http://www.apache.org/dyn/closer.lua/jclouds/{{ site.latest_version }}/jclouds-karaf-{{ site.latest_version }}-source-release.tar.gz">jclouds-karaf-{{ site.latest_version }}.tar.gz</a></td>
-    <td><a href="http://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-karaf-{{ site.latest_version }}-source-release.tar.gz.sha512">SHA 512 checksum</td>
-    <td><a href="http://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-karaf-{{ site.latest_version }}-source-release.tar.gz.asc">PGP signature</td>
+    <td><a href="https://www.apache.org/dyn/closer.lua/jclouds/{{ site.latest_version }}/jclouds-karaf-{{ site.latest_version }}-source-release.tar.gz">jclouds-karaf-{{ site.latest_version }}.tar.gz</a></td>
+    <td><a href="https://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-karaf-{{ site.latest_version }}-source-release.tar.gz.sha512">SHA 512 checksum</td>
+    <td><a href="https://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-karaf-{{ site.latest_version }}-source-release.tar.gz.asc">PGP signature</td>
 </tr>
 <tr>
-    <td><a href="http://www.apache.org/dyn/closer.lua/jclouds/{{ site.latest_version }}/jclouds-cli-{{ site.latest_version }}-source-release.tar.gz">jclouds-cli-{{ site.latest_version }}.tar.gz</a></td>
-    <td><a href="http://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-cli-{{ site.latest_version }}-source-release.tar.gz.sha512">SHA 512 checksum</td>
-    <td><a href="http://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-cli-{{ site.latest_version }}-source-release.tar.gz.asc">PGP signature</td>
+    <td><a href="https://www.apache.org/dyn/closer.lua/jclouds/{{ site.latest_version }}/jclouds-cli-{{ site.latest_version }}-source-release.tar.gz">jclouds-cli-{{ site.latest_version }}.tar.gz</a></td>
+    <td><a href="https://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-cli-{{ site.latest_version }}-source-release.tar.gz.sha512">SHA 512 checksum</td>
+    <td><a href="https://www.apache.org/dist/jclouds/{{ site.latest_version }}/jclouds-cli-{{ site.latest_version }}-source-release.tar.gz.asc">PGP signature</td>
 </tr>
 </tbody>
 </table>
 
 ## Verify the integrity
 
-It is essential that you verify the integrity of the downloaded files using the `PGP` signatures and `SHA` checksums. Please read [Verifying Apache Releases](http://www.apache.org/info/verification.html) for more information on why you should verify our releases and how to do it.
+It is essential that you verify the integrity of the downloaded files using the `PGP` signatures and `SHA` checksums. Please read [Verifying Apache Releases](https://www.apache.org/info/verification.html) for more information on why you should verify our releases and how to do it.
 
-The [KEYS](http://www.apache.org/dist/jclouds/KEYS) file contains the public PGP keys used by Apache jclodus developers to sign releases.
+The [KEYS](https://www.apache.org/dist/jclouds/KEYS) file contains the public PGP keys used by Apache jclodus developers to sign releases.
 
 ## Other versions
 Downloads for all versions are hosted (and mirrored) in:
 
-* [Apache's release mirrors](http://www.apache.org/dyn/closer.cgi/jclouds/).
-* [Archive repository](http://archive.apache.org/dist/jclouds/).
+* [Apache's release mirrors](https://www.apache.org/dyn/closer.cgi/jclouds/).
+* [Archive repository](https://archive.apache.org/dist/jclouds/).
 
 You can also read the changelogs for [all versions](/releasenotes).
 {% endcapture %}
