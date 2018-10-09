@@ -8,6 +8,7 @@ Use these guides for getting started with any of the cloud providers below:
 * [Amazon Web Services](aws)
 * [Azure Storage](azure-storage)
 * [CloudSigma](cloudsigma)
+* [Dimension Data](dimensiondata)
 * [Docker](docker)
 * [GoGrid](go-grid)
 * [Google Cloud Platform](google)

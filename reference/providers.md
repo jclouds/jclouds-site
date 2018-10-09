@@ -70,6 +70,11 @@ The Maven Group ID for all supported providers below is [org.apache.jclouds.prov
             <td></td>
         </tr>
         <tr>
+            <td><a href="/guides/dimensiondata/">Dimension Data</a>*</td>
+            <td>dimensiondata-cloudcontrol</td>
+            <td></td>
+        </tr>
+        <tr>
             <td>ElasticHosts HK</td>
             <td>elastichosts-hkg-e</td>
             <td>HK</td>
