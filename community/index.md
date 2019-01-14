@@ -16,7 +16,6 @@ title: Get in touch!
     <ul>
       <li><a href="https://webchat.freenode.net/?channels=jclouds">Chat</a> with us on IRC at <a href="https://botbot.me/freenode/jclouds/">#jclouds on Freenode</a></li>
       <li>Join the <a href="https://the-asf.slackarchive.io/jclouds">#jclouds Slack channel</a> at the <a href="https://the-asf.slack.com/">ASF workspace</a>. Ask us for an invitation to join!</li>
-      <li><a href="http://www.meetup.com/jclouds/">Attend a jclouds event!</a></li>
     </ul>
 
     <h2>Get involved!</h2>
