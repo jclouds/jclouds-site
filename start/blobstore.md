@@ -392,9 +392,12 @@ an object from a container that does not exist is a state problem, and should th
 <!--update to use ByteSource -->
 
 ### Uploading 
-As long as you use either `InputStream` or `File` as the payload for your blob, you should
+As long as you use either `ByteSource` or `File` as the payload for your blob, you should
 be fine. Note that in S3, you must calculate the length ahead of time, since it doesn't support
 chunked encoding.
+
+It is usually better to use a repeatable payload like `ByteSource` instead of `InputStream`,
+since this allows parallel uploads and retrying on errors.
 
 Our integration tests ensure that we don't rebuffer in memory on upload: 
 [testUploadBigFile](http://github.com/jclouds/jclouds/blob/master/core/src/test/java/org/jclouds/http/BaseHttpCommandExecutorServiceIntegrationTest.java).
@@ -405,5 +408,5 @@ environments such as Google App Engine.
 ### Downloading
 
 A blob you've downloaded via `blobstore.getBlob()` can be accessed via
-`blob.getPayload().getInput()` or `blob.getPayload().writeTo(outputStream)`.  Since these are
-streaming, you shouldn't have a problem with memory unless you rebuffer the payload.
+`blob.getPayload().openStream()`.  Since this is streaming, you shouldn't have a problem
+with memory unless you rebuffer the payload.
